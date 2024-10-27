@@ -37,7 +37,7 @@ if (isset($_SESSION['user_phone'])) {
         }
     </style>
 </head>
-<body style="background-color: #3fbbc0; overflow-y: hidden ">
+<body style="background-color: #D25B33; overflow-y: hidden ">
 <div id="loading-spinner"
      style="text-align: center;line-height:700px;position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1051; display: flex; align-items: center; justify-content: center;">
     <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
@@ -49,18 +49,19 @@ if (isset($_SESSION['user_phone'])) {
     <div class="container">
         <div class="row gy-4 align-items-center">
             <div class="col-12 col-md-6 col-xl-7">
-                <div class="d-flex justify-content-center" style="background-color: #3fbbc0; color: white">
+                <div class="d-flex justify-content-center" style="background-color: #D25B33; color: white">
                     <div class="col-12 col-xl-9">
                         <a href="<?php echo HOME_CLIENT_URL ?>"
                            class="logo me-auto">
-                            <img class="img-fluid rounded mb-4" loading="lazy" src="assets/img/Medicare.png" width="345"
+                            <img class="img-fluid rounded mb-4" loading="lazy" src="assets/img/logo_cent_white.png" width="345"
                                  alt="BootstrapBrain Logo">
                         </a>
                         <hr class="border-primary-subtle mb-4">
-                        <h2 class="h1 mb-4">Chào mừng đến với Medicare.</h2>
-                        <p class="lead mb-5">Chúng tôi rất vui được chăm sóc sức khỏe của quý vị. Tại đây, chúng tôi cam
-                            kết cung cấp dịch vụ y tế chất lượng, chu đáo và chuyên nghiệp nhất để mang lại sự an tâm và
-                            hài lòng cho quý khách.</p>
+                        <h2 class="h2 mb-4">Chào mừng đến với Cent Beauty.</h2>
+                        <p class="lead mb-5">Với đội ngũ Founder và nhân sự tới 99,99% thuộc thế hệ GenZ - Thế hệ vàng
+                            phát triển của đất nước. Cent Beauty là nơi hội tụ những “con người trẻ” tạo ra giá trị mỗi
+                            ngày cho “thế hệ trẻ”. Đó là lý do chúng mình ra đời với định vị: “Hệ thống Spa tiên phong
+                            dành cho giới trẻ.”</p>
                         <div class="text-endx">
                             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
                                  class="bi bi-grip-horizontal" viewBox="0 0 16 16">
@@ -105,7 +106,7 @@ if (isset($_SESSION['user_phone'])) {
                                 <div class="col-12 mt-4">
                                     <div class="d-grid">
                                         <button id="loginButton"
-                                                class="btn btn-lg" style="background-color: #3fbbc0; color: white"
+                                                class="btn btn-lg" style="background-color: #D25B33; color: white"
                                                 type="submit">Đăng nhập ngay
                                         </button>
                                     </div>
@@ -122,8 +123,8 @@ if (isset($_SESSION['user_phone'])) {
                         <div class="row mt-3">
                             <div class="col-12">
                                 <a href="<?php echo LOGIN_ADMIN_URL ?>"
-                                   style="color: #3fbbc0; margin-right: 10px">Đăng nhập quản trị
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(63, 187, 192, 1);transform: ;msFilter:;">
+                                   style="color: #D25B33; margin-right: 10px">Đăng nhập quản trị
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: #D25B33;transform: ;msFilter:;">
                                         <path d="M10.296 7.71 14.621 12l-4.325 4.29 1.408 1.42L17.461 12l-5.757-5.71z"></path>
                                         <path d="M6.704 6.29 5.296 7.71 9.621 12l-4.325 4.29 1.408 1.42L12.461 12z"></path>
                                     </svg>

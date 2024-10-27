@@ -26,7 +26,7 @@ class HomeController extends BaseController
     {
         $countDoctors = $this->doctorModel->getCountDoctors();
         $listDoctors = $this->doctorModel->getDoctorForHome();
-        return $this->view('client.home', [
+        return $this->view('client.home_cent', [
             'listDoctors' => $listDoctors,
             'countDoctors' => $countDoctors,
         ]);
