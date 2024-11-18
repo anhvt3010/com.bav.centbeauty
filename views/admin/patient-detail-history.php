@@ -5,9 +5,9 @@
                 <thead>
                 <tr>
                     <th style="width:5%;">STT</th>
-                    <th style="width:15%;">Bác sĩ</th>
-                    <th style="width:12%;">Bệnh nhân</th>
-                    <th style="width:15%;">Chuyên khoa</th>
+                    <th style="width:15%;">Chuyên gia</th>
+                    <th style="width:12%;">Khách hàng</th>
+                    <th style="width:15%;">Dịch vụ</th>
                     <th style="width:10%;">Thời gian</th>
                     <th style="width:5%;"></th>
                 </tr>

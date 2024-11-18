@@ -2,7 +2,7 @@ function validateAppointment(specialId, doctorId, dateSlot, timeSlotId) {
     var errorSpecialty = document.getElementById('error-specialty');
     if (!specialId) {
         errorSpecialty.style.display = 'block';
-        errorSpecialty.textContent = 'Vui lòng chọn chuyên khoa khám'
+        errorSpecialty.textContent = 'Vui lòng chọn dịch vụ'
         return false;
     } else {
         errorSpecialty.style.display = 'none';
@@ -11,7 +11,7 @@ function validateAppointment(specialId, doctorId, dateSlot, timeSlotId) {
     var errorDoctor = document.getElementById('error-doctor');
     if (!doctorId) {
         errorDoctor.style.display = 'block';
-        errorDoctor.textContent = 'Vui lòng chọn bác sĩ'
+        errorDoctor.textContent = 'Vui lòng chọn chuyên gia'
         return false;
     } else {
         errorDoctor.style.display = 'none';

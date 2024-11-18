@@ -13,7 +13,7 @@ if (!isset($_SESSION['admin_name'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="assets/img/logo.png" rel="icon">
+    <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
     <title>Chi tiết lịch khám</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -49,7 +49,7 @@ if (!isset($_SESSION['admin_name'])) {
                         <h3 class="mt-0">Thông tin cá nhân</h3>
                         <div class="mb-3 row">
                             <div class="col-5">
-                                <label for="specialtyName" class="form-label">Tên bệnh nhân</label>
+                                <label for="specialtyName" class="form-label">Tên khách hàng</label>
                                 <div class="form-control-sm" style="background-color: #eee; line-height: 30px">
                                     <?php echo $appointment['patient_name'] ?>
                                 </div>
@@ -85,13 +85,13 @@ if (!isset($_SESSION['admin_name'])) {
                         <h3 class="mt-0">Thông tin khám bệnh</h3>
                         <div class="mb-3 row">
                             <div class="col-8">
-                                <label for="" class="form-label">Tên bác sĩ</label>
+                                <label for="" class="form-label">Tên chuyên gia</label>
                                 <div class="form-control-sm" style="background-color: #eee; line-height: 30px">
                                     <?php echo $appointment['doctor_name'] ?>
                                 </div>
                             </div>
                             <div class="col-4">
-                                <label for="" class="form-label">Chuyên khoa khám</label>
+                                <label for="" class="form-label">Dịch vụ</label>
                                 <div class="form-control-sm" style="background-color: #eee; line-height: 30px">
                                     <?php echo $appointment['specialty_name'] ?>
                                 </div>

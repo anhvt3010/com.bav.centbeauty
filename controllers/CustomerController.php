@@ -1,14 +1,14 @@
 <?php
-class PatientController extends BaseController
+class CustomerController extends BaseController
 {
-    private $patientModel;
+    private $customerModel;
     private $specialtyModel;
     private $appointmentModel;
 
     public function __construct()
     {
-        $this->loadModel('PatientModel');
-        $this->patientModel = new PatientModel();
+        $this->loadModel('CustomerModel');
+        $this->customerModel = new CustomerModel();
 
         $this->loadModel('SpecialtyModel');
         $this->specialtyModel = new SpecialtyModel();
@@ -21,8 +21,8 @@ class PatientController extends BaseController
     public function index()
     {
         $listSpecialties = $this->specialtyModel->getSpecialtiesForAdmin();
-        $listPatients = $this->patientModel->getPatientForAdmin();
-        return $this->view('admin.patients', [
+        $listPatients = $this->customerModel->getPatientForAdmin();
+        return $this->view('admin.customers', [
             'listPatients' => $listPatients,
             'listSpecialties' => $listSpecialties,
         ]);
@@ -66,7 +66,7 @@ class PatientController extends BaseController
         session_start();
         if (isset($_SESSION['user_phone'])) {
             $phone = $_SESSION['user_phone'];
-            $patient = $this->patientModel->findByPhone($phone);
+            $patient = $this->customerModel->findByPhone($phone);
             return $this->view('client.profile', [
                 'patient' => $patient,
             ]);
@@ -79,9 +79,9 @@ class PatientController extends BaseController
     public function detail()
     {
         $id = $_GET['patient_id'] ?? null;
-        $patient = $this->patientModel->findById($id);
+        $patient = $this->customerModel->findById($id);
         $listAppointments = $this->appointmentModel->getAppointmentsByPatient($patient['phone'], $patient['patient_id']);
-        return $this->view('admin.patient-detail', [
+        return $this->view('admin.customer-detail', [
             'patient' => $patient,
             'listAppointments' => $listAppointments,
         ]);
@@ -90,9 +90,9 @@ class PatientController extends BaseController
     public function detail_patient()
     {
         $id = $_POST['patient_id'];
-        $patient = $this->patientModel->findById($id);
+        $patient = $this->customerModel->findById($id);
         $listAppointments = $this->appointmentModel->getAppointmentsByPatient($patient['phone'], $patient['patient_id']);
-        return $this->view('admin.patient-detail', [
+        return $this->view('admin.customer-detail', [
             'patient' => $patient,
             'listAppointments' => $listAppointments,
         ]);
@@ -108,7 +108,7 @@ class PatientController extends BaseController
             $email = $_POST['email'];
             $address = $_POST['address'];
             $phone = $_SESSION['user_phone'];
-            $result = $this->patientModel->updatePatient($name, $gender, $dob, $email, $address, $phone);
+            $result = $this->customerModel->updatePatient($name, $gender, $dob, $email, $address, $phone);
             if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
                 header('Content-Type: application/json');
                 echo json_encode($result);
@@ -163,7 +163,7 @@ class PatientController extends BaseController
             $employee_id = $_SESSION['admin_id'];
             $status = $_POST['status'];
             $patient_id = $_POST['patient_id'];
-            $result = $this->patientModel->updateStatus($patient_id, $status, $employee_id );
+            $result = $this->customerModel->updateStatus($patient_id, $status, $employee_id );
             if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
                 header('Content-Type: application/json');
                 echo json_encode($result);
@@ -182,7 +182,7 @@ class PatientController extends BaseController
     public function get_one()
     {
         $patient_id = $_POST['patient_id'];
-        $patient = $this->patientModel->findById($patient_id);
+        $patient = $this->customerModel->findById($patient_id);
         if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
             header('Content-Type: application/json');
             echo json_encode($patient);
@@ -209,7 +209,7 @@ class PatientController extends BaseController
     public function check_phone()
     {
         $phone = $_POST['phone'];  // Đảm bảo rằng bạn đang sử dụng POST ở đây
-        $result = $this->patientModel->checkPhoneExists($phone);
+        $result = $this->customerModel->checkPhoneExists($phone);
         if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
             header('Content-Type: application/json');
             echo json_encode($result);

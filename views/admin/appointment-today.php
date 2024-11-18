@@ -13,7 +13,7 @@ if (!isset($_SESSION['admin_name'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="assets/img/logo.png" rel="icon">
+    <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
     <title>Lịch khám hôm nay</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <?php include 'import-link-tag.php' ?>
@@ -50,10 +50,10 @@ if (!isset($_SESSION['admin_name'])) {
                         <div class="row table-filters-container">
                             <div class="col-3 table-filters pb-0">
                                 <div class="filter-container">
-                                    <label class="control-label table-filter-title">Lọc chuyên khoa:</label>
+                                    <label class="control-label table-filter-title">Lọc Dịch vụ:</label>
                                     <form>
                                         <select class="select2" name="specialty">
-                                            <option value="All" <?php echo ($specialtySelected == 'All' ? 'selected' : ''); ?>>Tất cả chuyên khoa</option>
+                                            <option value="All" <?php echo ($specialtySelected == 'All' ? 'selected' : ''); ?>>Tất cả dịch vụ</option>
                                             <?php
                                             foreach ($listSpecialties as $specialty) {
                                                 // Kiểm tra nếu id của chuyên khoa hiện tại trùng với $specialtySelected
@@ -68,10 +68,10 @@ if (!isset($_SESSION['admin_name'])) {
 
                             <div class="col-3 table-filters pb-0">
                                 <div class="filter-container">
-                                    <label class="control-label table-filter-title">Lọc bác sĩ:</label>
+                                    <label class="control-label table-filter-title">Lọc chuyên gia:</label>
                                     <form>
                                         <select class="select2" name="doctor">
-                                            <option value="All" <?php echo ($doctorSelected == 'All' ? 'selected' : ''); ?>>Tất cả bác sĩ</option>
+                                            <option value="All" <?php echo ($doctorSelected == 'All' ? 'selected' : ''); ?>>Tất cả chuyên gia</option>
                                             <?php
                                             foreach ($listDoctors as $doctor) {
                                                 // Kiểm tra nếu id của bác sĩ hiện tại trùng với $doctor_selected
@@ -86,7 +86,7 @@ if (!isset($_SESSION['admin_name'])) {
 
 
                             <div class="col-3 table-filters pb-0">
-                                <span class="table-filter-title">Tra cứu bệnh nhân </span>
+                                <span class="table-filter-title">Tra cứu khách hàng </span>
                                 <div class="filter-container">
                                     <div class="row">
                                         <div class="col-12">
@@ -114,10 +114,10 @@ if (!isset($_SESSION['admin_name'])) {
                                     <thead>
                                     <tr>
                                         <th style="width:2%;">STT</th>
-                                        <th style="width:13%;">Bác sĩ</th>
-                                        <th style="width:15%;">Bệnh nhân</th>
+                                        <th style="width:13%;">Chuyên gia</th>
+                                        <th style="width:15%;">Khách hàng</th>
                                         <th style="width:12%;">Thông tin liên hệ</th>
-                                        <th style="width:10%;">Chuyên khoa khám</th>
+                                        <th style="width:10%;">Dịch vụ</th>
                                         <th style="width:10%;">Thời gian hẹn</th>
                                         <th style="width:10%;" class="text-center">Trạng thái</th>
                                         <th style="width:1%;"></th>

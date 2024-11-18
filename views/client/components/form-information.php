@@ -66,11 +66,11 @@
     <hr>
     <div class="text-center mt-3 d-flex justify-content-between">
         <button id="backAppointment" type="button" class="btn btn-primary"
-                style="background-color:#3fbbc0 !important; width: 15%; font-weight: bold; border: none">
+                style="background-color:#d25b33 !important; width: 15%; font-weight: bold; border: none">
             Quay lại
         </button>
         <button id="openConfirm" type="button" class="btn btn-primary"
-                style="background-color:#3fbbc0 !important; width: 25%; font-weight: bold; border: none">
+                style="background-color:#d25b33 !important; width: 25%; font-weight: bold; border: none">
             Xem lại thông tin và xác nhận
         </button>
     </div>

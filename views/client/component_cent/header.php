@@ -7,7 +7,8 @@
     <meta name="keywords" content="Aesthetic, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Aesthetic | Template</title>
+    <title>Cent's Beauty</title>
+    <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
 
     <!-- Google Font -->
     <!--    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"-->

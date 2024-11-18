@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="be-navbar-header">
             <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=home_admin" class="ml-5">
-                <img src="assets/img/Medicare.png" alt="logo" width="150">
+                <img src="assets/img/logo_cent_orage.png" alt="logo" width="100">
             </a>
         </div>
         <div class="page-title"><span>Bảng điều khiển</span></div>

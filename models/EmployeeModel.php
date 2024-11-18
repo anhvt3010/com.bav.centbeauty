@@ -46,7 +46,7 @@ class EmployeeModel  extends BaseModel {
                        p.name AS position_name,
                         s.name AS specialty_name
                 FROM employees AS e
-                LEFT JOIN specialties AS s ON e.specialty_id = s.specialty_id
+                LEFT JOIN services AS s ON e.service_id = s.service_id
                 LEFT JOIN positions AS p ON e.position_id = p.position_id
                 WHERE e.employee_id = $id";
 

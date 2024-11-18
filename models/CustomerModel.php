@@ -1,5 +1,5 @@
 <?php
-class PatientModel extends Database {
+class CustomerModel extends Database {
     protected $connection = null;
 
     public function __construct() {
@@ -20,7 +20,7 @@ class PatientModel extends Database {
                        p.phone AS phone,
                        p.email AS email,
                        COUNT(a.patient_id) AS total_appointments
-                FROM patients AS p
+                FROM customers AS p
                          LEFT JOIN appointments AS a ON p.patient_id = a.patient_id
                 GROUP BY p.patient_id, p.name, p.dob, p.gender, p.address, p.phone, p.email";
         $query = $this->_query($sql);
@@ -41,7 +41,7 @@ class PatientModel extends Database {
                        p.dob AS dob,
                        p.address AS address,
                         p.status AS status
-                FROM patients AS p WHERE p.patient_id = {$id}";
+                FROM customers AS p WHERE p.patient_id = {$id}";
         $query = $this->_query($sql);
         return mysqli_fetch_assoc($query);
     }
@@ -56,13 +56,13 @@ class PatientModel extends Database {
                        p.dob AS dob,
                        p.address AS address,
                         p.status AS status
-                FROM patients AS p WHERE p.phone = {$phone}";
+                FROM customers AS p WHERE p.phone = {$phone}";
         $query = $this->_query($sql);
         return mysqli_fetch_assoc($query);
     }
 
     public function updatePatient($name, $gender, $dob, $email, $address, $phone) {
-        $sql = "UPDATE patients SET 
+        $sql = "UPDATE customers SET 
                     name = '" . mysqli_real_escape_string($this->connection, $name) . "',
                     email = '" . mysqli_real_escape_string($this->connection, $email) . "',
                     gender = '" . intval($gender) . "',
@@ -82,7 +82,7 @@ class PatientModel extends Database {
     public function updateStatus($patient_id, $status, $employee_id) {
         date_default_timezone_set('Asia/Ho_Chi_Minh');
         $update_at = date('Y-m-d H:i:s');
-        $sql = "UPDATE patients SET 
+        $sql = "UPDATE customers SET 
                     status = '" . intval($status) . "',
                     update_at = '" . mysqli_real_escape_string($this->connection, $update_at) . "',
                     update_by = '" . intval($employee_id) . "'
@@ -98,7 +98,7 @@ class PatientModel extends Database {
     }
 
     public function checkPhoneExists($phone): bool {
-        $sql = "SELECT COUNT(*) as count FROM patients WHERE phone = ?";
+        $sql = "SELECT COUNT(*) as count FROM customers WHERE phone = ?";
         $stmt = mysqli_prepare($this->connection, $sql);
         if ($stmt === false) {
             throw new Exception('MySQL prepare error: ' . mysqli_error($this->connection));

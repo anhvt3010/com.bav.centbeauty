@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lịch sử khám bệnh</title>
-    <link href="assets/img/logo.png" rel="icon">
+    <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -31,10 +31,10 @@
                                 <thead>
                                 <tr>
                                     <th style="width:5%;">STT</th>
-                                    <th style="width:15%;">Bác sĩ</th>
-                                    <th style="width:12%;">Bệnh nhân</th>
+                                    <th style="width:15%;">Chuyên gia</th>
+                                    <th style="width:12%;">Khách hàng</th>
                                     <th style="width:12%;">Thông tin liên hệ</th>
-                                    <th style="width:15%;">Chuyên khoa khám</th>
+                                    <th style="width:15%;">Dịch vụ</th>
                                     <th style="width:10%;">Thời gian khám</th>
                                     <th style="width:10%;" class="text-center">Trạng thái</th>
                                     <th style="width:10%;" class="text-center">Kết quả</th>
@@ -145,7 +145,7 @@
                                                 </button>
                                                 <div class="dropdown-menu dropdown-menu-left">
 <!--                                                    <a type="button" class="dropdown-item"-->
-<!--                                                       href="--><?php //echo BASE_URL ?><!--/index.php?controller=patient&action=detail_appointment&id=--><?php //echo $appointment['id'] ?><!--">Chi tiết</a>-->
+<!--                                                       href="--><?php //echo BASE_URL ?><!--/index.php?controller=customer&action=detail_appointment&id=--><?php //echo $appointment['id'] ?><!--">Chi tiết</a>-->
                                                     <form class="dropdown-item" action="<?php echo BASE_URL ?>/index.php?controller=appointment&action=detail_client" method="POST">
                                                         <input type="hidden" name="id" value="<?php echo $appointment['id'] ?>">
                                                         <button style="border: none ;background-color: transparent" type="submit" id="getAppointment">Chi tiết</button>

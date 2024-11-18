@@ -24,11 +24,9 @@ class HomeController extends BaseController
 
     public function home()
     {
-        $countDoctors = $this->doctorModel->getCountDoctors();
         $listDoctors = $this->doctorModel->getDoctorForHome();
         return $this->view('client.home_cent', [
             'listDoctors' => $listDoctors,
-            'countDoctors' => $countDoctors,
         ]);
     }
 
@@ -112,6 +110,29 @@ class HomeController extends BaseController
     public function search_client()
     {
         return $this->view('client.search');
+    }
+
+    public function about()
+    {
+        $listDoctors = $this->doctorModel->getDoctorForHome();
+        return $this->view('client.about', [
+            'listDoctors' => $listDoctors,
+        ]);
+    }
+
+    public function services()
+    {
+        return $this->view('client.services');
+    }
+
+    public function blog()
+    {
+        return $this->view('client.blog');
+    }
+
+    public function contact()
+    {
+        return $this->view('client.contact');
     }
 
     public function unauthorized()

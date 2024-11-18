@@ -9,7 +9,7 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="assets/img/logo.png" rel="icon">
+    <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
     <link href="assets/img/favicon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->

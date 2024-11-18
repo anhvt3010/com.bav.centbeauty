@@ -84,7 +84,7 @@ if (!isset($_SESSION['admin_name'])) {
             <div class="row">
                 <div class="col-12 col-lg-4">
                     <div class="card">
-                        <div class="card-header card-header-divider pb-3">Phân bổ độ tuổi bệnh nhân</div>
+                        <div class="card-header card-header-divider pb-3">Phân bổ độ tuổi khách hàng</div>
                         <div class="card-body pt-5">
                             <div class="row user-progress user-progress-small">
                                 <div class="col-lg-4"><span class="title">Dưới 14 tuổi </span></div>

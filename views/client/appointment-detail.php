@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lịch sử khám bệnh</title>
-    <link href="assets/img/logo.png" rel="icon">
+    <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -26,7 +26,7 @@ include "components/header.php" ;
                 <h3 class="mt-0">Thông tin cá nhân</h3>
                 <div class="mb-3 row">
                     <div class="col-5">
-                        <label for="specialtyName" class="form-label">Tên bệnh nhân</label>
+                        <label for="specialtyName" class="form-label">Tên khách hàng</label>
                         <div class="form-control-sm" style="background-color: #eee; line-height: 30px">
                             <?php echo $appointment['patient_name'] ?>
                         </div>
@@ -62,13 +62,13 @@ include "components/header.php" ;
                 <h3 class="mt-0">Thông tin khám bệnh</h3>
                 <div class="mb-3 row">
                     <div class="col-8">
-                        <label for="" class="form-label">Tên bác sĩ</label>
+                        <label for="" class="form-label">Tên chuyên gia</label>
                         <div class="form-control-sm" style="background-color: #eee; line-height: 30px">
                             <?php echo $appointment['doctor_name'] ?>
                         </div>
                     </div>
                     <div class="col-4">
-                        <label for="" class="form-label">Chuyên khoa khám</label>
+                        <label for="" class="form-label">Dịch vụ</label>
                         <div class="form-control-sm" style="background-color: #eee; line-height: 30px">
                             <?php echo $appointment['specialty_name'] ?>
                         </div>
@@ -89,7 +89,7 @@ include "components/header.php" ;
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="" class="form-label">Mô tả triệu chứng của bệnh nhân</label>
+                    <label for="" class="form-label">Mô tả tình trạng của khách hàng</label>
                     <textarea class="form-control" rows="3" disabled><?php echo $appointment['patient_description'] ?></textarea>
                 </div>
                 <div class="mb-3 row">

@@ -10,7 +10,7 @@ if (isset($_SESSION['user_phone'])) {
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Đăng nhập</title>
-    <link href="assets/img/logo.png" rel="icon">
+    <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
     <link href="assets/img/favicon.png" rel="apple-touch-icon">
     <!-- Favicons -->
     <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">

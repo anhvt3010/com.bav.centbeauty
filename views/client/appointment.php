@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đặt Lịch Khám</title>
-    <link href="assets/img/logo.png" rel="icon">
+    <link href="../../assets/img/logo_cent_orage.png" rel="icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -17,17 +17,87 @@
     <!-- Thêm jQuery UI -->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <link rel="stylesheet" href="assetsv2/css/style.css" type="text/css">
 </head>
 <body>
-<?php include "components/topbar.php" ?>
-<?php include "components/header.php" ?>
+<header class="header">
+    <div class="header__top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <ul class="header__top__left">
+                        <li><i class="fa fa-phone"></i> +84 988 526 666</li>
+                        <li><i class="fa fa-map-marker"></i> 12 P. Chùa Bộc, Quang Trung, Đống Đa, Hà Nội</li>
+                        <li><i class="fa fa-clock-o"></i> Thứ 2 - Thứ 6 8:00 - 17:00</li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <div class="header__top__right">
+                        <?php
+                        if (!isset($_SESSION['user_phone'])) {
+                            echo
+                                '<a href="'. LOGIN_CLIENT_URL .'" class=" order-last order-lg-0" style="color:white;">
+                  <i style="color: white;" class="fa fa-sign-in" aria-hidden="true"></i>
+                  Đăng nhập
+                </a>';
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="header__logo" style="padding-top: 15px">
+                    <a href="./index.php"><img width="120" src="assetsv2/img/logo_cent_orage.png" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-10">
+                <div class="header__menu__option">
+                    <nav class="header__menu">
+                        <ul>
+                            <li class="<?php echo ($action == 'home') ? 'active' : ''; ?>">
+                                <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=home">Trang chủ</a>
+                            </li>
+                            <li class="<?php echo ($action == 'about') ? 'active' : ''; ?>">
+                                <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=about">GIỚI THIỆU</a>
+                            </li>
+                            <li class="<?php echo ($action == 'services') ? 'active' : ''; ?>">
+                                <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=services">Dịch vụ</a>
+                            </li>
+                            <li class="<?php echo ($action == 'blog') ? 'active' : ''; ?>">
+                                <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=blog">Tin Tức</a>
+                            </li>
+                            <li class="<?php echo ($action == 'contact') ? 'active' : ''; ?>">
+                                <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=contact">Cơ sở</a>
+                            </li>
+                            <li class="<?php echo ($action == 'lookup') ? 'active' : ''; ?>">
+                                <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=search_client">Tra cứu</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header__btn">
+                        <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=appointment"
+                           class="primary-btn">Đặt Lịch Ngay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="canvas__open">
+            <i class="fa fa-bars"></i>
+        </div>
+    </div>
+</header>
 <div id="loading-spinner" style="text-align: center; line-height: 700px; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1051; display: none; align-items: center; justify-content: center;">
     <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
         <span class="sr-only">Loading...</span>
     </div>
 </div>
 <main id="main">
-    <section class="container" style="padding-top: 150px">
+    <section class="container" style="padding-top: 100px">
         <h2>Đặt Lịch Khám</h2>
         <hr>
         <form method="GET" action="#" class="row">
@@ -77,17 +147,17 @@
                     </div>
                     <hr>
                     <div class="mb-2">
-                        <label for="conNameDoctor" class="form-label">Tên bác sĩ</label>
+                        <label for="conNameDoctor" class="form-label">Tên chuyên gia</label>
                         <input type="text" class="form-control" id="conNameDoctor" disabled>
                     </div>
                     <div class="mb-2 row">
                         <div class="col-6">
-                            <label for="conSpecialty" class="form-label">Chuyên khoa khám</label>
+                            <label for="conSpecialty" class="form-label">Dịch vụ</label>
                             <input type="text" class="form-control" id="conSpecialty" disabled>
                         </div>
                         <div class="col-6">
                             <label for="conTime" class="form-label">Thời gian khám</label>
-                            <input style="background-color: #61d4d8" type="text" class="form-control" id="conTime"
+                            <input style="background-color: #d25b33" type="text" class="form-control" id="conTime"
                                    disabled>
                         </div>
                     </div>
@@ -100,7 +170,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
                 <button id="submit-button" class="btn btn-success" type="button"
-                        style="background-color:#3fbbc0 !important; font-weight: bold; border: none">
+                        style="background-color:#d25b33 !important; font-weight: bold; border: none">
                     Đặt lịch
                 </button>
             </div>
@@ -120,12 +190,12 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                <a href="<?php echo BASE_URL ?>/index.php?controller=patient&action=profile" class="btn btn-primary">Thêm thông tin tài khoản</a>
+                <a href="<?php echo BASE_URL ?>/index.php?controller=customer&action=profile" class="btn btn-primary">Thêm thông tin tài khoản</a>
             </div>
         </div>
     </div>
 </div>
-<?php include "components/footer.html" ?>
+<?php include "component_cent/footer.php"; ?>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <!-- Thêm JavaScript của jQuery UI -->
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
@@ -167,7 +237,7 @@
         document.getElementById('autoInformation').addEventListener('click', function () {
             document.getElementById('loading-spinner').style.display = 'block';
             $.ajax({
-                url: '<?php echo BASE_URL ?>/index.php?controller=patient&action=get_one',
+                url: '<?php echo BASE_URL ?>/index.php?controller=customer&action=get_one',
                 type: 'POST',
                 data: {
                     patient_id: patientId

@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($data)) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Chọn Bác Sĩ</title>
+    <title>Chọn chuyên gia</title>
     <style>
         .dropdown-menu {
             max-height: 300px;
@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($data)) {
             style="width: 100%; background-color: #3fbbc0; color: #ffffff; border-color: #3fbbc0; text-align: left"
             type="button" id="dropdownMenuButtonDoctor"
             data-bs-toggle="dropdown" aria-expanded="false" disabled>
-        Chọn bác sĩ (*)
+        Chọn chuyên gia (*)
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonDoctor">
         <div class="live-filtering" data-clear="true" data-autocomplete="true" data-keys="true">
@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($data)) {
         if (doctors.length === 0) {
             ul.innerHTML = '<div class="no-search-results p-2">' +
                 '<div class="alert alert-warning" role="alert" style="margin-bottom: 0 !important;">' +
-                '<i class="fa fa-warning margin-right-sm"></i>&nbsp;Không có bác sĩ</div></div>';
+                '<i class="fa fa-warning margin-right-sm"></i>&nbsp;Không có chuyên gia</div></div>';
         } else {
             doctors.forEach(function(doctor) {
                 var li = document.createElement('li');
@@ -112,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($data)) {
                 li.setAttribute('data-value', doctor.employee_id);
                 li.textContent = doctor.name;
                 li.onclick = function() {
-                    document.getElementById('dropdownMenuButtonDoctor').textContent = 'Bác sĩ: ' + doctor.name;
+                    document.getElementById('dropdownMenuButtonDoctor').textContent = 'Chuyên gia: ' + doctor.name;
                     document.getElementById('selected-doctor').value = doctor.employee_id; // Lưu ID bác sĩ vào input
                     console.log('Bac si: ', document.getElementById('selected-doctor').value)
                     document.getElementById('input-otherDate').disabled = false;

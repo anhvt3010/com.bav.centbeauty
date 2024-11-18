@@ -21,9 +21,9 @@
 }
 
 .selected {
-    background-color: #3fbbc0;
+    background-color: #d25b33;
     color: white!important;
-    border-color: #3fbbc0;
+    border-color: #d25b33;
 }
 .time-slot.disabled {
     color: #ffffff;
@@ -48,9 +48,9 @@
 }
 
 .btn-select-day:hover {
-    background-color: #3fbbc0!important;
+    background-color: #d25b33!important;
     color: white!important;
-    border-color: #3fbbc0;
+    border-color: #d25b33;
 }
 
 .date-format {
@@ -68,6 +68,6 @@
     align-items: center;
 }
 .ui-datepicker .ui-state-active {
-    background-color: #3fbbc0 !important; /* Màu xanh dương nhạt */
+    background-color: #d25b33 !important; /* Màu xanh dương nhạt */
     color: white !important; /* Màu chữ trắng */
 }

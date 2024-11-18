@@ -13,7 +13,7 @@ if (!isset($_SESSION['admin_name'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="assets/img/logo.png" rel="icon">
+    <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
     <title>Xác nhận lịch khám</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <?php include 'import-link-tag.php' ?>
@@ -337,9 +337,9 @@ if (!isset($_SESSION['admin_name'])) {
             // Hiển thị các khung giờ
             displayTimeSlots([], appointment['time_slot']);
 
-            // Cập nhật thông tin chuyên khoa và bác sĩ
-            specialty.textContent = 'Chuyên khoa: ' + appointment['specialty_name'];
-            doctor.textContent = 'Bác sĩ: ' + appointment['doctor_name'];
+            // Cập nhật thông tin dịch vụ và chuyen gia
+            specialty.textContent = 'Dịch vụ: ' + appointment['specialty_name'];
+            doctor.textContent = 'Chuyên gia: ' + appointment['doctor_name'];
 
             patient_name.value = appointment['patient_name']
             for (var i = 0; i < gender.length; i++) {

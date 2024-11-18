@@ -2,14 +2,14 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">Thêm mới bác sĩ</h1>
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Thêm mới chuyên gia</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="mb-2 row">
                     <div class="col-6">
-                        <label for="emName" class="form-label">Tên bác sĩ *</label>
-                        <input type="text" class="form-control" id="emName" placeholder="Nhập tên bác sĩ mới" autocomplete="off">
+                        <label for="emName" class="form-label">Tên chuyên gia *</label>
+                        <input type="text" class="form-control" id="emName" placeholder="Nhập tên chuyên gia mới" autocomplete="off">
                         <span style="margin-left: 10px; color: red" id="errorEmName"></span>
                     </div>
                     <div class="col-2 p-0">
@@ -40,7 +40,7 @@
                 <div class="mb-1 row">
                     <div class="col-9">
                         <label for="emAddress" class="form-label">Địa chỉ *</label>
-                        <input type="text" class="form-control" id="emAddress" placeholder="Nhập địa chỉ bác sĩ" autocomplete="off">
+                        <input type="text" class="form-control" id="emAddress" placeholder="Nhập địa chỉ" autocomplete="off">
                         <span style="margin-left: 10px; color: red" id="errorEmAddress"></span>
                     </div>
                     <div class="col-3">
@@ -53,9 +53,9 @@
                 </div>
                 <div class="mb-1 row">
                     <div class="col-5">
-                        <label for="emSpecialty" class="form-label">Chuyên khoa *</label>
+                        <label for="emSpecialty" class="form-label">Dịch vụ *</label>
                         <select id="emSpecialty" class="form-select" aria-label="Large select example" style="height: 50px">
-                            <option hidden="hidden" value="0">Chọn chuyên khoa</option>
+                            <option hidden="hidden" value="0">Chọn dịch vụ</option>
                             <?php
                             foreach ($listSpecialties as $specialty) {
                                 echo "<option value='" . htmlspecialchars($specialty['specialty_id']) . "'>" . htmlspecialchars($specialty['name']) . "</option>";

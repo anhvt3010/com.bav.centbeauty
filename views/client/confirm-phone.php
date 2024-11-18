@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đặt mật khẩu mới</title>
-    <link href="assets/img/logo.png" rel="icon">
+    <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -116,7 +116,7 @@
             phoneNumber.style.borderColor = '';
 
             $.ajax({
-                url: '<?php echo BASE_URL ?>/index.php?controller=patient&action=check_phone',
+                url: '<?php echo BASE_URL ?>/index.php?controller=customer&action=check_phone',
                 type: 'POST',
                 data: {
                     phone: phoneNumber.value

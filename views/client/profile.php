@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thông tin cá nhân</title>
-    <link href="assets/img/logo.png" rel="icon">
+    <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -74,7 +74,7 @@
                             <div class="col-4">
                                 <label for="" class="form-label">Ngày sinh</label>
                                 <input type="date" class="form-control" id="paDob"
-                                       placeholder="Nhập tên chuyên khoa" value="<?php echo $patient['dob'] ?>"
+                                       placeholder="" value="<?php echo $patient['dob'] ?>"
                                        disabled>
                                 <span id="error-paDob" style="color: red; margin-left: 10px"></span>
                             </div>
@@ -240,7 +240,7 @@
         confirmUpdateButton.addEventListener('click', function () {
             document.getElementById('loading-spinner').style.display = 'block';
             $.ajax({
-                url: '<?php echo BASE_URL ?>/index.php?controller=patient&action=update_information',
+                url: '<?php echo BASE_URL ?>/index.php?controller=customer&action=update_information',
                 type: 'POST',
                 data: {
                     name: nameInput.value,
@@ -252,7 +252,7 @@
                 success: function (response) {
                     console.log(response);
                     if (response === true) {
-                        success_toast('Cập nhật thành công', '<?php echo BASE_URL ?>/index.php?controller=patient&action=profile')
+                        success_toast('Cập nhật thành công', '<?php echo BASE_URL ?>/index.php?controller=customer&action=profile')
                     } else {
                         failed_toast('Cập nhật thất bại')
                         document.getElementById('loading-spinner').style.display = 'none';
@@ -308,7 +308,7 @@
                 success: function (response) {
                     if(response['success'] === true) {
                         console.log(response);
-                        success_toast('Đổi mật khẩu thành công', '<?php echo BASE_URL ?>/index.php?controller=patient&action=profile');
+                        success_toast('Đổi mật khẩu thành công', '<?php echo BASE_URL ?>/index.php?controller=customer&action=profile');
                     } else {
                         failed_toast(response['message']);
                         if (response['message'] === 'Mật khẩu hiện tại không đúng') {

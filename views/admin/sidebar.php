@@ -32,19 +32,19 @@
                         <?php if ($_SESSION['role_id'] == 1) { ?>
                             <li class="parent">
                                 <a href="#">
-                                    <i class="icon fa-solid fa-user"></i><span>Quản lý bệnh nhân</span>
+                                    <i class="icon fa-solid fa-user"></i><span>Quản lý khách hàng</span>
                                 </a>
                                 <ul class="sub-menu">
-                                    <li><a href="<?php echo BASE_URL ?>/index.php?controller=patient&action=index">Danh sách bệnh nhân</a></li>
-                                    <li><a href="<?php echo BASE_URL ?>/index.php?controller=patient&action=guest">Danh sách khách hàng </a></li>
+                                    <li><a href="<?php echo BASE_URL ?>/index.php?controller=customer&action=index">Danh sách khách hàng</a></li>
+                                    <li><a href="<?php echo BASE_URL ?>/index.php?controller=customer&action=guest">Danh sách khách hàng vãng lai </a></li>
                                 </ul>
                             </li>
                             <li class="parent">
                                 <a href="#">
-                                    <i class="icon fa-solid fa-user-doctor"></i><span>Quản lý bác sĩ</span>
+                                    <i class="icon fa-solid fa-user-doctor"></i><span>Quản lý chuyên gia</span>
                                 </a>
                                 <ul class="sub-menu">
-                                    <li><a href="<?php echo BASE_URL ?>/index.php?controller=doctor&action=index">Danh sách bác sĩ</a></li>
+                                    <li><a href="<?php echo BASE_URL ?>/index.php?controller=doctor&action=index">Danh sách chuyên gia</a></li>
                                 </ul>
                             </li>
                             <li class="parent">
@@ -57,10 +57,10 @@
                             </li>
                             <li class="parent">
                                 <a href="#">
-                                    <i class="icon fa-solid fa-font-awesome"></i><span>Quản lý chuyên khoa</span>
+                                    <i class="icon fa-solid fa-font-awesome"></i><span>Quản lý dịch vụ</span>
                                 </a>
                                 <ul class="sub-menu">
-                                    <li><a href="<?php echo BASE_URL ?>/index.php?controller=specialty&action=index">Danh sách chuyên khoa</a></li>
+                                    <li><a href="<?php echo BASE_URL ?>/index.php?controller=specialty&action=index">Danh sách dịch vụ</a></li>
                                 </ul>
                             </li>
                         <?php } ?>

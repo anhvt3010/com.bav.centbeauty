@@ -16,8 +16,8 @@ if (!isset($_SESSION['admin_name'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="assets/img/logo.png" rel="icon">
-    <title>Danh sách bác sĩ</title>
+    <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
+    <title>Danh sách chuyên gia</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css"
           href="<?php echo BASE_URL ?>/views/admin/assets/lib/perfect-scrollbar/css/perfect-scrollbar.css">
@@ -48,12 +48,12 @@ if (!isset($_SESSION['admin_name'])) {
     <?php include 'sidebar.php' ?>
     <div class="be-content">
         <div class="page-head">
-            <h2 class="page-head-title" style="font-size: 25px">Danh sách bác sĩ</h2>
+            <h2 class="page-head-title" style="font-size: 25px">Danh sách chuyên gia</h2>
             <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb page-head-nav">
                     <li class="breadcrumb-item"><a href="index.php">Trang chủ</a></li>
-                    <li class="breadcrumb-item">Quán lý bác sĩ</li>
-                    <li class="breadcrumb-item active">Danh sách bác sĩ</li>
+                    <li class="breadcrumb-item">Quán lý chuyên gia</li>
+                    <li class="breadcrumb-item active">Danh sách chuyên gia</li>
                 </ol>
             </nav>
         </div>
@@ -81,7 +81,7 @@ if (!isset($_SESSION['admin_name'])) {
                                         <div class="col-12">
                                             <form>
                                                 <select class="form-select form-control" id="selectSpecialty">
-                                                    <option value="All" selected>Tất cả chuyên khoa</option>
+                                                    <option value="All" selected>Tất cả Dịch vụ</option>
                                                     <?php
                                                     foreach ($listSpecialties as $specialty) {
                                                         echo "<option value='" . htmlspecialchars($specialty['name']) . "'>" . htmlspecialchars($specialty['name']) . "</option>";
@@ -98,7 +98,7 @@ if (!isset($_SESSION['admin_name'])) {
                                 <div class="filter-container">
                                     <div class="row">
                                         <div class="col-12">
-                                            <input id="searchInput" placeholder="Nhập tên/sđt/mã bác sĩ..." autocomplete="off"
+                                            <input id="searchInput" placeholder="Nhập tên/sđt/mã chuyên gia..." autocomplete="off"
                                                    class="form-control">
                                         </div>
                                     </div>
@@ -111,10 +111,10 @@ if (!isset($_SESSION['admin_name'])) {
                                     <thead>
                                     <tr>
                                         <th style="width:2%;">STT</th>
-                                        <th style="width:13%;">Tên bác sĩ</th>
+                                        <th style="width:13%;">Tên chuyên gia</th>
                                         <th style="width:8%;">Mã nhân viên</th>
                                         <th style="width:5%;">Chức vụ</th>
-                                        <th style="width:15%;">Chuyên khoa</th>
+                                        <th style="width:15%;">Dịch vụ</th>
                                         <th style="width:5%;">Ngày sinh</th>
                                         <th style="width:10%;">Thông tin liên hệ</th>
                                         <th style="width:10%;">Trạng thái</th>
@@ -230,7 +230,7 @@ if (!isset($_SESSION['admin_name'])) {
             if(currentPage === Math.ceil(listDoctors.length / doctorsPerPage)) {
                 end = listDoctors.length
             }
-            paginationInfo.innerHTML = `${start + 1} - ${end} trong số ${items.length} bác sĩ`;
+            paginationInfo.innerHTML = `${start + 1} - ${end} trong số ${items.length} chuyên gia`;
         }
 
         function setupPagination(items, wrapper, rowsPerPage) {
@@ -396,13 +396,13 @@ if (!isset($_SESSION['admin_name'])) {
 
         // Xu ly them moi
         const errorMessages = {
-            emName: 'Vui lòng nhập tên bác sĩ',
+            emName: 'Vui lòng nhập tên chuyên gia',
             emDob: 'Vui lòng nhập ngày sinh',
             emDobAge: 'Nhân viên phải trên 18 tuổi',
             emEmail: 'Email không hợp lệ',
             emPhone: 'Số điện thoại không hợp lệ',
             emAddress: 'Vui lòng nhập địa chỉ',
-            emSpecialty: 'Vui lòng chọn chuyên khoa '
+            emSpecialty: 'Vui lòng chọn dịch vụ '
         };
 
         document.getElementById('btnAddEm').addEventListener('click', function() {

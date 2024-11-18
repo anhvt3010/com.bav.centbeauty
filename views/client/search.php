@@ -4,24 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tra cứu lịch khám</title>
-    <link href="assets/img/logo.png" rel="icon">
+    <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo BASE_URL ?>/views/admin/assets/css/app.css" type="text/css">
     <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="assetsv2/css/style.css" type="text/css">
+
 </head>
 <body>
-<?php include "components/topbar.php" ?>
-<?php include "components/header.php" ?>
+<header class="header">
+    <div class="header__top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <ul class="header__top__left">
+                        <li><i class="fa fa-phone"></i> +84 988 526 666</li>
+                        <li><i class="fa fa-map-marker"></i> 12 P. Chùa Bộc, Quang Trung, Đống Đa, Hà Nội</li>
+                        <li><i class="fa fa-clock-o"></i> Thứ 2 - Thứ 6 8:00 - 17:00</li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <div class="header__top__right">
+                        <?php
+                        if (!isset($_SESSION['user_phone'])) {
+                            echo
+                                '<a href="'. LOGIN_CLIENT_URL .'" class=" order-last order-lg-0" style="color:white;">
+                  <i style="color: white;" class="fa fa-sign-in" aria-hidden="true"></i>
+                  Đăng nhập
+                </a>';
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="header__logo" style="padding-top: 15px">
+                    <a href="./index.php"><img width="120" src="assetsv2/img/logo_cent_orage.png" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-10">
+                <div class="header__menu__option">
+                    <nav class="header__menu">
+                        <ul>
+                            <li class="<?php echo ($action == 'home') ? 'active' : ''; ?>">
+                                <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=home">Trang chủ</a>
+                            </li>
+                            <li class="<?php echo ($action == 'about') ? 'active' : ''; ?>">
+                                <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=about">GIỚI THIỆU</a>
+                            </li>
+                            <li class="<?php echo ($action == 'services') ? 'active' : ''; ?>">
+                                <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=services">Dịch vụ</a>
+                            </li>
+                            <li class="<?php echo ($action == 'blog') ? 'active' : ''; ?>">
+                                <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=blog">Tin Tức</a>
+                            </li>
+                            <li class="<?php echo ($action == 'contact') ? 'active' : ''; ?>">
+                                <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=contact">Cơ sở</a>
+                            </li>
+                            <li class="<?php echo ($action == 'lookup') ? 'active' : ''; ?>">
+                                <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=search_client">Tra cứu</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header__btn">
+                        <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=appointment"
+                           class="primary-btn">Đặt Lịch Ngay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="canvas__open">
+            <i class="fa fa-bars"></i>
+        </div>
+    </div>
+</header>
 <div id="loading-spinner"
      style="text-align: center;line-height:700px;position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1050; display: flex; align-items: center; justify-content: center;">
     <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
         <span class="sr-only">Loading...</span>
     </div>
 </div>
-<main class="container p-0" style="margin-top: 150px!important; margin-bottom: 30px">
+<main class="container p-0" style="margin-top: 80px!important; margin-bottom: 30px">
     <div class="main-content container-fluid" style="margin-top: -30px">
         <div class="row">
             <div class="col-md-12 p-0">
@@ -54,13 +124,12 @@
                                     <thead>
                                     <tr>
                                         <th style="width:5%;">STT</th>
-                                        <th style="width:15%;">Bác sĩ</th>
-                                        <th style="width:12%;">Bệnh nhân</th>
+                                        <th style="width:15%;">Chuyên gia</th>
+                                        <th style="width:12%;">Khách hàng</th>
                                         <th style="width:12%;">Thông tin liên hệ</th>
-                                        <th style="width:15%;">Chuyên khoa khám</th>
+                                        <th style="width:15%;">Dịch vụ</th>
                                         <th style="width:10%;">Thời gian khám</th>
                                         <th style="width:10%;" class="text-center">Trạng thái</th>
-                                        <th style="width:10%;" class="text-center">Kết quả</th>
                                         <th style="width:2%;"></th>
                                     </tr>
                                     </thead>
@@ -99,7 +168,7 @@
         </div>
     </div>
 </div>
-<?php include "components/footer.html" ?>
+<?php include "component_cent/footer.php"; ?>
 
 <script src="<?php echo BASE_URL ?>/views/admin/assets/lib\jquery\jquery.min.js" type="text/javascript"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
@@ -146,7 +215,7 @@
         function handleSearch() {
             loadingSpinner.style.display = 'block';
             $.ajax({
-                url: '<?php echo BASE_URL ?>/index.php?controller=patient&action=search',
+                url: '<?php echo BASE_URL ?>/index.php?controller=customer&action=search',
                 type: 'POST',
                 data: {
                     phone: searchInput.value
@@ -211,12 +280,6 @@
                     <div class="btn btn-secondary" style="width: 150px; color: whitesmoke; font-weight: normal;
                             background-color: ${getStatusColor(appointment.status)[0]};">
                         ${getStatusColor(appointment.status)[1]}
-                    </div>
-                </td>
-                <td class="text-center">
-                    <div class="btn btn-secondary" style="width: 150px; color: whitesmoke; font-weight: normal;
-                            background-color: ${getResultColor(appointment.result)[0]};">
-                        ${getResultColor(appointment.result)[1]}
                     </div>
                 </td>
                 <td class="p-0">

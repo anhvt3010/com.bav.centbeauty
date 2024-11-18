@@ -13,7 +13,7 @@ if (!isset($_SESSION['admin_name'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="assets/img/logo.png" rel="icon">
+    <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
     <title>Danh sách khách vãng lai</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <?php include 'import-link-tag.php' ?>
@@ -38,7 +38,7 @@ if (!isset($_SESSION['admin_name'])) {
             <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb page-head-nav">
                     <li class="breadcrumb-item"><a href="<?php echo HOME_ADMIN_URL ?>">Trang chủ</a></li>
-                    <li class="breadcrumb-item">Quán lý bệnh nhân</li>
+                    <li class="breadcrumb-item">Quán lý khách hàng</li>
                     <li class="breadcrumb-item active">Danh sách khách hàng</li>
                 </ol>
             </nav>
@@ -87,7 +87,7 @@ if (!isset($_SESSION['admin_name'])) {
                                     <thead>
                                     <tr>
                                         <th style="width:2%;">STT</th>
-                                        <th style="width:10%;">Tên bệnh nhân</th>
+                                        <th style="width:10%;">Tên khách hàng</th>
                                         <th style="width:10%;">Giới tính</th>
                                         <th style="width:10%;">Ngày sinh</th>
                                         <th style="width:10%;">Số điện thoại</th>
@@ -134,8 +134,8 @@ if (!isset($_SESSION['admin_name'])) {
                                                     </button>
                                                     <div class="dropdown-menu dropdown-menu-right">
 <!--                                                        <a type="button" class="dropdown-item"-->
-<!--                                                           href="--><?php //echo BASE_URL ?><!--/index.php?controller=patient&action=guest_detail&phone=--><?php //echo $guest['patient_phone'] ?><!--">Chi tiết</a>-->
-                                                        <form action="<?php echo BASE_URL ?>/index.php?controller=patient&action=guest_detail_admin" method="POST">
+<!--                                                           href="--><?php //echo BASE_URL ?><!--/index.php?controller=customer&action=guest_detail&phone=--><?php //echo $guest['patient_phone'] ?><!--">Chi tiết</a>-->
+                                                        <form action="<?php echo BASE_URL ?>/index.php?controller=customer&action=guest_detail_admin" method="POST">
                                                             <input type="hidden" name="phone" value="<?php echo $guest['patient_phone'] ?>">
                                                             <button class="dropdown-item" style="border: none ;background-color: transparent" type="submit" id="getAppointment">Chi tiết</button>
                                                         </form>
@@ -252,7 +252,7 @@ if (!isset($_SESSION['admin_name'])) {
     });
 </script>
 <script>
-    var url_appointment = '<?php echo BASE_URL ?>/index.php?controller=patient&action=guest&page=1'
+    var url_appointment = '<?php echo BASE_URL ?>/index.php?controller=customer&action=guest&page=1'
 
     document.getElementById('button').addEventListener('click', function() {
         var searchInput = document.getElementById('searchInput').value.trim();

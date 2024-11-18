@@ -5,7 +5,7 @@
                 <div class="count-box">
                     <i class="fas fa-user-md"></i>
                     <span data-purecounter-start="0" data-purecounter-end="<?php echo $countDoctors[0]['count(*)'] ?>" data-purecounter-duration="1" class="purecounter"></span>
-                    <p><strong>Bác sĩ</strong> trong trung tâm</p>
+                    <p><strong>Chuyên gia</strong> trong trung tâm</p>
                     <a href="#">Tìm hiểu thêm &raquo;</a>
                 </div>
             </div>

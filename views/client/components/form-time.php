@@ -61,7 +61,7 @@
     <hr>
     <div class="text-center mt-3">
         <button id="action-button" class="btn btn-success" type="button"
-                style="background-color:#3fbbc0 !important; width: 20%; font-weight: bold; border: none">
+                style="background-color:#d25b33 !important; width: 20%; font-weight: bold; border: none">
             Tiếp tục
         </button>
     </div>

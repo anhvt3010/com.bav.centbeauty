@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Chọn Chuyên Khoa Khám</title>
+    <title>Chọn Dịch vụ</title>
     <style>
         .filter-item-specialty-specialty {
             cursor: pointer;
@@ -31,7 +31,7 @@
             style="width: 100%; background-color: #3fbbc0; color: #ffffff; border-color: #3fbbc0; text-align: left"
             type="button" id="dropdownMenuButton"
             data-bs-toggle="dropdown" aria-expanded="false">
-        Chọn chuyên khoa khám (*)
+        Chọn dịch vụ (*)
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <div class="live-filtering" data-clear="true" data-autocomplete="true" data-keys="true">
@@ -70,14 +70,14 @@
             var doctorButton = document.getElementById('dropdownMenuButtonDoctor');
             fetchDoctorsBySpecialty(specialtyId);
             if (specialtyId) {
-                doctorButton.textContent = 'Chọn Bác Sĩ (*)'; // Thiết lập lại nội dung mặc định của nút
-                fetchDoctorsBySpecialty(specialtyId); // Gọi hàm để lấy danh sách bác sĩ theo chuyên khoa
+                doctorButton.textContent = 'Chọn chuyên gia (*)'; // Thiết lập lại nội dung mặc định của nút
+                fetchDoctorsBySpecialty(specialtyId);
             } else {
-                doctorButton.textContent = 'Chọn Bác Sĩ (*)'; // Thiết lập lại nội dung mặc định của nút khi không có chuyên khoa được chọn
+                doctorButton.textContent = 'Chọn chuyên gia (*)';
             }
 
             var selectedSpecialty = $(this).data('filter');
-            $('#dropdownMenuButton').text('Chuyên khoa: ' + selectedSpecialty); // Cập nhật nội dung của nút button
+            $('#dropdownMenuButton').text('Dịch vụ: ' + selectedSpecialty); // Cập nhật nội dung của nút button
 
             // Gửi yêu cầu AJAX tới select-doctor.php
             var xhr = new XMLHttpRequest();

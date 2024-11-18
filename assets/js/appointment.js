@@ -73,7 +73,7 @@ $(document).ready(function () {
         document.getElementById('date-slot').value = dateTimestamp
         document.getElementById('selected-date-slot').value = date.toLocaleDateString()
         console.log('Chuyen khoa: + ', specialtyId)
-        console.log('Bác sĩ:  + ', parseInt(document.getElementById('selected-doctor').value,10))
+        console.log('chuyên gia:  + ', parseInt(document.getElementById('selected-doctor').value,10))
 
         // Lấy ngày hiện tại và thời gian hiện tại
         var now = new Date();

@@ -16,8 +16,8 @@ if (!isset($_SESSION['admin_name'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="assets/img/logo.png" rel="icon">
-    <title>Chi tiết bác sĩ</title>
+    <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
+    <title>Chi tiết chuyên gia</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <?php include 'import-link-tag.php'?>
     <style>
@@ -90,12 +90,12 @@ if (!isset($_SESSION['admin_name'])) {
     <?php include 'sidebar.php' ?>
     <div class="be-content">
         <div class="page-head">
-            <h2 class="page-head-title" style="font-size: 25px">Chi tiết bác sĩ</h2>
+            <h2 class="page-head-title" style="font-size: 25px">Chi tiết chuyên gia</h2>
             <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb page-head-nav">
                     <li class="breadcrumb-item"><a href="index.php">Trang chủ</a></li>
-                    <li class="breadcrumb-item">Quán lý bác sĩ</li>
-                    <li class="breadcrumb-item active">Danh sách bác sĩ</li>
+                    <li class="breadcrumb-item">Quán lý chuyên gia</li>
+                    <li class="breadcrumb-item active">Danh sách chuyên gia</li>
                     <li class="breadcrumb-item active">Chi tiết</li>
                 </ol>
             </nav>
@@ -196,12 +196,12 @@ if (!isset($_SESSION['admin_name'])) {
                         </div>
                         <br>
                         <div class="col-md-12">
-                            <label class="labels">Chuyên khoa</label>
+                            <label class="labels">Dịch vụ</label>
                             <select id="docUpSpecialty" class="form-select" style="height: 50px" disabled>
-                                <option hidden="hidden" value="0">Chọn chuyên khoa</option>
+                                <option hidden="hidden" value="0">Chọn dịch vụ</option>
                                 <?php
                                 foreach ($listSpecialties as $specialty) {
-                                    echo "<option value='" . htmlspecialchars($specialty['specialty_id']) . "'>" . htmlspecialchars($specialty['name']) . "</option>";
+                                    echo "<option value='" . htmlspecialchars($specialty['service_id']) . "'>" . htmlspecialchars($specialty['name']) . "</option>";
                                 }
                                 ?>
                             </select>
@@ -244,7 +244,7 @@ if (!isset($_SESSION['admin_name'])) {
         document.getElementById('loading-spinner').style.display = 'none';
         // Thiết lập giá trị cho select chuyên khoa
         var specialtySelect = document.getElementById('docUpSpecialty');
-        specialtySelect.value = '<?php echo $doctor['specialty_id']; ?>';
+        specialtySelect.value = '<?php echo $doctor['service_id']; ?>';
     };
     document.addEventListener('DOMContentLoaded', function () {
         // document.getElementById('fullScreenSpinner').style.display = 'none';
@@ -299,7 +299,7 @@ if (!isset($_SESSION['admin_name'])) {
             formData.append('phone', document.getElementById('docUpPhone').value);
             formData.append('address', document.getElementById('docUpAddress').value);
             formData.append('status', parseInt(document.getElementById('docUpStatus').value, 10));
-            formData.append('specialty_id', parseInt(document.getElementById('docUpSpecialty').value, 10));
+            formData.append('service_id', parseInt(document.getElementById('docUpSpecialty').value, 10));
             formData.append('avt', '<?php echo $doctor['avt'] ?>');
 
             // Thêm file vào FormData nếu có

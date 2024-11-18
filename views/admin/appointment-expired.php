@@ -3,7 +3,7 @@ session_start(); // Khởi động session
 if (!isset($_SESSION['admin_name'])) {
     header('Location: '. LOGIN_ADMIN_URL);
     exit();
-} else if ($_SESSION['role_id'] == 2){  // Trừ bác sĩ
+} else if ($_SESSION['role_id'] == 2){  // Trừ chuyên gia
     header('Location: '. UNAUTHORIZED_URL);
     exit();
 }
@@ -16,7 +16,7 @@ if (!isset($_SESSION['admin_name'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="assets/img/logo.png" rel="icon">
+    <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
     <title>Lịch khám quá hạn</title>
     <?php include 'import-link-tag.php' ?>
 
@@ -52,12 +52,12 @@ if (!isset($_SESSION['admin_name'])) {
                         <div class="row table-filters-container">
                             <div class="col-3 table-filters pb-0">
                                 <div class="filter-container">
-                                    <label class="control-label table-filter-title">Lọc chuyên khoa:</label>
+                                    <label class="control-label table-filter-title">Lọc dịch vụ:</label>
                                     <form>
                                         <select class="select2" name="specialty"
                                                 style="height: 50px; border-color: #cac9c9; padding: 10px; width:250px">
                                             <option value="All" <?php echo($specialtySelected == 'All' ? 'selected' : ''); ?>>
-                                                Tất cả chuyên khoa
+                                                Tất cả dịch vụ
                                             </option>
                                             <?php
                                             foreach ($listSpecialties as $specialty) {
@@ -73,16 +73,16 @@ if (!isset($_SESSION['admin_name'])) {
 
                             <div class="col-3 table-filters pb-0">
                                 <div class="filter-container">
-                                    <label class="control-label table-filter-title">Lọc bác sĩ:</label>
+                                    <label class="control-label table-filter-title">Lọc chuyên gia:</label>
                                     <form>
                                         <select class="select2" name="doctor"
                                                 style="height: 50px; border-color: #cac9c9; padding: 10px; width:250px ">
                                             <option value="All" <?php echo($doctorSelected == 'All' ? 'selected' : ''); ?>>
-                                                Tất cả bác sĩ
+                                                Tất cả chuyên gia
                                             </option>
                                             <?php
                                             foreach ($listDoctors as $doctor) {
-                                                // Kiểm tra nếu id của bác sĩ hiện tại trùng với $doctor_selected
+                                                // Kiểm tra nếu id của chuyên gia hiện tại trùng với $doctor_selected
                                                 $selected = ($doctor['id'] == $doctorSelected) ? 'selected' : '';
                                                 echo "<option value='" . htmlspecialchars($doctor['id']) . "' $selected>" . htmlspecialchars($doctor['name']) . "</option>";
                                             }
@@ -94,7 +94,7 @@ if (!isset($_SESSION['admin_name'])) {
 
 
                             <div class="col-3 table-filters pb-0">
-                                <span class="table-filter-title">Tra cứu bệnh nhân </span>
+                                <span class="table-filter-title">Tra cứu khách hàng </span>
                                 <div class="filter-container">
                                     <div class="row">
                                         <div class="col-12">
@@ -122,10 +122,10 @@ if (!isset($_SESSION['admin_name'])) {
                                     <thead>
                                     <tr>
                                         <th style="width:2%;">STT</th>
-                                        <th style="width:13%;">Bác sĩ</th>
+                                        <th style="width:13%;">chuyên gia</th>
                                         <th style="width:15%;">Bệnh nhân</th>
                                         <th style="width:12%;">Thông tin liên hệ</th>
-                                        <th style="width:10%;">Chuyên khoa khám</th>
+                                        <th style="width:10%;">Dịch vụ</th>
                                         <th style="width:10%;">Thời gian hẹn</th>
                                         <th style="width:10%;" class="text-center">Trạng thái</th>
                                         <th style="width:1%;"></th>
@@ -162,7 +162,7 @@ if (!isset($_SESSION['admin_name'])) {
                                                      src="<?php echo htmlspecialchars($appointment['doctor_avt']); ?>"
                                                      alt="Avatar">
                                                 <span><?php echo htmlspecialchars($appointment['doctor_name']); ?></span>
-                                                <!--                                            <span class="cell-detail-description">Bác sĩ chuyên khoa 1</span>-->
+                                                <!--                                            <span class="cell-detail-description">chuyên gia chuyên khoa 1</span>-->
                                             </td>
                                             <td class="cell-detail milestone" data-project="Bootstrap">
                                                 <span class="completed"><?php echo htmlspecialchars($appointment['patient_dob']); ?></span>

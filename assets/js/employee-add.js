@@ -70,7 +70,7 @@ $(document).ready(function () {
 
         // Kiểm tra chuyên khoa
         if (emSpecialty.value.trim() === '') {
-            document.getElementById('errorEmSpecialty').textContent = 'Chuyên khoa không được để trống';
+            document.getElementById('errorEmSpecialty').textContent = 'Dịch vụ không được để trống';
             emSpecialty.classList.add('is-invalid');
             isValid = false;
         }

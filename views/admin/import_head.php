@@ -3,7 +3,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="">
 <meta name="author" content="">
-<link href="assets/img/logo.png" rel="icon">
+<link href="assets/img/logo_cent_orage.png" rel="icon">
 <link rel="stylesheet" type="text/css" href="views/admin/assets\lib\perfect-scrollbar\css\perfect-scrollbar.css">
 <link rel="stylesheet" type="text/css" href="views/admin/assets\lib\material-design-icons\css\material-design-iconic-font.min.css">
 <link rel="stylesheet" type="text/css" href="views/admin/assets\lib\jquery.vectormap\jquery-jvectormap-1.2.2.css">

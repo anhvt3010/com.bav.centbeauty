@@ -1,6 +1,6 @@
 <?php
-// Lấy tên file hiện tại
-$currentFile = basename($_SERVER['PHP_SELF'], ".php");
+// Lấy giá trị của 'action' từ URL
+$action = isset($_GET['action']) ? $_GET['action'] : 'home';
 ?>
 
 <header class="header">
@@ -16,10 +16,15 @@ $currentFile = basename($_SERVER['PHP_SELF'], ".php");
                 </div>
                 <div class="col-lg-4">
                     <div class="header__top__right">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                        <?php
+                        if (!isset($_SESSION['user_phone'])) {
+                            echo
+                                '<a href="'. LOGIN_CLIENT_URL .'" class=" order-last order-lg-0" style="color:white;">
+                  <i style="color: white;" class="fa fa-sign-in" aria-hidden="true"></i>
+                  Đăng nhập
+                </a>';
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -28,7 +33,7 @@ $currentFile = basename($_SERVER['PHP_SELF'], ".php");
     <div class="container">
         <div class="row">
             <div class="col-lg-2">
-                <div class="header__logo" style="padding-top: 25px">
+                <div class="header__logo" style="padding-top: 15px">
                     <a href="./index.php"><img width="120" src="assetsv2/img/logo_cent_orage.png" alt=""></a>
                 </div>
             </div>
@@ -36,24 +41,29 @@ $currentFile = basename($_SERVER['PHP_SELF'], ".php");
                 <div class="header__menu__option">
                     <nav class="header__menu">
                         <ul>
-                            <li class="<?php echo ($currentFile == 'index') ? 'active' : ''; ?>"><a href="./index.php">Trang chủ</a></li>
-                            <li class="<?php echo ($currentFile == 'about') ? 'active' : ''; ?>"><a href="./about.php">GIỚI THIỆU</a></li>
-                            <li class="<?php echo ($currentFile == 'services') ? 'active' : ''; ?>"><a href="./services.php">Dịch vụ</a></li>
-<!--                            <li class="--><?php //echo ($currentFile == 'pages') ? 'active' : ''; ?><!--"><a href="#">Trang</a>-->
-<!--                                <ul class="dropdown">-->
-<!--                                    <li><a href="./pricing.html">Pricing</a></li>-->
-<!--                                    <li><a href="./doctor.html">Doctor</a></li>-->
-<!--                                    <li><a href="./blog-details.html">Blog Details</a></li>-->
-<!--                                </ul>-->
-<!--                            </li>-->
-                            <li class="<?php echo ($currentFile == 'blog') ? 'active' : ''; ?>"><a href="./blog.php">Tin Tức</a></li>
-<!--                            <li class="--><?php //echo ($currentFile == 'contact') ? 'active' : ''; ?><!--"><a href="./contact.php">Liên Hệ</a></li>-->
-                            <li class="<?php echo ($currentFile == 'contact') ? 'active' : ''; ?>"><a href="./contact.php">Cơ sở</a></li>
-                            <li class="<?php echo ($currentFile == 'contact') ? 'active' : ''; ?>"><a href="./contact.php">Tra cứu</a></li>
+                            <li class="<?php echo ($action == 'home') ? 'active' : ''; ?>">
+                                <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=home">Trang chủ</a>
+                            </li>
+                            <li class="<?php echo ($action == 'about') ? 'active' : ''; ?>">
+                                <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=about">GIỚI THIỆU</a>
+                            </li>
+                            <li class="<?php echo ($action == 'services') ? 'active' : ''; ?>">
+                                <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=services">Dịch vụ</a>
+                            </li>
+                            <li class="<?php echo ($action == 'blog') ? 'active' : ''; ?>">
+                                <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=blog">Tin Tức</a>
+                            </li>
+                            <li class="<?php echo ($action == 'contact') ? 'active' : ''; ?>">
+                                <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=contact">Cơ sở</a>
+                            </li>
+                            <li class="<?php echo ($action == 'lookup') ? 'active' : ''; ?>">
+                                <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=search_client">Tra cứu</a>
+                            </li>
                         </ul>
                     </nav>
                     <div class="header__btn">
-                        <a href="#" class="primary-btn">Đặt Lịch Ngay</a>
+                        <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=appointment"
+                           class="primary-btn">Đặt Lịch Ngay</a>
                     </div>
                 </div>
             </div>

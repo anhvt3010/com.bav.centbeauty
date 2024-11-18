@@ -1,6 +1,6 @@
 <?php
 class SpecialtyModel extends Database{
-    const TABLE_NAME = 'specialties';
+    const TABLE_NAME = 'services';
 
     protected $connection = null;
 
@@ -18,32 +18,32 @@ class SpecialtyModel extends Database{
         $status = mysqli_real_escape_string($this->connection, $status);
         $created_at = date("Y-m-d H:i:s");
 
-        $sql = "INSERT INTO specialties (name, description, status, create_at, update_by) 
+        $sql = "INSERT INTO services (name, description, status, create_at, update_by) 
                 VALUES ('$name', '$description', '$status', '$created_at', $update_by)";
 
         return $this->_query($sql);
     }
 
-    public function updateSpecialtyById($specialty_id, $specialtyName, $specialtyDescription, $specialtyStatus, $employee_id): mysqli_result|bool
+    public function updateSpecialtyById($service_id, $specialtyName, $specialtyDescription, $specialtyStatus, $employee_id): mysqli_result|bool
     {
         $specialtyName = mysqli_real_escape_string($this->connection, $specialtyName);
         $specialtyDescription = mysqli_real_escape_string($this->connection, $specialtyDescription);
         $specialtyStatus = mysqli_real_escape_string($this->connection, $specialtyStatus);
 
-        $sql = "UPDATE specialties SET 
+        $sql = "UPDATE services SET 
                 name = '{$specialtyName}', 
                 description = '{$specialtyDescription}', 
                 status = '{$specialtyStatus}', 
                 update_at = NOW(),
                 update_by = $employee_id
-                WHERE specialty_id = {$specialty_id}";
+                WHERE service_id = {$service_id}";
         return $this->_query($sql);
     }
 
     public function getSpecialtiesForAppointment(): array
     {
         $sql = "SELECT *
-            FROM specialties
+            FROM services
             WHERE status = 1";
 
         $query = $this->_query($sql);
@@ -57,7 +57,7 @@ class SpecialtyModel extends Database{
     public function getSpecialties(): array
     {
         $sql = "SELECT *
-            FROM specialties ORDER BY create_at DESC";
+            FROM services ORDER BY create_at DESC";
 
         $query = $this->_query($sql);
         $data = [];
@@ -70,7 +70,7 @@ class SpecialtyModel extends Database{
     public function getSpecialtiesForAdmin(): array
     {
         $sql = "SELECT *
-            FROM specialties WHERE status = 1";
+            FROM services WHERE status = 1";
 
         $query = $this->_query($sql);
         $data = [];
@@ -80,10 +80,10 @@ class SpecialtyModel extends Database{
         return $data;
     }
 
-    public function getById($specialty_id): array
+    public function getById($service_id): array
     {
         $sql = "SELECT *
-            FROM specialties WHERE specialty_id = {$specialty_id}";
+            FROM services WHERE service_id = {$service_id}";
 
         $query = $this->_query($sql);
         return mysqli_fetch_assoc($query);

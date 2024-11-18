@@ -76,11 +76,11 @@ function send_mail($specialtyName, $doctorName, $dateSlot, $timeSlot, $patientNa
                     .Dưới đây là thông tin chi tiết:</p>
                     <table class="info-table">
                         <tr>
-                            <th>Chuyên khoa</th>
+                            <th>Dịch vụ</th>
                             <td>' . $specialtyName . '</td>
                         </tr>
                         <tr>
-                            <th>Bác sĩ</th>
+                            <th>Chuyên gia</th>
                             <td>' . $doctorName . '</td>
                         </tr>
                         <tr>
@@ -184,11 +184,11 @@ function confirm_mail($specialtyName, $doctorName, $dateSlot, $timeSlot, $patien
                     <p>Lịch hẹn của bạn đã được xác nhận.Dưới đây là thông tin chi tiết:</p>
                     <table class="info-table">
                         <tr>
-                            <th>Chuyên khoa</th>
+                            <th>Dịch vụ</th>
                             <td>' . $specialtyName . '</td>
                         </tr>
                         <tr>
-                            <th>Bác sĩ</th>
+                            <th>Chuyên gia</th>
                             <td>' . $doctorName . '</td>
                         </tr>
                         <tr>

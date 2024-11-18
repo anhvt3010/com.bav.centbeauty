@@ -16,7 +16,7 @@ if (!isset($_SESSION['admin_name'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="assets/img/logo.png" rel="icon">
+    <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
     <title>Xác nhận lịch khám</title>
     <?php include 'import-link-tag.php' ?>
 
@@ -52,12 +52,12 @@ if (!isset($_SESSION['admin_name'])) {
                         <div class="row table-filters-container">
                             <div class="col-3 table-filters pb-0">
                                 <div class="filter-container">
-                                    <label class="control-label table-filter-title">Lọc chuyên khoa:</label>
+                                    <label class="control-label table-filter-title">Lọc dịch vụ:</label>
                                     <form>
                                         <select class="select2" name="specialty"
                                                 style="height: 50px; border-color: #cac9c9; padding: 10px; width:250px">
                                             <option value="All" <?php echo($specialtySelected == 'All' ? 'selected' : ''); ?>>
-                                                Tất cả chuyên khoa
+                                                Tất cả dịch vụ
                                             </option>
                                             <?php
                                             foreach ($listSpecialties as $specialty) {
@@ -73,12 +73,12 @@ if (!isset($_SESSION['admin_name'])) {
 
                             <div class="col-3 table-filters pb-0">
                                 <div class="filter-container">
-                                    <label class="control-label table-filter-title">Lọc bác sĩ:</label>
+                                    <label class="control-label table-filter-title">Lọc chuyên gia:</label>
                                     <form>
                                         <select class="select2" name="doctor"
                                                 style="height: 50px; border-color: #cac9c9; padding: 10px; width:250px ">
                                             <option value="All" <?php echo($doctorSelected == 'All' ? 'selected' : ''); ?>>
-                                                Tất cả bác sĩ
+                                                Tất cả chuyên gia
                                             </option>
                                             <?php
                                             foreach ($listDoctors as $doctor) {
@@ -122,10 +122,10 @@ if (!isset($_SESSION['admin_name'])) {
                                     <thead>
                                     <tr>
                                         <th style="width:2%;">STT</th>
-                                        <th style="width:13%;">Bác sĩ</th>
-                                        <th style="width:15%;">Bệnh nhân</th>
+                                        <th style="width:13%;">Chuyên gia</th>
+                                        <th style="width:15%;">Khách hàng</th>
                                         <th style="width:12%;">Thông tin liên hệ</th>
-                                        <th style="width:10%;">Chuyên khoa khám</th>
+                                        <th style="width:10%;">Dịch vụ</th>
                                         <th style="width:10%;">Thời gian hẹn</th>
                                         <th style="width:10%;" class="text-center">Trạng thái</th>
                                         <th style="width:1%;"></th>

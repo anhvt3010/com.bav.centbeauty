@@ -16,8 +16,8 @@ if (!isset($_SESSION['admin_name'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="assets/img/logo.png" rel="icon">
-    <title>Chi tiết chuyên khoa</title>
+    <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
+    <title>Chi tiết dịch vụ</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <?php include 'import-link-tag.php' ?>
@@ -36,12 +36,12 @@ if (!isset($_SESSION['admin_name'])) {
     <?php include 'sidebar.php' ?>
     <div class="be-content">
         <div class="page-head">
-            <h2 class="page-head-title" style="font-size: 25px">Chi tiết chuyên khoa</h2>
+            <h2 class="page-head-title" style="font-size: 25px">Chi tiết dịch vụ</h2>
             <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb page-head-nav">
                     <li class="breadcrumb-item"><a href="index.php">Trang chủ</a></li>
-                    <li class="breadcrumb-item">Quán lý chuyên khoa</li>
-                    <li class="breadcrumb-item active">Danh sách chuyên khoa</li>
+                    <li class="breadcrumb-item">Quán lý dịch vụ</li>
+                    <li class="breadcrumb-item active">Danh sách dịch vụ</li>
                     <li class="breadcrumb-item active">Chi tiết</li>
                 </ol>
             </nav>
@@ -52,17 +52,17 @@ if (!isset($_SESSION['admin_name'])) {
                     <div class="card card-table">
                         <div class="main-content container-fluid" style="margin-top: 30px ">
                             <div class="mb-3">
-                                <label for="specialtyName" class="form-label">Tên chuyên khoa</label>
+                                <label for="specialtyName" class="form-label">Tên dịch vụ</label>
                                 <input type="text" class="form-control" id="specialtyName" maxlength="150"
-                                       placeholder="Nhập tên chuyên khoa" value="<?php echo $specialty['name'] ?>"
+                                       placeholder="Nhập tên dịch vụ" value="<?php echo $specialty['name'] ?>"
                                        disabled>
                                 <span style="margin-left: 10px; color: red" id="errorSpecialtyNameUpdate"></span>
 
                             </div>
                             <div class="mb-3">
-                                <label for="specialtyDescription" class="form-label">Mô tả chuyên khoa</label>
+                                <label for="specialtyDescription" class="form-label">Mô tả dịch vụ</label>
                                 <textarea class="form-control" id="specialtyDescription" rows="5"
-                                          placeholder="Mô tả chuyên khoa" maxlength="500"
+                                          placeholder="Mô tả dịch vụ" maxlength="500"
                                           disabled><?php echo $specialty['description'] ?></textarea>
                                 <span style="margin-left: 10px; color: red" id="errorSpecialtyDescriptionUpdate"></span>
                             </div>
@@ -150,7 +150,7 @@ if (!isset($_SESSION['admin_name'])) {
                 errorSpecialtyDescription.textContent = '';
 
                 if (!specialtyName.value) {
-                    errorSpecialtyName.textContent = 'Tên chuyên khoa không được để trống';
+                    errorSpecialtyName.textContent = 'Tên dịch vụ không được để trống';
                     valid = false;
                 }
 
@@ -168,12 +168,12 @@ if (!isset($_SESSION['admin_name'])) {
         document.getElementById('saveSpecialtyUpdate').addEventListener('click', function () {
             exampleModal.hide()
 
-            console.log("Tên chuyên khoa:", specialtyName.value);
-            console.log("Mô tả chuyên khoa:", specialtyDescription.value);
+            console.log("Tên dịch vụ:", specialtyName.value);
+            console.log("Mô tả dịch vụ:", specialtyDescription.value);
             console.log("Trạng thái:", specialtyStatus.value);
 
             var formData = new FormData();
-            formData.append('specialtyId', <?php echo $specialty['specialty_id'] ?>);
+            formData.append('specialtyId', <?php echo $specialty['service_id'] ?>);
             formData.append('specialtyName', specialtyName.value);
             formData.append('specialtyDescription', specialtyDescription.value);
             formData.append('specialtyStatus', specialtyStatus.value);

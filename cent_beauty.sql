@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 22, 2024 lúc 01:44 AM
+-- Thời gian đã tạo: Th10 18, 2024 lúc 08:05 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `medicare_final`
+-- Cơ sở dữ liệu: `cent_beauty`
 --
 
 -- --------------------------------------------------------
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `appointments` (
   `appointment_id` int(11) NOT NULL,
   `patient_id` int(11) DEFAULT NULL,
-  `specialty_id` int(11) DEFAULT NULL,
+  `service_id` int(11) DEFAULT NULL,
   `employee_id` int(11) DEFAULT NULL,
   `date_slot` int(11) DEFAULT NULL,
   `time_id` int(11) DEFAULT NULL,
@@ -51,8 +51,8 @@ CREATE TABLE `appointments` (
 -- Đang đổ dữ liệu cho bảng `appointments`
 --
 
-INSERT INTO `appointments` (`appointment_id`, `patient_id`, `specialty_id`, `employee_id`, `date_slot`, `time_id`, `patient_name`, `patient_gender`, `patient_dob`, `patient_phone`, `patient_email`, `patient_description`, `status`, `result`, `update_at`, `update_by`, `created_at`) VALUES
-(41, NULL, 1, 1, 19866, 5, 'Nguyễn Văn A', 1, '1985-10-27', '0900000001', 'user39@example.com', 'Sốt cao liên tục', 2, '', '2024-05-27 23:17:35', NULL, '2024-05-24 12:08:22'),
+INSERT INTO `appointments` (`appointment_id`, `patient_id`, `service_id`, `employee_id`, `date_slot`, `time_id`, `patient_name`, `patient_gender`, `patient_dob`, `patient_phone`, `patient_email`, `patient_description`, `status`, `result`, `update_at`, `update_by`, `created_at`) VALUES
+(41, NULL, 1, 1, 19866, 5, 'Nguyễn Văn A', 1, '1985-10-27', '0900000001', 'user39@example.com', 'Sốt cao liên tục', 2, 'https://res.cloudinary.com/dnp6p86dp/image/upload/v1730209211/sfnokcfkvjefdnqqtzmk.pdf', '2024-10-29 20:40:12', NULL, '2024-05-24 12:08:22'),
 (42, NULL, 1, 2, 19888, 2, 'Trần Thị B', 1, '2020-03-28', '0900000002', 'ta@gmail.com', 'Ho khan kéo dài', 1, NULL, '2024-06-14 07:55:18', NULL, '2024-05-28 05:08:45'),
 (43, NULL, 4, 23, 19871, 15, 'Lê Thanh C', 1, '2011-02-11', '0900000003', 'tham@gmail.com', 'Đau đầu dữ dội', 2, 'https://res.cloudinary.com/dnp6p86dp/image/upload/v1717862996/zmznpyveugyr5lng6dro.pdf', '2024-06-08 23:09:57', NULL, '2024-05-28 05:57:10'),
 (48, NULL, 3, 18, 19889, 15, 'Phạm Hoàng D', 1, '2002-10-30', '0900000004', 'ta@gmail.com', 'Đau bụng quặn thắt', 1, 'https://res.cloudinary.com/dnp6p86dp/image/upload/v1717750877/zoghx4ta1wp3qeuldbqa.pdf', '2024-06-14 16:50:02', NULL, '2024-05-31 22:38:21'),
@@ -79,7 +79,51 @@ INSERT INTO `appointments` (`appointment_id`, `patient_id`, `specialty_id`, `emp
 (99, 52, 1, 6, 19896, 1, 'Nguyễn Đức Anh', 1, '1959-06-20', '0813966292', 'ducco123@gmail.com', 'Tăng cân không kiểm soát', 1, NULL, '2024-06-22 05:49:53', 67, '2024-06-20 01:12:06'),
 (100, NULL, 1, 1, 19896, 15, 'Hoa Minh', 0, '1997-04-02', '0987654322', 'hoaminh678@gmail.com', 'Đổ mồ hôi đêm', 0, NULL, '2024-06-22 05:53:23', 67, '2024-06-20 01:14:38'),
 (101, NULL, 3, 3, 19896, 6, 'Nguyễn Thùy Linh', 0, '1968-10-20', '0987654323', 'nguyenthuylinh852003@gmail.com', 'Đau bụng', 1, NULL, '2024-06-22 05:52:02', 67, '2024-06-20 01:15:56'),
-(102, 1, 1, 6, 19897, 10, 'Vũ Thị Thắm', 1, '2002-05-23', '0987654321', 'tham@gmail.com', 'Đau nửa đầu, buồn nôn', 3, NULL, '2024-06-22 06:41:37', 76, '2024-06-22 06:40:43');
+(102, 1, 1, 6, 19897, 10, 'Vũ Thị Thắm', 1, '2002-05-23', '0987654321', 'tham@gmail.com', 'Đau nửa đầu, buồn nôn', 3, NULL, '2024-06-22 06:41:37', 76, '2024-06-22 06:40:43'),
+(103, NULL, 24, 79, 20020, 4, 'Bệnh nhân 36', 1, '2002-10-30', '0964444444', 'chatgpt3010@gmail.com', 'không biết gì cả', 0, NULL, NULL, NULL, '2024-10-23 00:05:03');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `customers`
+--
+
+CREATE TABLE `customers` (
+  `patient_id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `dob` date DEFAULT NULL,
+  `gender` tinyint(4) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `phone` varchar(11) DEFAULT NULL,
+  `email` varchar(150) DEFAULT NULL,
+  `status` tinyint(4) DEFAULT NULL,
+  `create_at` datetime DEFAULT NULL,
+  `update_by` int(11) DEFAULT NULL,
+  `update_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `customers`
+--
+
+INSERT INTO `customers` (`patient_id`, `name`, `password`, `dob`, `gender`, `address`, `phone`, `email`, `status`, `create_at`, `update_by`, `update_at`) VALUES
+(1, 'Vũ Thị Thắm', '$2y$12$/tA/0qAnbA7Pgk4k.VSTqejuh23YJ9CpoRMU78EF7PIn0cI07qFpu', '2002-05-23', 1, 'Thanh Tri, Thanh Liet, Ha Noi 1', '0987654321', 'tham@gmail.com', 1, '2024-02-22 06:21:01', 76, '2024-06-16 19:33:14'),
+(2, 'Thúy Hiền', '$2a$12$3Ry4td9KXgnnbd9pzsuPmeJytyyV3I0kX1Vq.y/hpwV7IoQ8QuZ0u\n', '2002-10-25', 0, 'Lac Long Quan, Tay Ho, Ha Noi', '0964434888', 'hien@gmail.com', 0, '2024-05-22 06:21:06', 76, '2024-10-28 19:05:35'),
+(3, 'Ngọc Lan', '$2a$12$y2zig.K/MX4pFnXGkMsTTe7dzbu1fDbYCQYsUb.w38WB/SQ2SxCEO\n', '2002-05-27', 1, 'Ho Tung Mau, Cau Giay, Ha Noi', '0915033333', 'abc@gmail.com', 1, '2024-05-22 06:21:29', NULL, NULL),
+(4, 'Thu Hường', '$2a$12$sQlXdw.1Icv2hipevwl/GeVZXQscmLfvPmRryYsJckvzNx.xoKo1C', '2002-09-23', 1, 'Doi Can, Ba Dinh, Ha Noi', '0936501777', 'abc@gmail.com', 1, '2024-03-22 06:21:32', NULL, NULL),
+(5, 'Hải Yến', '$2a$12$SyDIjHYt2zMR2XH1rCJN7.WIUItgQgtt.Oo3a6z9LhrxW3mORhMAy', '2002-05-18', 0, 'Kim Ma Thuong, Ba Dinh, Ha Noi', '0938729999', 'abc@gmail.com', 1, '2024-02-22 06:21:01', NULL, NULL),
+(31, 'Nguyễn Trang Hà', '$2a$12$SyDIjHYt2zMR2XH1rCJN7.WIUItgQgtt.Oo3a6z9LhrxW3mORhMAy', '1985-03-15', 1, 'Phố Huế, Hai Bà Trưng, Hà Nội', '0912345678', 'nguyenvane@gmail.com', 1, '2024-05-22 06:21:06', NULL, NULL),
+(32, 'Hà Thanh', '$2a$12$SyDIjHYt2zMR2XH1rCJN7.WIUItgQgtt.Oo3a6z9LhrxW3mORhMAy', '1990-07-22', 0, 'Cầu Giấy, Hà Nội', '0912345679', 'tranthif@gmail.com', 1, '2024-05-22 06:21:29', NULL, NULL),
+(33, 'Lê Hoàng Vũ', '$2a$12$SyDIjHYt2zMR2XH1rCJN7.WIUItgQgtt.Oo3a6z9LhrxW3mORhMAy', '2000-11-11', 1, 'Hoàn Kiếm, Hà Nội', '0912345680', 'lehoangg@gmail.com', 1, '2024-03-22 06:21:32', NULL, NULL),
+(34, 'Ánh Nguyệt', '$2a$12$SyDIjHYt2zMR2XH1rCJN7.WIUItgQgtt.Oo3a6z9LhrxW3mORhMAy', '1978-05-30', 1, 'Đống Đa, Hà Nội', '0912345681', 'phaminhh@gmail.com', 1, '2024-02-22 06:21:01', NULL, NULL),
+(35, 'Lan Anh', '$2a$12$SyDIjHYt2zMR2XH1rCJN7.WIUItgQgtt.Oo3a6z9LhrxW3mORhMAy', '1995-02-14', 0, 'Tây Hồ, Hà Nội', '0912345682', 'nguyenthii@gmail.com', 1, '2024-05-22 06:21:06', NULL, NULL),
+(36, 'Bùi Mạnh Quân', '$2a$12$SyDIjHYt2zMR2XH1rCJN7.WIUItgQgtt.Oo3a6z9LhrxW3mORhMAy', '1982-09-17', 1, 'Hà Đông, Hà Nội', '0912345683', 'buivanj@gmail.com', 1, '2024-05-22 06:21:29', 1, '2024-06-14 06:54:24'),
+(37, 'Trang Vũ', '$2a$12$SyDIjHYt2zMR2XH1rCJN7.WIUItgQgtt.Oo3a6z9LhrxW3mORhMAy', '1992-06-06', 0, 'Long Biên, Hà Nội', '0912345684', 'dothik@gmail.com', 1, '2024-03-22 06:21:32', NULL, NULL),
+(38, 'Hải Lan', '$2a$12$SyDIjHYt2zMR2XH1rCJN7.WIUItgQgtt.Oo3a6z9LhrxW3mORhMAy', '1989-12-21', 1, 'Ba Đình, Hà Nội', '0912345685', 'hoangvanl@gmail.com', 1, '2024-02-22 06:21:01', NULL, NULL),
+(39, 'Như Ý', '$2a$12$SyDIjHYt2zMR2XH1rCJN7.WIUItgQgtt.Oo3a6z9LhrxW3mORhMAy', '1987-08-08', 0, 'Hai Bà Trưng, Hà Nội', '0912345686', 'trinhthim@gmail.com', 1, '2024-05-22 06:21:06', NULL, NULL),
+(40, 'Túc Quốc Công', '$2a$12$SyDIjHYt2zMR2XH1rCJN7.WIUItgQgtt.Oo3a6z9LhrxW3mORhMAy', '1993-03-01', 1, 'Thanh Xuân, Hà Nội', '0912345687', 'vominhn@gmail.com', 1, '2024-05-22 06:21:29', NULL, NULL),
+(52, 'Nguyễn Thùy Linh', '$2y$12$8zDpmhzzhGLXUrkU62xe7eCFW8qbnyTOWBWK78c7kB6Ez5xAus55a', '2003-05-08', 0, '73 Láng Hạ Đống Đa Hà Nội', '0813966292', 'nguyenthuylinh852003@gmail.com', 1, '2024-03-22 06:21:32', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -90,7 +134,7 @@ INSERT INTO `appointments` (`appointment_id`, `patient_id`, `specialty_id`, `emp
 CREATE TABLE `employees` (
   `employee_id` int(11) NOT NULL,
   `role_id` int(11) DEFAULT NULL,
-  `specialty_id` int(11) DEFAULT NULL,
+  `service_id` int(11) DEFAULT NULL,
   `position_id` int(11) DEFAULT NULL,
   `employee_code` varchar(55) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
@@ -111,7 +155,7 @@ CREATE TABLE `employees` (
 -- Đang đổ dữ liệu cho bảng `employees`
 --
 
-INSERT INTO `employees` (`employee_id`, `role_id`, `specialty_id`, `position_id`, `employee_code`, `name`, `password`, `avt`, `phone`, `email`, `dob`, `gender`, `address`, `status`, `create_at`, `update_at`, `update_by`) VALUES
+INSERT INTO `employees` (`employee_id`, `role_id`, `service_id`, `position_id`, `employee_code`, `name`, `password`, `avt`, `phone`, `email`, `dob`, `gender`, `address`, `status`, `create_at`, `update_at`, `update_by`) VALUES
 (1, 2, 1, 1, 'DOC1', 'Bác sĩ Sơn Tùng', '$2y$12$rtnVP/ML8JMVoSOXRaC7Q.7eSk.dSn7khh0hJb4AxK5iwVioPZ/p6', 'http://localhost/Medicare/assets/img/doctors/doctors-1.jpg', '0900000000', 'panh@gmail.com', '1977-10-29', 1, '12 Trần Hưng Đạo, Hoàn Kiếm, Hà Nội', 1, '2024-06-04 17:21:42', NULL, NULL),
 (2, 2, 1, 1, 'DOC2', 'Bác sĩ Thúy Hiền', '$2a$12$S/NPYls/TQCkFJYsnDa1pOTjDlCKkwdUMci7m.q4zYh8vkUfLrLeG', 'http://localhost/Medicare/assets/img/doctors/doctors-2.jpg', '0900000001', 'hien@gmail.com', '1991-03-09', 1, 'Đa Phúc Đa Tốn Gia Lâm Hà Nội', 1, '2024-06-04 17:21:41', NULL, NULL),
 (3, 2, 3, 1, 'DOC3', 'Bác sĩ Minh Khang', '$2a$12$S/NPYls/TQCkFJYsnDa1pOTjDlCKkwdUMci7m.q4zYh8vkUfLrLeG', 'http://localhost/Medicare/assets/img/doctors/doctors-4.jpg', '0900000002', 'abc@gmail.com', '1989-05-29', 1, '8 Nguyễn Thái Học Quang Trung Hà Đông Hà Nội', 1, '2024-06-04 17:21:37', NULL, NULL),
@@ -185,49 +229,6 @@ INSERT INTO `employees` (`employee_id`, `role_id`, `specialty_id`, `position_id`
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `patients`
---
-
-CREATE TABLE `patients` (
-  `patient_id` int(11) NOT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
-  `dob` date DEFAULT NULL,
-  `gender` tinyint(4) DEFAULT NULL,
-  `address` varchar(255) DEFAULT NULL,
-  `phone` varchar(11) DEFAULT NULL,
-  `email` varchar(150) DEFAULT NULL,
-  `status` tinyint(4) DEFAULT NULL,
-  `create_at` datetime DEFAULT NULL,
-  `update_by` int(11) DEFAULT NULL,
-  `update_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `patients`
---
-
-INSERT INTO `patients` (`patient_id`, `name`, `password`, `dob`, `gender`, `address`, `phone`, `email`, `status`, `create_at`, `update_by`, `update_at`) VALUES
-(1, 'Vũ Thị Thắm', '$2y$12$aLtxz8E/DO/Be3cuOGbG9e7DelYAoJD/gjdBXve6b6lcatxh7NInq', '2002-05-23', 1, 'Thanh Tri, Thanh Liet, Ha Noi 1', '0987654321', 'tham@gmail.com', 1, '2024-02-22 06:21:01', 76, '2024-06-16 19:33:14'),
-(2, 'Thúy Hiền', '$2a$12$3Ry4td9KXgnnbd9pzsuPmeJytyyV3I0kX1Vq.y/hpwV7IoQ8QuZ0u\n', '2002-10-25', 0, 'Lac Long Quan, Tay Ho, Ha Noi', '0964434888', 'hien@gmail.com', 1, '2024-05-22 06:21:06', NULL, NULL),
-(3, 'Ngọc Lan', '$2a$12$y2zig.K/MX4pFnXGkMsTTe7dzbu1fDbYCQYsUb.w38WB/SQ2SxCEO\n', '2002-05-27', 1, 'Ho Tung Mau, Cau Giay, Ha Noi', '0915033333', 'abc@gmail.com', 1, '2024-05-22 06:21:29', NULL, NULL),
-(4, 'Thu Hường', '$2a$12$sQlXdw.1Icv2hipevwl/GeVZXQscmLfvPmRryYsJckvzNx.xoKo1C', '2002-09-23', 1, 'Doi Can, Ba Dinh, Ha Noi', '0936501777', 'abc@gmail.com', 1, '2024-03-22 06:21:32', NULL, NULL),
-(5, 'Hải Yến', '$2a$12$SyDIjHYt2zMR2XH1rCJN7.WIUItgQgtt.Oo3a6z9LhrxW3mORhMAy', '2002-05-18', 0, 'Kim Ma Thuong, Ba Dinh, Ha Noi', '0938729999', 'abc@gmail.com', 1, '2024-02-22 06:21:01', NULL, NULL),
-(31, 'Nguyễn Trang Hà', '$2a$12$SyDIjHYt2zMR2XH1rCJN7.WIUItgQgtt.Oo3a6z9LhrxW3mORhMAy', '1985-03-15', 1, 'Phố Huế, Hai Bà Trưng, Hà Nội', '0912345678', 'nguyenvane@gmail.com', 1, '2024-05-22 06:21:06', NULL, NULL),
-(32, 'Hà Thanh', '$2a$12$SyDIjHYt2zMR2XH1rCJN7.WIUItgQgtt.Oo3a6z9LhrxW3mORhMAy', '1990-07-22', 0, 'Cầu Giấy, Hà Nội', '0912345679', 'tranthif@gmail.com', 1, '2024-05-22 06:21:29', NULL, NULL),
-(33, 'Lê Hoàng Vũ', '$2a$12$SyDIjHYt2zMR2XH1rCJN7.WIUItgQgtt.Oo3a6z9LhrxW3mORhMAy', '2000-11-11', 1, 'Hoàn Kiếm, Hà Nội', '0912345680', 'lehoangg@gmail.com', 1, '2024-03-22 06:21:32', NULL, NULL),
-(34, 'Ánh Nguyệt', '$2a$12$SyDIjHYt2zMR2XH1rCJN7.WIUItgQgtt.Oo3a6z9LhrxW3mORhMAy', '1978-05-30', 1, 'Đống Đa, Hà Nội', '0912345681', 'phaminhh@gmail.com', 1, '2024-02-22 06:21:01', NULL, NULL),
-(35, 'Lan Anh', '$2a$12$SyDIjHYt2zMR2XH1rCJN7.WIUItgQgtt.Oo3a6z9LhrxW3mORhMAy', '1995-02-14', 0, 'Tây Hồ, Hà Nội', '0912345682', 'nguyenthii@gmail.com', 1, '2024-05-22 06:21:06', NULL, NULL),
-(36, 'Bùi Mạnh Quân', '$2a$12$SyDIjHYt2zMR2XH1rCJN7.WIUItgQgtt.Oo3a6z9LhrxW3mORhMAy', '1982-09-17', 1, 'Hà Đông, Hà Nội', '0912345683', 'buivanj@gmail.com', 1, '2024-05-22 06:21:29', 1, '2024-06-14 06:54:24'),
-(37, 'Trang Vũ', '$2a$12$SyDIjHYt2zMR2XH1rCJN7.WIUItgQgtt.Oo3a6z9LhrxW3mORhMAy', '1992-06-06', 0, 'Long Biên, Hà Nội', '0912345684', 'dothik@gmail.com', 1, '2024-03-22 06:21:32', NULL, NULL),
-(38, 'Hải Lan', '$2a$12$SyDIjHYt2zMR2XH1rCJN7.WIUItgQgtt.Oo3a6z9LhrxW3mORhMAy', '1989-12-21', 1, 'Ba Đình, Hà Nội', '0912345685', 'hoangvanl@gmail.com', 1, '2024-02-22 06:21:01', NULL, NULL),
-(39, 'Như Ý', '$2a$12$SyDIjHYt2zMR2XH1rCJN7.WIUItgQgtt.Oo3a6z9LhrxW3mORhMAy', '1987-08-08', 0, 'Hai Bà Trưng, Hà Nội', '0912345686', 'trinhthim@gmail.com', 1, '2024-05-22 06:21:06', NULL, NULL),
-(40, 'Túc Quốc Công', '$2a$12$SyDIjHYt2zMR2XH1rCJN7.WIUItgQgtt.Oo3a6z9LhrxW3mORhMAy', '1993-03-01', 1, 'Thanh Xuân, Hà Nội', '0912345687', 'vominhn@gmail.com', 1, '2024-05-22 06:21:29', NULL, NULL),
-(52, 'Nguyễn Thùy Linh', '$2y$12$8zDpmhzzhGLXUrkU62xe7eCFW8qbnyTOWBWK78c7kB6Ez5xAus55a', '2003-05-08', 0, '73 Láng Hạ Đống Đa Hà Nội', '0813966292', 'nguyenthuylinh852003@gmail.com', 1, '2024-03-22 06:21:32', NULL, NULL);
-
--- --------------------------------------------------------
-
---
 -- Cấu trúc bảng cho bảng `positions`
 --
 
@@ -268,13 +269,14 @@ INSERT INTO `roles` (`role_id`, `role_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `specialties`
+-- Cấu trúc bảng cho bảng `services`
 --
 
-CREATE TABLE `specialties` (
-  `specialty_id` int(11) NOT NULL,
+CREATE TABLE `services` (
+  `service_id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `description` longtext DEFAULT NULL,
+  `price` int(11) NOT NULL,
   `update_at` datetime DEFAULT NULL,
   `update_by` int(11) DEFAULT NULL,
   `create_at` datetime DEFAULT NULL,
@@ -282,33 +284,33 @@ CREATE TABLE `specialties` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `specialties`
+-- Đang đổ dữ liệu cho bảng `services`
 --
 
-INSERT INTO `specialties` (`specialty_id`, `name`, `description`, `update_at`, `update_by`, `create_at`, `status`) VALUES
-(1, 'Đa khoa', 'Khám & điều trị các bệnh lý cơ bản, chưa rõ nguyên nhân, chưa có định hướng chuyên khoa cụ thể', '2024-06-18 16:16:08', 76, '2024-05-19 12:48:17', 1),
-(2, 'Da liễu', 'Khám & điều trị các bệnh về da và những phần phụ của da', '2024-06-03 14:45:10', NULL, '2024-05-13 12:48:17', 0),
-(3, 'Dinh dưỡng', 'Tư vấn chế độ dinh dưỡng cũng như chế độ ăn uống phù hợp cho từng thể trạng và bệnh lý khác nhau ở mọi lứa tuổi', '2024-06-03 09:22:35', NULL, '2024-05-14 12:48:17', 1),
-(4, 'Di truyền y học', 'Tư vấn di truyền cho các trường hợp mắc bệnh lý di truyền & mắc dị tật bẩm sinh...', '2024-06-03 16:55:44', NULL, '2024-05-24 12:48:17', 1),
-(5, 'Gây mê - Điều trị đau', 'Chăm sóc giảm nhẹ cho người bệnh', '2024-06-03 07:05:29', NULL, '2024-05-11 12:48:17', 1),
-(6, 'Hen - Dị ứng miễn dịch', 'Khám & điều trị các bệnh dị ứng', '2024-06-03 19:47:18', NULL, '2024-05-31 12:48:17', 1),
-(7, 'Hô hấp', 'Khám, điều trị bệnh lý đường hô hấp như hen suyễn, viêm phế quản, viêm phổi, bệnh phổi tắc nghẽn mạn tính...', '2024-06-03 18:15:52', NULL, '2024-05-15 12:48:17', 1),
-(8, 'Hỗ trợ sinh sản', 'Khám và điều trị các bệnh lý vô sinh hiếm muộn', '2024-06-03 23:40:11', NULL, '2024-05-18 12:48:17', 1),
-(9, 'Huyết học', 'Khám & điều trị các bệnh lý về máu', '2024-06-03 05:30:46', NULL, '2024-05-23 12:48:17', 0),
-(12, 'Nam khoa', 'Khám và điều trị các vấn đề liên quan tới bộ phận sinh sản nam', '2024-06-03 19:35:24', NULL, '2024-06-01 12:48:17', 1),
-(13, 'Ngoại chấn thương chỉnh hình', 'Khám & điều trị các chấn thương và tình trạng bệnh liên quan đến hệ thống cơ xương khớp', '2024-06-03 02:05:11', NULL, '2024-06-02 12:48:17', 1),
-(14, 'Ngoại nhi', 'Phẫu thuật nhi chung: dị tật bẩm sinh nhi; lồng ruột', '2024-06-03 17:15:54', NULL, '2024-05-22 12:48:17', 0),
-(15, 'Ngoại tim mạch', 'Khám & điều trị các bệnh: tim bẩm sinh, suy tim, phình động mạch, tổn thương, chấn thương các cơ quan trong lồng ngực...', '2024-06-03 06:40:17', NULL, '2024-05-29 12:48:17', 1),
-(16, 'Nội cơ xương khớp', 'Khám & điều trị các bệnh lý về cơ, xương, khớp bằng phương pháp nội khoa như: thuốc men, tiêm chích, vật lý trị liệu...', '2024-06-03 22:50:13', NULL, '2024-05-30 12:48:17', 1),
-(17, 'Nội tiết', 'Khám và điều trị các bệnh như tiểu đường, rối loạn tuyến giáp, rối loạn cholesterol, tuyến yên, tuyến thượng thận...', '2024-06-03 04:25:47', NULL, '2024-05-10 12:48:17', 1),
-(19, 'Phục hồi chức năng', 'Hỗ trợ phục hồi các chức năng, năng lực vận động và nhận thức tâm lý vốn có đã mất đi, suy giảm hoặc tiềm ẩn của cơ thể', '2024-06-03 15:50:08', NULL, '2024-05-20 12:48:17', 1),
-(20, 'Răng - Hàm - Mặt', 'Khám & điều trị bệnh lý về cấu trúc răng (xương, tuỷ răng..), hàm (vòm miệng, quai hàm,...) & mặt (xương trán, gò má...)', '2024-06-03 12:45:36', NULL, '2024-05-26 12:48:17', 1),
-(21, 'Tai - Mũi - Họng', 'Thông thường, các khối u vùng đầu mặt cổ, các dị tật bẩm sinh vùng tai mũi họng,..', '2024-06-19 23:42:51', 76, '2024-05-17 12:48:17', 1),
-(22, 'Tâm lý', 'Khám và điều trị các bệnh lý về tâm thần như rối loạn lo âu, trầm cảm...', '2024-06-14 03:48:54', NULL, '2024-06-03 12:48:17', 1),
-(23, 'Thẩm mỹ ', 'Khám, tư vấn & can thiệp các vấn đề liên quan đến việc phục hồi, tái thiết hoặc thay đổi cơ thể, diện mạo bên ngoài', '2024-06-19 23:41:55', 76, '2024-05-27 12:48:17', 1),
-(24, 'Tiêu hóa', 'Khám tiêu hóa là quá trình kiểm tra hình thái và đánh giá chức năng của các cơ quan trong hệ tiêu hóa để phát hiện những rối loạn và bất thường', '2024-06-03 14:05:17', NULL, '2024-05-09 12:48:17', 1),
-(26, 'Truyền nhiễm', 'Khám & điều trị các bệnh do vi khuẩn, ký sinh trùng, nhiễm trùng chưa xác định nguyên nhân gây bệnh', '2024-06-03 20:10:48', NULL, '2024-05-16 12:48:17', 1),
-(37, 'Chuyên khoa mới', 'Mô tả ngắn updated', '2024-06-21 09:22:01', 76, '2024-06-21 04:20:01', 0);
+INSERT INTO `services` (`service_id`, `name`, `description`, `price`, `update_at`, `update_by`, `create_at`, `status`) VALUES
+(1, 'Gội đầu dưỡng sinh', 'Khám & điều trị các bệnh lý cơ bản, chưa rõ nguyên nhân, chưa có định hướng chuyên khoa cụ thể', 0, '2024-06-18 16:16:08', 76, '2024-05-19 12:48:17', 1),
+(2, 'Massage ', 'Khám & điều trị các bệnh về da và những phần phụ của da', 0, '2024-06-03 14:45:10', NULL, '2024-05-13 12:48:17', 0),
+(3, 'Làm nail ngắn', 'Tư vấn chế độ dinh dưỡng cũng như chế độ ăn uống phù hợp cho từng thể trạng và bệnh lý khác nhau ở mọi lứa tuổiLàm nail theo nhu cầu của khách, không úp móng', 0, '2024-06-03 09:22:35', NULL, '2024-05-14 12:48:17', 1),
+(4, 'Làm nail dài', 'Làm nail kèm úp móng theo yêu cầu', 0, '2024-06-03 16:55:44', NULL, '2024-05-24 12:48:17', 1),
+(5, 'Gây mê - Điều trị đau', 'Chăm sóc giảm nhẹ cho người bệnh', 0, '2024-06-03 07:05:29', NULL, '2024-05-11 12:48:17', 1),
+(6, 'Hen - Dị ứng miễn dịch', 'Khám & điều trị các bệnh dị ứng', 0, '2024-06-03 19:47:18', NULL, '2024-05-31 12:48:17', 1),
+(7, 'Hô hấp', 'Khám, điều trị bệnh lý đường hô hấp như hen suyễn, viêm phế quản, viêm phổi, bệnh phổi tắc nghẽn mạn tính...', 0, '2024-06-03 18:15:52', NULL, '2024-05-15 12:48:17', 1),
+(8, 'Hỗ trợ sinh sản', 'Khám và điều trị các bệnh lý vô sinh hiếm muộn', 0, '2024-06-03 23:40:11', NULL, '2024-05-18 12:48:17', 1),
+(9, 'Huyết học', 'Khám & điều trị các bệnh lý về máu', 0, '2024-06-03 05:30:46', NULL, '2024-05-23 12:48:17', 0),
+(12, 'Nam khoa', 'Khám và điều trị các vấn đề liên quan tới bộ phận sinh sản nam', 0, '2024-06-03 19:35:24', NULL, '2024-06-01 12:48:17', 1),
+(13, 'Ngoại chấn thương chỉnh hình', 'Khám & điều trị các chấn thương và tình trạng bệnh liên quan đến hệ thống cơ xương khớp', 0, '2024-06-03 02:05:11', NULL, '2024-06-02 12:48:17', 1),
+(14, 'Ngoại nhi', 'Phẫu thuật nhi chung: dị tật bẩm sinh nhi; lồng ruột', 0, '2024-06-03 17:15:54', NULL, '2024-05-22 12:48:17', 0),
+(15, 'Ngoại tim mạch', 'Khám & điều trị các bệnh: tim bẩm sinh, suy tim, phình động mạch, tổn thương, chấn thương các cơ quan trong lồng ngực...', 0, '2024-06-03 06:40:17', NULL, '2024-05-29 12:48:17', 1),
+(16, 'Nội cơ xương khớp', 'Khám & điều trị các bệnh lý về cơ, xương, khớp bằng phương pháp nội khoa như: thuốc men, tiêm chích, vật lý trị liệu...', 0, '2024-06-03 22:50:13', NULL, '2024-05-30 12:48:17', 1),
+(17, 'Nội tiết', 'Khám và điều trị các bệnh như tiểu đường, rối loạn tuyến giáp, rối loạn cholesterol, tuyến yên, tuyến thượng thận...', 0, '2024-06-03 04:25:47', NULL, '2024-05-10 12:48:17', 1),
+(19, 'Phục hồi chức năng', 'Hỗ trợ phục hồi các chức năng, năng lực vận động và nhận thức tâm lý vốn có đã mất đi, suy giảm hoặc tiềm ẩn của cơ thể', 0, '2024-06-03 15:50:08', NULL, '2024-05-20 12:48:17', 1),
+(20, 'Răng - Hàm - Mặt', 'Khám & điều trị bệnh lý về cấu trúc răng (xương, tuỷ răng..), hàm (vòm miệng, quai hàm,...) & mặt (xương trán, gò má...)', 0, '2024-06-03 12:45:36', NULL, '2024-05-26 12:48:17', 1),
+(21, 'Tai - Mũi - Họng', 'Thông thường, các khối u vùng đầu mặt cổ, các dị tật bẩm sinh vùng tai mũi họng,..', 0, '2024-06-19 23:42:51', 76, '2024-05-17 12:48:17', 1),
+(22, 'Tâm lý', 'Khám và điều trị các bệnh lý về tâm thần như rối loạn lo âu, trầm cảm...', 0, '2024-06-14 03:48:54', NULL, '2024-06-03 12:48:17', 1),
+(23, 'Thẩm mỹ ', 'Khám, tư vấn & can thiệp các vấn đề liên quan đến việc phục hồi, tái thiết hoặc thay đổi cơ thể, diện mạo bên ngoài', 0, '2024-06-19 23:41:55', 76, '2024-05-27 12:48:17', 1),
+(24, 'Tiêu hóa', 'Khám tiêu hóa là quá trình kiểm tra hình thái và đánh giá chức năng của các cơ quan trong hệ tiêu hóa để phát hiện những rối loạn và bất thường', 0, '2024-06-03 14:05:17', NULL, '2024-05-09 12:48:17', 1),
+(26, 'Truyền nhiễm', 'Khám & điều trị các bệnh do vi khuẩn, ký sinh trùng, nhiễm trùng chưa xác định nguyên nhân gây bệnh', 0, '2024-06-03 20:10:48', NULL, '2024-05-16 12:48:17', 1),
+(37, 'Chuyên khoa mới updated', 'Mô tả ngắn updated', 0, '2024-11-19 02:03:50', 76, '2024-06-21 04:20:01', 0);
 
 -- --------------------------------------------------------
 
@@ -352,25 +354,25 @@ INSERT INTO `time_slots` (`time_id`, `slot_time`) VALUES
 ALTER TABLE `appointments`
   ADD PRIMARY KEY (`appointment_id`),
   ADD KEY `patient_id` (`patient_id`),
-  ADD KEY `specialty_id` (`specialty_id`),
+  ADD KEY `specialty_id` (`service_id`),
   ADD KEY `employee_id` (`employee_id`),
   ADD KEY `date_id` (`date_slot`),
   ADD KEY `time_id` (`time_id`);
+
+--
+-- Chỉ mục cho bảng `customers`
+--
+ALTER TABLE `customers`
+  ADD PRIMARY KEY (`patient_id`);
 
 --
 -- Chỉ mục cho bảng `employees`
 --
 ALTER TABLE `employees`
   ADD PRIMARY KEY (`employee_id`),
-  ADD KEY `specialty_id` (`specialty_id`),
+  ADD KEY `specialty_id` (`service_id`),
   ADD KEY `position_id` (`position_id`),
   ADD KEY `role_id` (`role_id`);
-
---
--- Chỉ mục cho bảng `patients`
---
-ALTER TABLE `patients`
-  ADD PRIMARY KEY (`patient_id`);
 
 --
 -- Chỉ mục cho bảng `positions`
@@ -385,10 +387,10 @@ ALTER TABLE `roles`
   ADD PRIMARY KEY (`role_id`);
 
 --
--- Chỉ mục cho bảng `specialties`
+-- Chỉ mục cho bảng `services`
 --
-ALTER TABLE `specialties`
-  ADD PRIMARY KEY (`specialty_id`);
+ALTER TABLE `services`
+  ADD PRIMARY KEY (`service_id`);
 
 --
 -- Chỉ mục cho bảng `time_slots`
@@ -404,19 +406,19 @@ ALTER TABLE `time_slots`
 -- AUTO_INCREMENT cho bảng `appointments`
 --
 ALTER TABLE `appointments`
-  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+
+--
+-- AUTO_INCREMENT cho bảng `customers`
+--
+ALTER TABLE `customers`
+  MODIFY `patient_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT cho bảng `employees`
 --
 ALTER TABLE `employees`
   MODIFY `employee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
-
---
--- AUTO_INCREMENT cho bảng `patients`
---
-ALTER TABLE `patients`
-  MODIFY `patient_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT cho bảng `positions`
@@ -431,10 +433,10 @@ ALTER TABLE `roles`
   MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT cho bảng `specialties`
+-- AUTO_INCREMENT cho bảng `services`
 --
-ALTER TABLE `specialties`
-  MODIFY `specialty_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+ALTER TABLE `services`
+  MODIFY `service_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT cho bảng `time_slots`
@@ -450,7 +452,7 @@ ALTER TABLE `time_slots`
 -- Các ràng buộc cho bảng `appointments`
 --
 ALTER TABLE `appointments`
-  ADD CONSTRAINT `appointments_ibfk_2` FOREIGN KEY (`specialty_id`) REFERENCES `specialties` (`specialty_id`),
+  ADD CONSTRAINT `appointments_ibfk_2` FOREIGN KEY (`service_id`) REFERENCES `services` (`service_id`),
   ADD CONSTRAINT `appointments_ibfk_3` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`),
   ADD CONSTRAINT `appointments_ibfk_5` FOREIGN KEY (`time_id`) REFERENCES `time_slots` (`time_id`);
 
@@ -458,7 +460,7 @@ ALTER TABLE `appointments`
 -- Các ràng buộc cho bảng `employees`
 --
 ALTER TABLE `employees`
-  ADD CONSTRAINT `employees_ibfk_1` FOREIGN KEY (`specialty_id`) REFERENCES `specialties` (`specialty_id`),
+  ADD CONSTRAINT `employees_ibfk_1` FOREIGN KEY (`service_id`) REFERENCES `services` (`service_id`),
   ADD CONSTRAINT `employees_ibfk_2` FOREIGN KEY (`position_id`) REFERENCES `positions` (`position_id`),
   ADD CONSTRAINT `employees_ibfk_3` FOREIGN KEY (`role_id`) REFERENCES `roles` (`role_id`);
 COMMIT;

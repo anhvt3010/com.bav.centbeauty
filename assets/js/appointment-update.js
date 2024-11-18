@@ -61,7 +61,7 @@ $(document).ready(function () {
         console.log('Ngày đã chọn:', dateTimestamp);
         document.getElementById('date-slot').value = dateTimestamp
         console.log('Chuyen khoa: + ', specialtyId)
-        console.log('Bác sĩ:  + ', parseInt(document.getElementById('selected-doctor').value,10))
+        console.log('Chuyên gia:  + ', parseInt(document.getElementById('selected-doctor').value,10))
 
         // Lấy ngày hiện tại và thời gian hiện tại
         var now = new Date();

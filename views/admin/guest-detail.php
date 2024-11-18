@@ -16,8 +16,8 @@ if (!isset($_SESSION['admin_name'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="assets/img/logo.png" rel="icon">
-    <title>Chi tiết bệnh nhân</title>
+    <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
+    <title>Chi tiết khách hàng</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <?php include 'import-link-tag.php' ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -42,7 +42,7 @@ if (!isset($_SESSION['admin_name'])) {
             <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb page-head-nav">
                     <li class="breadcrumb-item"><a href="index.php">Trang chủ</a></li>
-                    <li class="breadcrumb-item">Quán lý bệnh nhân</li>
+                    <li class="breadcrumb-item">Quán lý khách hàng</li>
                     <li class="breadcrumb-item active">Danh sách khách hàng</li>
                     <li class="breadcrumb-item active">Chi tiết</li>
                 </ol>
@@ -55,10 +55,10 @@ if (!isset($_SESSION['admin_name'])) {
                     <thead>
                     <tr>
                         <th style="width:2%;">STT</th>
-                        <th style="width:15%;">Bác sĩ</th>
-                        <th style="width:12%;">Bệnh nhân</th>
+                        <th style="width:15%;">Chuyên gia</th>
+                        <th style="width:12%;">Khách hàng</th>
                         <th style="width:15%;">Số điện thoại</th>
-                        <th style="width:15%;">Chuyên khoa</th>
+                        <th style="width:15%;">Dịch vụ</th>
                         <th style="width:8%;">Giờ</th>
                         <th style="width:10%;">Ngày</th>
                         <th style="width:2%;"></th>

@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4">
                     <div class="footer__logo">
-                        <a href="#"><img width="100" src="img/logoSpa.png" alt=""></a>
+                        <a href="#"><img width="100" src="assetsv2/img/logoSpa.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-8">
@@ -34,7 +34,7 @@
                     <ul>
                         <li><a href="#">Về Chúng Tôi</a></li>
                         <li><a href="#">Các Phòng Ban</a></li>
-                        <li><a href="#">Tìm Bác Sĩ</a></li>
+                        <li><a href="#">Tìm chuyên gia</a></li>
                         <li><a href="#">Câu Hỏi Thường Gặp</a></li>
                         <li><a href="#">Tin Tức</a></li>
                     </ul>

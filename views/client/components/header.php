@@ -8,8 +8,8 @@
         <ul>
           <li><a class="nav-link scrollto" href="<?php echo BASE_URL ?>/index.php?controller=home&action=home#hero">Trang chủ</a></li>
           <li><a class="nav-link scrollto" href="<?php echo BASE_URL ?>/index.php?controller=home&action=home#about">Giới thiệu</a></li>
-          <li><a class="nav-link scrollto" href="<?php echo BASE_URL ?>/index.php?controller=home&action=home#services">Chuyên khoa</a></li>
-          <li><a class="nav-link scrollto" href="<?php echo BASE_URL ?>/index.php?controller=home&action=home#doctors">Bác sĩ</a></li>
+          <li><a class="nav-link scrollto" href="<?php echo BASE_URL ?>/index.php?controller=home&action=home#services">Dịch vụ</a></li>
+          <li><a class="nav-link scrollto" href="<?php echo BASE_URL ?>/index.php?controller=home&action=home#doctors">Chuyên gia</a></li>
             <li><a class="nav-link scrollto" href="<?php echo BASE_URL ?>/index.php?controller=home&action=home#contact">Liên hệ</a></li>
             <li><a class="nav-link scrollto" href="<?php echo BASE_URL ?>/index.php?controller=home&action=search_client">Tra cứu</a></li>
         </ul>
@@ -33,10 +33,10 @@
                        <span class="d-none d-md-inline">Xin chào: </span> ' . htmlspecialchars($username) . '
                       </a>
                       <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="'. BASE_URL .'/index.php?controller=patient&action=profile">
+                        <li><a class="dropdown-item" href="'. BASE_URL .'/index.php?controller=customer&action=profile">
                             <i class="fa-solid fa-user"></i>&nbsp;&nbsp;Thông tin cá nhân
                         </a></li>
-                        <li><a class="dropdown-item" href="'. BASE_URL .'/index.php?controller=patient&action=history">
+                        <li><a class="dropdown-item" href="'. BASE_URL .'/index.php?controller=customer&action=history">
                             <i class="fa-solid fa-clock-rotate-left"></i>&nbsp;&nbsp;Lịch sử khám
                         </a></li>
                         <li>

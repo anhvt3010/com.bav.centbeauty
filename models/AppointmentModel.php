@@ -27,7 +27,7 @@ class AppointmentModel extends Database {
                 FROM appointments AS a
                          JOIN employees AS e ON e.employee_id = a.employee_id
                          JOIN time_slots AS ts ON ts.time_id = a.time_id
-                         JOIN specialties AS s ON s.specialty_id = a.specialty_id
+                         JOIN services AS s ON s.service_id = a.service_id
                 WHERE a.patient_id IS NULL AND a.status = 2 ";
         if ($search) {
             $sql .= " AND (a.patient_name LIKE '%$search%' OR a.patient_phone LIKE '%$search%')";
@@ -48,7 +48,7 @@ class AppointmentModel extends Database {
                FROM appointments AS a
                          JOIN employees AS e ON e.employee_id = a.employee_id
                          JOIN time_slots AS ts ON ts.time_id = a.time_id
-                         JOIN specialties AS s ON s.specialty_id = a.specialty_id
+                         JOIN services AS s ON s.service_id = a.service_id
                 WHERE a.patient_id IS NULL AND a.status = 2";
         if ($search) {
             $sql .= " AND (a.patient_name LIKE '%$search%' OR a.patient_phone LIKE '%$search%')";
@@ -64,11 +64,11 @@ class AppointmentModel extends Database {
             JOIN employees AS e ON e.employee_id = a.employee_id
             JOIN roles AS r ON r.role_id = e.role_id
             JOIN time_slots AS ts ON ts.time_id = a.time_id
-            JOIN specialties AS s ON s.specialty_id = a.specialty_id
+            JOIN services AS s ON s.service_id = a.service_id
             WHERE r.role_name = LOWER('doctor') AND a.status =  3";
 
         if ($specialty) {
-            $sql .= " AND s.specialty_id = " . $specialty;
+            $sql .= " AND s.service_id = " . $specialty;
         }
         if ($doctor) {
             $sql .= " AND e.employee_id = " . $doctor;
@@ -103,10 +103,10 @@ class AppointmentModel extends Database {
             JOIN employees AS e ON e.employee_id = a.employee_id
             JOIN roles AS r ON r.role_id = e.role_id
             JOIN time_slots AS ts ON ts.time_id = a.time_id
-            JOIN specialties AS s ON s.specialty_id = a.specialty_id
+            JOIN services AS s ON s.service_id = a.service_id
             WHERE r.role_name = LOWER('doctor') AND a.status =  3";
         if ($specialty) {
-            $sql .= " AND s.specialty_id = " . $specialty;
+            $sql .= " AND s.service_id = " . $specialty;
         }
         if ($doctor) {
             $sql .= " AND e.employee_id = " . $doctor;
@@ -127,7 +127,7 @@ class AppointmentModel extends Database {
         return $data;
     }
 
-    public function updateAppointment($id, $employee_id, $specialty_id, $date_slot, $time_id, $patient_name, $patient_gender, $patient_email, $patient_description, $status, $update_by): bool {
+    public function updateAppointment($id, $employee_id, $service_id, $date_slot, $time_id, $patient_name, $patient_gender, $patient_email, $patient_description, $status, $update_by): bool {
 
         if ($id === null) {
             return false;
@@ -144,7 +144,7 @@ class AppointmentModel extends Database {
             patient_email = ?,
             patient_gender = ?,
             patient_name = ?,
-            specialty_id = ?,
+            service_id = ?,
             status = ?,
             time_id = ?,
             update_at = ?,
@@ -161,7 +161,7 @@ class AppointmentModel extends Database {
                 $patient_email,
                 $patient_gender,
                 $patient_name,
-                $specialty_id,
+                $service_id,
                 $status,
                 $time_id,
                 $updated_at,
@@ -259,7 +259,7 @@ class AppointmentModel extends Database {
                        a.patient_email AS patient_email,
                        a.patient_description AS patient_description,
                        s.name AS specialty_name,
-                       s.specialty_id AS specialty_id,
+                       s.service_id AS service_id,
                        s.name AS specialty_name,
                        a.date_slot AS date_slot,
                        ts.slot_time AS time_slot,
@@ -269,7 +269,7 @@ class AppointmentModel extends Database {
                 FROM appointments AS a
                          JOIN employees AS e ON e.employee_id = a.employee_id
                          JOIN time_slots AS ts ON ts.time_id = a.time_id
-                         JOIN specialties AS s ON s.specialty_id = a.specialty_id
+                         JOIN services AS s ON s.service_id = a.service_id
                 WHERE a.appointment_id = " . $appointmentId;
 
         $query = $this->_query($sql);
@@ -296,10 +296,10 @@ class AppointmentModel extends Database {
             JOIN employees AS e ON e.employee_id = a.employee_id
             JOIN roles AS r ON r.role_id = e.role_id
             JOIN time_slots AS ts ON ts.time_id = a.time_id
-            JOIN specialties AS s ON s.specialty_id = a.specialty_id
+            JOIN services AS s ON s.service_id = a.service_id
             WHERE r.role_name = LOWER('doctor') AND a.status =  0 ";
         if ($specialty) {
-            $sql .= " AND s.specialty_id = " . $specialty;
+            $sql .= " AND s.service_id = " . $specialty;
         }
         if ($doctor) {
             $sql .= " AND e.employee_id = " . $doctor;
@@ -326,11 +326,11 @@ class AppointmentModel extends Database {
             JOIN employees AS e ON e.employee_id = a.employee_id
             JOIN roles AS r ON r.role_id = e.role_id
             JOIN time_slots AS ts ON ts.time_id = a.time_id
-            JOIN specialties AS s ON s.specialty_id = a.specialty_id
+            JOIN services AS s ON s.service_id = a.service_id
             WHERE r.role_name = LOWER('doctor') AND a.status =  0";
 
         if ($specialty) {
-            $sql .= " AND s.specialty_id = " . $specialty;
+            $sql .= " AND s.service_id = " . $specialty;
         }
         if ($doctor) {
             $sql .= " AND e.employee_id = " . $doctor;
@@ -369,11 +369,11 @@ class AppointmentModel extends Database {
             JOIN employees AS e ON e.employee_id = a.employee_id
             JOIN roles AS r ON r.role_id = e.role_id
             JOIN time_slots AS ts ON ts.time_id = a.time_id
-            JOIN specialties AS s ON s.specialty_id = a.specialty_id
+            JOIN services AS s ON s.service_id = a.service_id
             WHERE r.role_name = LOWER('doctor') AND a.status != 0 AND a.date_slot = " . $date;
 
         if ($specialty) {
-            $sql .= " AND s.specialty_id = " . $specialty;
+            $sql .= " AND s.service_id = " . $specialty;
         }
         if ($doctor) {
             $sql .= " AND e.employee_id = " . $doctor;
@@ -412,11 +412,11 @@ class AppointmentModel extends Database {
             JOIN employees AS e ON e.employee_id = a.employee_id
             JOIN roles AS r ON r.role_id = e.role_id
             JOIN time_slots AS ts ON ts.time_id = a.time_id
-            JOIN specialties AS s ON s.specialty_id = a.specialty_id
+            JOIN services AS s ON s.service_id = a.service_id
             WHERE r.role_name = LOWER('doctor')";
 
         if ($specialty) {
-            $sql .= " AND s.specialty_id = " . $specialty;
+            $sql .= " AND s.service_id = " . $specialty;
         }
         if ($doctor) {
             $sql .= " AND e.employee_id = " . $doctor;
@@ -460,11 +460,11 @@ class AppointmentModel extends Database {
             JOIN employees AS e ON e.employee_id = a.employee_id
             JOIN roles AS r ON r.role_id = e.role_id
             JOIN time_slots AS ts ON ts.time_id = a.time_id
-            JOIN specialties AS s ON s.specialty_id = a.specialty_id
+            JOIN services AS s ON s.service_id = a.service_id
             WHERE r.role_name = LOWER('doctor') AND a.status != 0 AND a.date_slot = " . $date;
 
         if ($specialty) {
-            $sql .= " AND s.specialty_id = " . $specialty;
+            $sql .= " AND s.service_id = " . $specialty;
         }
         if ($doctor) {
             $sql .= " AND e.employee_id = " . $doctor;
@@ -498,11 +498,11 @@ class AppointmentModel extends Database {
             JOIN employees AS e ON e.employee_id = a.employee_id
             JOIN roles AS r ON r.role_id = e.role_id
             JOIN time_slots AS ts ON ts.time_id = a.time_id
-            JOIN specialties AS s ON s.specialty_id = a.specialty_id
+            JOIN services AS s ON s.service_id = a.service_id
             WHERE r.role_name = LOWER('doctor')";
 
         if ($specialty) {
-            $sql .= " AND s.specialty_id = " . $specialty;
+            $sql .= " AND s.service_id = " . $specialty;
         }
         if ($doctor) {
             $sql .= " AND e.employee_id = " . $doctor;
@@ -542,13 +542,13 @@ class AppointmentModel extends Database {
         // Kiểm tra xem patient_id có giá trị hay không
         if ($patient_id !== null) {
             $sql = "INSERT INTO appointments (
-                specialty_id, employee_id, date_slot, time_id,
+                service_id, employee_id, date_slot, time_id,
                 patient_name, patient_gender, patient_dob, patient_phone, patient_email, patient_description,
                 patient_id, status, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $params = "iiiissssssiis";
         } else {
             $sql = "INSERT INTO appointments (
-                specialty_id, employee_id, date_slot, time_id,
+                service_id, employee_id, date_slot, time_id,
                 patient_name, patient_gender, patient_dob, patient_phone, patient_email, patient_description,
                 status, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $params = "iiiissssssis";
@@ -595,7 +595,7 @@ class AppointmentModel extends Database {
             FROM appointments AS a
                      JOIN employees AS e ON e.employee_id = a.employee_id
                      JOIN time_slots AS ts ON ts.time_id = a.time_id
-                     JOIN specialties AS s ON s.specialty_id = a.specialty_id
+                     JOIN services AS s ON s.service_id = a.service_id
             WHERE a.patient_phone = ? OR a.patient_id = ?
             ORDER BY a.date_slot ASC";
 
@@ -630,7 +630,7 @@ class AppointmentModel extends Database {
             FROM appointments AS a
                      JOIN employees AS e ON e.employee_id = a.employee_id
                      JOIN time_slots AS ts ON ts.time_id = a.time_id
-                     JOIN specialties AS s ON s.specialty_id = a.specialty_id
+                     JOIN services AS s ON s.service_id = a.service_id
             WHERE  a.status = 2 AND a.patient_phone = ? 
             ORDER BY a.date_slot ASC";
 

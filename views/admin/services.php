@@ -29,12 +29,12 @@ if (!isset($_SESSION['admin_name'])) {
     <?php include 'sidebar.php' ?>
     <div class="be-content">
         <div class="page-head">
-            <h2 class="page-head-title" style="font-size: 25px">Danh sách chuyên khoa</h2>
+            <h2 class="page-head-title" style="font-size: 25px">Danh sách dịch vụ</h2>
             <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb page-head-nav">
                     <li class="breadcrumb-item"><a href="<?php echo BASE_URL ?>/index.php?controller=home&action=home_admin">Trang chủ</a></li>
-                    <li class="breadcrumb-item">Quán lý chuyên khoa</li>
-                    <li class="breadcrumb-item active">Danh sách chuyên khoa</li>
+                    <li class="breadcrumb-item">Quán lý dịch vụ</li>
+                    <li class="breadcrumb-item active">Danh sách dịch vụ</li>
                 </ol>
             </nav>
         </div>
@@ -69,7 +69,7 @@ if (!isset($_SESSION['admin_name'])) {
                                 <div class="filter-container">
                                     <div class="row">
                                         <div class="col-12">
-                                            <input id="searchInput" placeholder="Tìm kiếm tên chuyên khoa..."
+                                            <input id="searchInput" placeholder="Tìm kiếm tên dịch vụ..."
                                                    class="form-control" autocomplete="off">
                                         </div>
                                     </div>
@@ -82,7 +82,7 @@ if (!isset($_SESSION['admin_name'])) {
                                     <thead>
                                     <tr>
                                         <th style="width:2%;">STT</th>
-                                        <th style="width:20%;">Tên chuyên khoa</th>
+                                        <th style="width:20%;">Tên Dịch vụ</th>
                                         <th style="width:60%;">Mô tả</th>
                                         <th style="width:15%;">Trạng thái</th>
                                     </tr>
@@ -108,13 +108,13 @@ if (!isset($_SESSION['admin_name'])) {
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Thêm mới chuyên khoa khám</h1>
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Thêm mới dịch vụ</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label for="specialtyName" class="form-label">Tên chuyên khoa</label>
-                        <input type="text" class="form-control" id="specialtyName" maxlength="255" placeholder="Nhập tên chuyên khoa mới">
+                        <label for="specialtyName" class="form-label">Tên dịch vụ</label>
+                        <input type="text" class="form-control" id="specialtyName" maxlength="255" placeholder="Nhập tên dịch vụ mới">
                         <span style="margin-left: 10px; color: red" id="errorSpecialtyName"></span>
                     </div>
                     <div class="mb-3">
@@ -193,7 +193,7 @@ if (!isset($_SESSION['admin_name'])) {
                                 </button>
                                 <div class='dropdown-menu dropdown-menu-right' role='menu'>
                                     <a class='dropdown-item '
-                                       href='<?php echo BASE_URL ?>/index.php?controller=specialty&action=get_one&specialtyId=${specialty.specialty_id}'>Xem chi tiết</a>
+                                       href='<?php echo BASE_URL ?>/index.php?controller=specialty&action=get_one&specialtyId=${specialty.service_id}'>Xem chi tiết</a>
 <!--                                    <a class='dropdown-item' href='#'>Xóa</a>-->
                                 </div>
                             </div>
@@ -207,7 +207,7 @@ if (!isset($_SESSION['admin_name'])) {
             if(currentPage === Math.ceil(listSpecialties.length / itemsPerPage)) {
                 end = listSpecialties.length
             }
-            paginationInfo.innerHTML = `${start + 1} - ${end} trong số ${items.length} chuyên khoa`;
+            paginationInfo.innerHTML = `${start + 1} - ${end} trong số ${items.length} dịch vụ`;
         }
 
         function setupPagination(items, wrapper, rowsPerPage) {
@@ -380,7 +380,7 @@ if (!isset($_SESSION['admin_name'])) {
 
             // Kiểm tra tên chuyên khoa
             if (!specialtyName.value || specialtyName.value.length > 150) {
-                errorSpecialtyName.textContent = 'Vui lòng nhập tên chuyên khoa';
+                errorSpecialtyName.textContent = 'Vui lòng nhập tên dịch vụ';
                 valid = false;
             }
 

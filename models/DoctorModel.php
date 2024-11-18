@@ -24,7 +24,7 @@ class DoctorModel  extends BaseModel {
                        e.phone AS phone,
                        e.address AS address,
                        e.status AS status,
-                       e.specialty_id AS specialty_id,
+                       e.service_id AS service_id,
                        p.name AS positionName,
                        e.employee_code AS employee_code
                 FROM employees AS e
@@ -38,7 +38,7 @@ class DoctorModel  extends BaseModel {
     /**
      * @throws Exception
      */
-    public function updateDoctor($doctor_id, $name, $dob, $email, $phone, $gender, $address, $specialty_id, $status, $avt, $update_by)
+    public function updateDoctor($doctor_id, $name, $dob, $email, $phone, $gender, $address, $service_id, $status, $avt, $update_by)
     {
         // Kiểm tra số điện thoại đã tồn tại chưa và không thuộc về nhân viên hiện tại
         $currentPhone = $this->getById($doctor_id)['phone'];
@@ -53,7 +53,7 @@ class DoctorModel  extends BaseModel {
         $updated_at = date("Y-m-d H:i:s");
 
         $sql = "UPDATE employees SET
-                specialty_id = ?,
+                service_id = ?,
                 name = ?,
                 phone = ?,
                 email = ?,
@@ -72,7 +72,7 @@ class DoctorModel  extends BaseModel {
         }
 
         mysqli_stmt_bind_param($stmt, 'issssisissii',
-            $specialty_id, $name, $phone, $email, $dob, $gender,
+            $service_id, $name, $phone, $email, $dob, $gender,
             $address, $status, $updated_at, $avt, $update_by, $doctor_id);
 
         $result = mysqli_stmt_execute($stmt);
@@ -87,7 +87,7 @@ class DoctorModel  extends BaseModel {
         ];
     }
 
-    public function addDoctor($name, $dob, $email, $phone, $gender, $address, $specialty_id, $status, $avt, $update_by): array
+    public function addDoctor($name, $dob, $email, $phone, $gender, $address, $service_id, $status, $avt, $update_by): array
     {
         // Kiểm tra số điện thoại đã tồn tại chưa
         if ($this->checkPhoneExists($phone)) {
@@ -102,9 +102,9 @@ class DoctorModel  extends BaseModel {
         $hashedPassword = password_hash('Abc12345', PASSWORD_BCRYPT, ['cost' => 12]);
         $role_id = 2;
         $position_id = 1;
-        // Bước 1: Thêm bác sĩ mà không có employee_code
+        // Bước 1: Thêm  mà không có employee_code
         $sql = "INSERT INTO employees (
-                   specialty_id,
+                   service_id,
                    position_id,
                    role_id,
                    name,
@@ -126,7 +126,7 @@ class DoctorModel  extends BaseModel {
         }
 
         mysqli_stmt_bind_param($stmt, 'iiisssssisissi',
-            $specialty_id, $position_id, $role_id, $name, $hashedPassword, $phone, $email, $dob, $gender,
+            $service_id, $position_id, $role_id, $name, $hashedPassword, $phone, $email, $dob, $gender,
             $address, $status, $created_at, $avt, $update_by);
         $result = mysqli_stmt_execute($stmt);
         if ($result === false) {
@@ -155,7 +155,7 @@ class DoctorModel  extends BaseModel {
 
         return [
             'success' => true,
-            'message' => 'Bác sĩ đã được thêm thành công.'
+            'message' => 'Chuyên gia đã được thêm thành công.'
         ];
     }
 
@@ -163,10 +163,10 @@ class DoctorModel  extends BaseModel {
     {
         $sql = "SELECT e.employee_id, e.name as doctorName, e.avt, s.name as specialtyName
                 FROM employees AS e
-                JOIN specialties AS s ON e.specialty_id = s.specialty_id
+                JOIN services AS s ON e.service_id = s.service_id
                 JOIN roles AS r ON r.role_id = e.role_id
                 WHERE r.role_name = 'doctor'
-                LIMIT 4";
+                LIMIT 3";
 
         $query = $this->_query($sql);
         $data = [];
@@ -192,24 +192,9 @@ class DoctorModel  extends BaseModel {
                     e.status AS status
                 FROM employees AS e
                 JOIN positions AS p ON e.position_id = p.position_id
-                JOIN specialties AS s ON e.specialty_id = s.specialty_id
+                JOIN services AS s ON e.service_id = s.service_id
                 JOIN roles AS r ON e.role_id = r.role_id
                 WHERE r.role_name = LOWER('doctor') ORDER BY e.employee_id DESC";
-
-        $query = $this->_query($sql);
-        $data = [];
-        while ($result = mysqli_fetch_assoc($query)) {
-            $data[] = $result;
-        }
-        return $data;
-    }
-
-    public function getCountDoctors(): array
-    {
-        $sql = "SELECT count(*)
-                FROM employees AS e
-                JOIN roles AS r ON r.role_id = e.role_id
-                WHERE r.role_name = 'doctor'";
 
         $query = $this->_query($sql);
         $data = [];
@@ -223,9 +208,9 @@ class DoctorModel  extends BaseModel {
     {
         $sql = "SELECT e.employee_id, e.name
                 FROM employees AS e
-                JOIN specialties AS s ON e.specialty_id = s.specialty_id
+                JOIN services AS s ON e.service_id = s.service_id
                 JOIN roles AS r ON r.role_id = e.role_id
-                WHERE r.role_name = 'doctor' AND e.status = 1 AND s.specialty_id = $specialty";
+                WHERE r.role_name = 'doctor' AND e.status = 1 AND s.service_id = $specialty";
 
         $query = $this->_query($sql);
         $data = [];

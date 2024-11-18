@@ -16,8 +16,8 @@ if (!isset($_SESSION['admin_name'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="assets/img/logo.png" rel="icon">
-    <title>Danh sách bệnh nhân</title>
+    <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
+    <title>Danh sách khách hàng</title>
     <?php include 'import-link-tag.php' ?>
 </head>
 <body>
@@ -28,12 +28,12 @@ if (!isset($_SESSION['admin_name'])) {
     <?php include 'sidebar.php' ?>
     <div class="be-content">
         <div class="page-head">
-            <h2 class="page-head-title" style="font-size: 25px">Danh sách bệnh nhân</h2>
+            <h2 class="page-head-title" style="font-size: 25px">Danh sách khách hàng</h2>
             <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb page-head-nav">
                     <li class="breadcrumb-item"><a href="index.php">Trang chủ</a></li>
-                    <li class="breadcrumb-item">Quán lý bệnh nhân</li>
-                    <li class="breadcrumb-item active">Danh sách bệnh nhân</li>
+                    <li class="breadcrumb-item">Quán lý khách hàng</li>
+                    <li class="breadcrumb-item active">Danh sách khách hàng</li>
                 </ol>
             </nav>
         </div>
@@ -78,7 +78,7 @@ if (!isset($_SESSION['admin_name'])) {
                                     <thead>
                                     <tr>
                                         <th style="width:2%;">STT</th>
-                                        <th style="width:10%;">Tên bệnh nhân</th>
+                                        <th style="width:10%;">Tên khách hàng</th>
                                         <th style="width:8%;">Giới tính</th>
                                         <th style="width:10%;">Ngày sinh</th>
                                         <th style="width:10%;">Liên hệ</th>
@@ -167,9 +167,9 @@ if (!isset($_SESSION['admin_name'])) {
                                                         </svg>
                                 </button>
                             <div class='dropdown-menu dropdown-menu-right' role='menu'>
-                           <!--       <a href="<?php echo BASE_URL ?>/index.php?controller=patient&action=detail&patient_id=${patient.patient_id}"
+                           <!--       <a href="<?php echo BASE_URL ?>/index.php?controller=customer&action=detail&patient_id=${patient.patient_id}"
                                    type='button' class='dropdown-item'>Xem chi tiết</a> -->
-                               <form action="<?php echo BASE_URL ?>/index.php?controller=patient&action=detail_patient" method="POST">
+                               <form action="<?php echo BASE_URL ?>/index.php?controller=customer&action=detail_patient" method="POST">
                                     <input type="hidden" name="patient_id" value="${patient.patient_id}">
                                     <button class="dropdown-item" style="border: none ;background-color: transparent; with:100%" type="submit" id="getAppointment">Chi tiết</button>
                                </form>

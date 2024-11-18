@@ -3,7 +3,7 @@ class Database{
     const HOST = 'localhost';
     const USERNAME = 'root';
     const PASSWORD = '';
-    const DATABASE = 'medicare';
+    const DATABASE = 'cent_beauty';
 
 //    product
 //    const HOST = 'localhost';

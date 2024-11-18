@@ -12,8 +12,8 @@ if (!isset($_SESSION['admin_name'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="assets/img/logo.png" rel="icon">
-    <title>Chi tiết bác sĩ</title>
+    <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
+    <title>Chi tiết chuyên gia</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <?php include 'import-link-tag.php'?>
 <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"-->
@@ -129,7 +129,7 @@ if (!isset($_SESSION['admin_name'])) {
                         </div>
                         <br>
                         <div class="col-md-12">
-                            <label class="labels">Chuyên khoa</label>
+                            <label class="labels">Dịch vụ</label>
                             <div id="docUpPosition" class="form-control"
                                  style="height: 50px; background-color: #eee; line-height: 30px; font-size: 13px">
                                 <?php echo $employee['specialty_name'] ?? " không có" ?>

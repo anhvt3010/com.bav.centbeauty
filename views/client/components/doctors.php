@@ -2,7 +2,7 @@
     <div class="container" data-aos="fade-up">
 
       <div class="section-title">
-        <h2>Bác sĩ</h2>
+        <h2>Chuyên gia</h2>
         <p>Các chuyên gia y tế tại trung tâm chúng tôi có kinh nghiệm và uy tín, sẵn lòng hỗ trợ bạn trong mọi vấn đề về sức khỏe.</p>
       </div>
 

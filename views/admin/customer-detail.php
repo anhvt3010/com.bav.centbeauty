@@ -16,8 +16,8 @@ if (!isset($_SESSION['admin_name'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="assets/img/logo.png" rel="icon">
-    <title>Chi tiết bệnh nhân</title>
+    <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
+    <title>Chi tiết khách hàng</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <?php include 'import-link-tag.php' ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -50,12 +50,12 @@ if (!isset($_SESSION['admin_name'])) {
     <?php include 'sidebar.php' ?>
     <div class="be-content">
         <div class="page-head">
-            <h2 class="page-head-title" style="font-size: 25px">Chi tiết bệnh nhân</h2>
+            <h2 class="page-head-title" style="font-size: 25px">Chi tiết khách hàng</h2>
             <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb page-head-nav">
                     <li class="breadcrumb-item"><a href="index.php">Trang chủ</a></li>
-                    <li class="breadcrumb-item">Quán lý bệnh nhân</li>
-                    <li class="breadcrumb-item active">Danh sách bệnh nhân</li>
+                    <li class="breadcrumb-item">Quán lý khách hàng</li>
+                    <li class="breadcrumb-item active">Danh sách khách hàng</li>
                     <li class="breadcrumb-item active">Chi tiết</li>
                 </ol>
             </nav>
@@ -72,7 +72,7 @@ if (!isset($_SESSION['admin_name'])) {
                                 </h4>
                                 <div class="mb-3 row">
                                     <div class="col-4">
-                                        <label for="" class="form-label">Tên bệnh nhân</label>
+                                        <label for="" class="form-label">Tên khách hàng</label>
                                         <input type="text" class="form-control" value="<?php echo $patient['name'] ?>"
                                                disabled>
                                     </div>
@@ -84,7 +84,7 @@ if (!isset($_SESSION['admin_name'])) {
                                     <div class="col-4">
                                         <label for="" class="form-label">Ngày sinh</label>
                                         <input type="text" class="form-control" id="specialtyName"
-                                               placeholder="Nhập tên chuyên khoa" value="<?php echo $patient['dob'] ?>"
+                                               placeholder="Nhập tên dịch vụ" value="<?php echo $patient['dob'] ?>"
                                                disabled>
                                     </div>
                                 </div>
@@ -202,14 +202,14 @@ if (!isset($_SESSION['admin_name'])) {
 
             document.getElementById('loading-spinner').style.display = 'block';
             $.ajax({
-                url: '<?php echo BASE_URL ?>/index.php?controller=patient&action=update_status',
+                url: '<?php echo BASE_URL ?>/index.php?controller=customer&action=update_status',
                 type: 'POST',
                 data: formData,
                 contentType: false, // Không set contentType
                 processData: false, // Không xử lý dữ liệu
                 success: function(response) {
                     console.log(response);
-                    success_toast('<?php echo BASE_URL ?>/index.php?controller=patient&action=index')
+                    success_toast('<?php echo BASE_URL ?>/index.php?controller=customer&action=index')
                 },
                 error: function() {
                     failed_toast()
