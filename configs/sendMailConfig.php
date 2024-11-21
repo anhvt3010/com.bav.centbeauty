@@ -13,13 +13,13 @@ function send_mail($specialtyName, $doctorName, $dateSlot, $timeSlot, $patientNa
         $mail->Host       = 'smtp.gmail.com';               // Địa chỉ SMTP server
         $mail->SMTPAuth   = true;                             // Kích hoạt SMTP authentication
         $mail->Username   = 'medicarephongkham138@gmail.com';         // SMTP username
-        $mail->Password   = 'waxt ruwp qkpd pyvp';                  // SMTP password
+        $mail->Password   = 'jusb hloh aaod icxm';                  // SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;   // Kích hoạt mã hóa TLS
         $mail->Port       = 587;                              // Cổng TCP để kết nối
         $mail->CharSet = 'UTF-8';
 
         // Người gửi
-        $mail->setFrom('medicarephongkham138@gmail.com', 'Phòng khám Medicare');
+        $mail->setFrom('medicarephongkham138@gmail.com', 'Cent Beauty');
 
         // Người nhận
         $mail->addAddress($patientEmail, $patientName);       // Thêm người nhận
@@ -68,7 +68,7 @@ function send_mail($specialtyName, $doctorName, $dateSlot, $timeSlot, $patientNa
         <body>
             <div class="email-container">
                 <div class="email-header">
-                    <h2>Phòng khám Medicare</h2>
+                    <h2>Cent Beauty</h2>
                 </div>
                 <div class="email-body">
                     <p>Xin chào <strong>' . $patientName . '</strong>,</p>
@@ -100,10 +100,10 @@ function send_mail($specialtyName, $doctorName, $dateSlot, $timeSlot, $patientNa
                             <td>' . $patientDescription . '</td>
                         </tr>
                     </table>
-                    <p>Vui lòng đến đúng giờ và mang theo các giấy tờ cần thiết.</p>
+                    <p>Vui lòng đến đúng giờ. Cảm ơn bạn đã tin tưởng!</p>
                 </div>
                 <div class="email-footer">
-                    <p>&copy; 2023 Phòng khám Medicare. Mọi quyền được bảo lưu.</p>
+                    <p>&copy; 2023 Cent Beauty. Mọi quyền được bảo lưu.</p>
                 </div>
             </div>
         </body>
@@ -124,12 +124,12 @@ function confirm_mail($specialtyName, $doctorName, $dateSlot, $timeSlot, $patien
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
         $mail->Username   = 'medicarephongkham138@gmail.com';
-        $mail->Password   = 'waxt ruwp qkpd pyvp';
+        $mail->Password   = 'jusb hloh aaod icxm';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
         $mail->CharSet = 'UTF-8';
 
-        $mail->setFrom('medicarephongkham138@gmail.com', 'Phòng khám Medicare');
+        $mail->setFrom('medicarephongkham138@gmail.com', 'Cent Beauty');
 
         $mail->addAddress($patientEmail, $patientName);
 
@@ -177,7 +177,7 @@ function confirm_mail($specialtyName, $doctorName, $dateSlot, $timeSlot, $patien
         <body>
             <div class="email-container">
                 <div class="email-header">
-                    <h2>Phòng khám Medicare</h2>
+                    <h2>Cent Beauty</h2>
                 </div>
                 <div class="email-body">
                     <p>Xin chào <strong>' . $patientName . '</strong>,</p>
@@ -211,7 +211,7 @@ function confirm_mail($specialtyName, $doctorName, $dateSlot, $timeSlot, $patien
                     <p>Vui lòng đến đúng giờ và mang theo các giấy tờ cần thiết.</p>
                 </div>
                 <div class="email-footer">
-                    <p>&copy; 2023 Phòng khám Medicare. Mọi quyền được bảo lưu.</p>
+                    <p>&copy; 2023 Cent Beauty. Mọi quyền được bảo lưu.</p>
                 </div>
             </div>
         </body>
@@ -232,17 +232,17 @@ function result_mail($patientName, $patientEmail, $link) {
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
         $mail->Username   = 'medicarephongkham138@gmail.com';
-        $mail->Password   = 'waxt ruwp qkpd pyvp';
+        $mail->Password   = 'jusb hloh aaod icxm';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
         $mail->CharSet = 'UTF-8';
 
-        $mail->setFrom('medicarephongkham138@gmail.com', 'Phòng khám Medicare');
+        $mail->setFrom('medicarephongkham138@gmail.com', 'Cent Beauty');
         $mail->addAddress($patientEmail, $patientName);
 
         // Nội dung Email
         $mail->isHTML(true);
-        $mail->Subject = 'Thông báo kết quả lịch khám';
+        $mail->Subject = 'Thông báo kết quả';
         $mail->Body = '
         <html>
         <head>
@@ -273,15 +273,15 @@ function result_mail($patientName, $patientEmail, $link) {
         <body>
             <div class="email-container">
                 <div class="email-header">
-                    <h2>Phòng khám Medicare</h2>
+                    <h2>Cent Beauty</h2>
                 </div>
                 <div class="email-body">
                     <p>Xin chào <strong>' . $patientName . '</strong>,</p>
-                    <p>Lịch khám của bạn đã có kết quả. Vui lòng truy cập link sau để xem kết quả:</p>
+                    <p>Cảm ơn bạn đã sử dụng dịch v cuủa Cent Beauty. Vui lòng truy cập link sau để xem kết quả:</p>
                     <p><a href="'. $link .'">Xem kết quả</a></p>
                 </div>
                 <div class="email-footer">
-                    <p>&copy; 2023 Phòng khám Medicare. Mọi quyền được bảo lưu.</p>
+                    <p>&copy; 2023 Cent Beauty. Mọi quyền được bảo lưu.</p>
                 </div>
             </div>
         </body>

@@ -164,7 +164,7 @@ class DoctorModel  extends BaseModel {
                 FROM employees AS e
                 JOIN services AS s ON e.service_id = s.service_id
                 JOIN roles AS r ON r.role_id = e.role_id
-                WHERE r.role_name = 'doctor'
+                WHERE r.role_name = 'employee'
                 LIMIT 3";
 
         $query = $this->_query($sql);

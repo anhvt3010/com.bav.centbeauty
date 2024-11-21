@@ -5,43 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d135579f-d2e6-42b6-af04-33dcd6f1265a" name="Changes" comment="update code">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/df8db5aa-7ca3-4757-916b-addbc52015d9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/df8db5aa-7ca3-4757-916b-addbc52015d9.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/validate-appointment.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/validate-appointment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/DoctorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/DoctorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/SpecialtyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/SpecialtyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/AppointmentModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/AppointmentModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/AuthModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/AuthModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/sendMailConfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/configs/sendMailConfig.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/DoctorModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/DoctorModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/EmployeeModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/EmployeeModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/SpecialtyModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/SpecialtyModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/UserModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/UserModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/404.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/404.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/appointment-confirm.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/appointment-confirm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/appointment-detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/appointment-detail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/appointment-expired.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/appointment-expired.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/appointment-today.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/appointment-today.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/appointments.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/appointments.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/doctor-add.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/doctor-add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/doctors.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/doctors.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/employees.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/employees.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/services.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/sidebar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/specialty-detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/specialty-detail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/client/appointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/client/appointment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/client/blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/client/blog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/client/component_cent/header_content.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/client/component_cent/header_content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/client/component_cent/offMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/client/component_cent/offMenu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/client/components/form-information.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/client/components/form-information.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/client/components/form-time.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/client/components/form-time.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/client/components/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/client/components/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/client/components/select-specialty.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/client/components/select-specialty.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/client/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/client/contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/client/history.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/client/history.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/client/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/client/profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/client/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/client/search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/client/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/client/services.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +151,7 @@
       <workItem from="1731939328980" duration="12289000" />
       <workItem from="1732014709353" duration="2885000" />
       <workItem from="1732110489454" duration="14954000" />
-      <workItem from="1732194016210" duration="11607000" />
+      <workItem from="1732194016210" duration="12554000" />
     </task>
     <task id="LOCAL-00002" summary="fixbug">
       <option name="closed" value="true" />
@@ -259,7 +225,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731956781348</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="update code">
+      <option name="closed" value="true" />
+      <created>1732209399496</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1732209399496</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
