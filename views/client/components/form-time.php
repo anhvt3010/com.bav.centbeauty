@@ -16,8 +16,8 @@
     </div>
     <div class="col-md-6">
         <div class="row">
-            <h5 class="mb-1">Thời gian khám</h5>
-            <p>Ngày khám (*)</p>
+            <h5 class="mb-1">Thời gian đặt lịch</h5>
+            <p>Ngày hẹn (*)</p>
             <div class="col-12 mb-3" id="format-btn-date">
                 <div class="btn-select-day" onclick="selectDateSlot(this)">
                     <div class="date-format" id="todayBtn"></div>
@@ -46,16 +46,16 @@
             </div>
             <span id="error-date" class="ml-2" style="color: red;"></span>
             <!-- Chọn gio khám -->
-            <p>Giờ khám (*)</p>
+            <p>Giờ hẹn (*)</p>
             <div class="col-12" id="display-time-slot">
             </div>
             <input type="text" id="time-slot" hidden="hidden">
             <input type="text" id="selected-time-slot" hidden="hidden">
             <span id="error-time" class="ml-2" style="color: red;"></span>
-            <strong style="font-style: italic; font-size: 13px">Lưu ý: Thời gian khám trên chỉ là thời gian dự kiến,
+            <strong style="font-style: italic; font-size: 13px">Lưu ý: Thời gian đặt lịch trên chỉ là thời gian dự kiến,
                 tổng
                 đài sẽ liên hệ xác nhận thời
-                gian khám chính xác tới quý khách sau khi quý khách đặt hẹn</strong>
+                gian hẹn chính xác tới quý khách sau khi quý khách đặt hẹn</strong>
         </div>
     </div>
     <hr>

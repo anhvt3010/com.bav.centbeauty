@@ -61,7 +61,7 @@
                         foreach ($listSpecialties as $specialty) {
                             echo "<li class='filter-item-specialty-specialty items p-2' 
                                       data-filter='" . htmlspecialchars($specialty['name']) . "' 
-                                      data-value='" . htmlspecialchars($specialty['specialty_id']) . "'>
+                                      data-value='" . htmlspecialchars($specialty['service_id']) . "'>
                                         " . htmlspecialchars($specialty['name']) . "
                                         <br>
                                         <small class='text-muted'>" . htmlspecialchars($specialty['description'] ?? '') . "</small>

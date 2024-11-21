@@ -84,6 +84,7 @@ if (!isset($_SESSION['admin_name'])) {
                                         <th style="width:2%;">STT</th>
                                         <th style="width:20%;">Tên Dịch vụ</th>
                                         <th style="width:60%;">Mô tả</th>
+                                        <th style="width:10%;">Giá</th>
                                         <th style="width:15%;">Trạng thái</th>
                                     </tr>
                                     </thead>
@@ -121,6 +122,11 @@ if (!isset($_SESSION['admin_name'])) {
                         <label for="specialtyDescription" class="form-label">Mô tả ngắn</label>
                         <textarea class="form-control" id="specialtyDescription" rows="5"></textarea>
                         <span style="margin-left: 10px; color: red" id="errorSpecialtyDesciption"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="specialtyName" class="form-label">Giá</label>
+                        <input type="text" class="form-control" id="servicePrice" maxlength="255" placeholder="Nhập giá dịch vụ">
+                        <span style="margin-left: 10px; color: red" id="errorServicePrice"></span>
                     </div>
                     <div class="mb-3">
                         <label for="specialtyStatus" class="form-label">Trạng thái</label>
@@ -179,6 +185,9 @@ if (!isset($_SESSION['admin_name'])) {
                         </td>
                         <td>
                             <span style='font-size: 15px; color: black'>${specialty.description ?? 'Không có mô tả'}</span>
+                        </td>
+                        <td>
+                            <span>${specialty.price}</span>
                         </td>
                         <td class='milestone'>
                             <div>${specialty.status == 1 ? 'Đang hoạt động' : 'Đã đóng'}</div>
@@ -365,6 +374,7 @@ if (!isset($_SESSION['admin_name'])) {
 
         // xu ly them moi
         const specialtyName = document.getElementById('specialtyName');
+        const servicePrice = document.getElementById('servicePrice');
         const specialtyDescription = document.getElementById('specialtyDescription');
         const specialtyStatus = document.getElementById('specialtyStatus');
         const errorSpecialtyName = document.getElementById('errorSpecialtyName');
@@ -390,6 +400,12 @@ if (!isset($_SESSION['admin_name'])) {
                 valid = false;
             }
 
+            // Kiểm tra mô tả chuyên khoa
+            if (!servicePrice.value) {
+                errorServicePrice.textContent = 'Vui lòng giá.';
+                valid = false;
+            }
+
             // Nếu dữ liệu hợp lệ, gửi dữ liệu
             if (valid) {
                 console.log('specialtyName: ', specialtyName.value);
@@ -403,7 +419,8 @@ if (!isset($_SESSION['admin_name'])) {
                     data: {
                         specialtyName: specialtyName.value,
                         specialtyDescription: specialtyDescription.value,
-                        specialtyStatus: specialtyStatus.value
+                        specialtyStatus: specialtyStatus.value,
+                        servicePrice: servicePrice.value
                     },
                     success: function(response) {
                         success_toast('Thêm mới thành công.')

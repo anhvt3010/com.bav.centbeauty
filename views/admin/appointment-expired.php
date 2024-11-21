@@ -62,8 +62,8 @@ if (!isset($_SESSION['admin_name'])) {
                                             <?php
                                             foreach ($listSpecialties as $specialty) {
                                                 // Kiểm tra nếu id của chuyên khoa hiện tại trùng với $specialtySelected
-                                                $selected = ($specialty['specialty_id'] == $specialtySelected) ? 'selected' : '';
-                                                echo "<option value='" . htmlspecialchars($specialty['specialty_id']) . "' $selected>" . htmlspecialchars($specialty['name']) . "</option>";
+                                                $selected = ($specialty['service_id'] == $specialtySelected) ? 'selected' : '';
+                                                echo "<option value='" . htmlspecialchars($specialty['service_id']) . "' $selected>" . htmlspecialchars($specialty['name']) . "</option>";
                                             }
                                             ?>
                                         </select>
@@ -73,12 +73,12 @@ if (!isset($_SESSION['admin_name'])) {
 
                             <div class="col-3 table-filters pb-0">
                                 <div class="filter-container">
-                                    <label class="control-label table-filter-title">Lọc chuyên gia:</label>
+                                    <label class="control-label table-filter-title">Lọc nhân viên:</label>
                                     <form>
                                         <select class="select2" name="doctor"
                                                 style="height: 50px; border-color: #cac9c9; padding: 10px; width:250px ">
                                             <option value="All" <?php echo($doctorSelected == 'All' ? 'selected' : ''); ?>>
-                                                Tất cả chuyên gia
+                                                Tất cả nhân viên
                                             </option>
                                             <?php
                                             foreach ($listDoctors as $doctor) {

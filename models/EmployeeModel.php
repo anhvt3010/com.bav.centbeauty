@@ -142,7 +142,7 @@ class EmployeeModel  extends BaseModel {
 
         $created_at = date("Y-m-d H:i:s");
         $hashedPassword = password_hash('Abc12345', PASSWORD_BCRYPT, ['cost' => 12]);
-        $role_id = 3;
+        $role_id = 2;
 
         $sql = "INSERT INTO employees (
                position_id,
@@ -177,13 +177,8 @@ class EmployeeModel  extends BaseModel {
         $employee_id = mysqli_insert_id($this->connection);
 
         // Bước 2: Tạo employee_code và cập nhật
-        if ($position_id == 2) {
-            $employee_code = 'NUR' . $employee_id;
-        } elseif ($position_id == 3) {
-            $employee_code = 'REC' . $employee_id;
-        } else {
-            $employee_code = 'EMP' . $employee_id;
-        }
+        $employee_code = 'EMP' . $employee_id;
+
 
         $sqlUpdate = "UPDATE employees SET employee_code = ? WHERE employee_id = ?";
         $stmtUpdate = mysqli_prepare($this->connection, $sqlUpdate);

@@ -17,12 +17,12 @@
 <body>
 <?php include "components/topbar.php" ?>
 <?php include "components/header.php" ?>
-<main class="container p-0" style="margin-top: 150px!important; margin-bottom: 30px">
+<main class="container p-0" style="margin-top: 150px!important; margin-bottom: 30px; height: 500px">
     <div class="main-content container-fluid" style="margin-top: -30px">
         <div class="row">
             <div class="col-md-12 p-0">
                 <div class="page-head p-0 mb-3">
-                    <h2 class="page-head-title">Lịch sử khám bệnh</h2>
+                    <h2 class="page-head-title">Lịch sử trải nghiệm</h2>
                 </div>
                 <div class="card card-table">
                     <div class="card-body">
@@ -35,9 +35,8 @@
                                     <th style="width:12%;">Khách hàng</th>
                                     <th style="width:12%;">Thông tin liên hệ</th>
                                     <th style="width:15%;">Dịch vụ</th>
-                                    <th style="width:10%;">Thời gian khám</th>
+                                    <th style="width:10%;">Thời gian hẹn</th>
                                     <th style="width:10%;" class="text-center">Trạng thái</th>
-                                    <th style="width:10%;" class="text-center">Kết quả</th>
                                     <th style="width:2%;"></th>
                                 </tr>
                                 </thead>
@@ -114,22 +113,6 @@
                                             ?>
                                             <div style="width: 150px; color: whitesmoke; font-weight: normal;
                                                          height: 30px; line-height: 30px; background-color: <?php echo $statusInfo[0]; ?>;">
-                                                <?php echo $statusInfo[1]; ?>
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <?php
-                                            $statusColors = [
-                                                0 => ['#d3d3d3', 'Chờ kết quả'],
-                                                1 => ['#34a853', 'Đã có kết quả'],
-                                                'default' => ['#d3d3d3', 'Không xác định']
-                                            ];
-
-                                            // Chọn trạng thái dựa trên có kết quả hay không
-                                            $statusInfo = $appointment['result'] ? $statusColors[1] : $statusColors[0];
-                                            ?>
-                                            <div style="width: 150px; height: 30px; line-height: 30px;
-                                                    color: whitesmoke; font-weight: normal; background-color: <?php echo $statusInfo[0]; ?>;">
                                                 <?php echo $statusInfo[1]; ?>
                                             </div>
                                         </td>

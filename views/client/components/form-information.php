@@ -60,7 +60,7 @@
 <!--    <div style="width: 50%; margin: 0">-->
     <div class="col-md-6 mb-4">
     <textarea class="form-control" id="patient-description" rows="9" style="resize: none" maxlength="500"
-              placeholder="Vui lòng mô tả rõ triệu chứng của bạn và nhu cầu thăm khám (*)"></textarea>
+              placeholder="Ghi chú"></textarea>
         <span id="error-description" class="ml-2" style="color: red;"></span>
     </div>
     <hr>

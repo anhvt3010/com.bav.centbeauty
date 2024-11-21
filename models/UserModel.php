@@ -1,7 +1,7 @@
 <?php
 require_once 'BaseModel.php';
 class UserModel extends BaseModel {
-    const TABLE_NAME = "patients";
+    const TABLE_NAME = "customers";
 
     protected $connection = null;
 

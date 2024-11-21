@@ -112,7 +112,7 @@ if (!isset($_SESSION['admin_name'])) {
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="" class="form-label">Mô tả triệu chứng của bệnh nhân</label>
+                            <label for="" class="form-label">Dịch vụ thêm</label>
                             <textarea class="form-control" rows="3" disabled><?php echo $appointment['patient_description'] ?></textarea>
                         </div>
                         <div class="mb-3 row">
@@ -156,7 +156,7 @@ if (!isset($_SESSION['admin_name'])) {
                                     <div class="modal-dialog modal-lg" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="resultModalLabel">Hồ sơ khám bệnh</h5>
+                                                <h5 class="modal-title" id="resultModalLabel">Hồ sơ sử dụng dịch vụ</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>

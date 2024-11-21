@@ -2,7 +2,17 @@
 // Lấy giá trị của 'action' từ URL
 $action = isset($_GET['action']) ? $_GET['action'] : 'home';
 ?>
+<style>
+    .header__top a {
+        color: #000000; /* Màu chữ bình thường */
+        text-decoration: none; /* Bỏ gạch chân nếu cần */
+    }
 
+    .header__top a:hover {
+        color: #000000; /* Màu chữ khi hover */
+        text-decoration: none; /* Bỏ gạch chân khi hover */
+    }
+</style>
 <header class="header">
     <div class="header__top">
         <div class="container">
@@ -15,15 +25,36 @@ $action = isset($_GET['action']) ? $_GET['action'] : 'home';
                     </ul>
                 </div>
                 <div class="col-lg-4">
-                    <div class="header__top__right">
+                    <div class="header__top__right" style="padding-top: 13px; text-align: right; color: whitesmoke; ">
                         <?php
-                        if (!isset($_SESSION['user_phone'])) {
-                            echo
-                                '<a href="'. LOGIN_CLIENT_URL .'" class=" order-last order-lg-0" style="color:white;">
-                  <i style="color: white;" class="fa fa-sign-in" aria-hidden="true"></i>
-                  Đăng nhập
-                </a>';
-                        }
+                            if (!isset($_SESSION['user_phone'])) {
+                                echo
+                                    '<a href="'. LOGIN_CLIENT_URL .'" class=" order-last order-lg-0" style="color:white;">
+                                      <i style="color: white;" class="fa fa-sign-in" aria-hidden="true"></i>
+                                      Đăng nhập
+                                    </a>';
+                            } else {
+                                $username =  $_SESSION['user_name'];
+
+                                // Hiển thị số điện thoại người dùng
+                                echo '<div class="dropdown order-last order-lg-0">
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            ' . htmlspecialchars($username) . '
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item" href="'. BASE_URL .'/index.php?controller=customer&action=profile">
+                                    Thông tin cá nhân</a>
+                            </li>
+                            <li><a class="dropdown-item" href="'. BASE_URL .'/index.php?controller=customer&action=history">
+                                    Lịch sử khám</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Đăng xuất
+                                </a></li>
+                        </ul>
+                    </div>';
+                            }
                         ?>
                     </div>
                 </div>
@@ -73,3 +104,30 @@ $action = isset($_GET['action']) ? $_GET['action'] : 'home';
         </div>
     </div>
 </header>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg"> <!-- Thay đổi kích thước ở đây -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title fs-1" id="exampleModalLabel">Thông báo</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Bạn có chắc chắn muốn đăng xuất không?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-danger" onclick="logout()">Đăng xuất</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function logout() {
+        window.location.href = "<?php echo BASE_URL ?>/index.php?controller=home&action=logout";
+    }
+</script>
+<!-- Thêm jQuery -->
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>

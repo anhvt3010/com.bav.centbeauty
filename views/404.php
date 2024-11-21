@@ -1,39 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>404</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-
-    <!-- Favicons -->
-    <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
-    <link href="assets/img/favicon.png" rel="apple-touch-icon">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-    <!-- Vendor CSS Files -->
-    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-    <link href="assets/css/style.css" rel="stylesheet">
-
-</head>
-
+<?php include "client/component_cent/header.php"; ?>
+<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
 <body>
-<!-- ======= Top Bar ======= -->
-<?php include "client/components/topbar.php" ?>
-<!-- ======= Header ======= -->
-<?php include "client/components/header.php" ?>
+
+<!-- Offcanvas Menu Begin -->
+<?php include "client/component_cent/offMenu.php"; ?>
+<!-- Offcanvas Menu End -->
+
+<!-- Header Section Begin -->
+<?php include "client/component_cent/header_content.php"; ?>
 
 <section class="py-3 py-md-5 min-vh-100 d-flex justify-content-center align-items-center">
     <div class="container">
@@ -47,7 +22,7 @@
                     </h2>
                     <h3 class="h2 mb-2">Ối! Không xong rồi.</h3>
                     <p class="mb-5">Trang bạn đang tìm kiếm không được tìm thấy.</p>
-                    <a class="btn bsb-btn-5xl btn-dark rounded-pill px-5 fs-6 m-0" style="background-color: #3fbbc0; border-color: #3fbbc0"
+                    <a class="btn bsb-btn-5xl btn-dark rounded-pill px-5 fs-6 m-0" style="background-color: #D25B33; border-color: #D25B33"
                        href="<?php echo HOME_CLIENT_URL ?>" role="button">Trở lại trang chủ</a>
                 </div>
             </div>
@@ -56,7 +31,7 @@
 </section>
 
 <!-- ======= Footer ======= -->
-<?php include "client/components/footer.html" ?>
+<?php include "client/component_cent/footer.php"; ?>
 
 <div id="preloader"></div>
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

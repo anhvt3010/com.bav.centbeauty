@@ -3,7 +3,7 @@ session_start();
 if (!isset($_SESSION['admin_name'])) {
     header('Location: '. NOT_FOUND_URL);
     exit();
-} else if ($_SESSION['role_id'] == 2){  // Trừ chuyên gia
+} else if ($_SESSION['role_id'] == 2){
     header('Location: '. UNAUTHORIZED_URL);
     exit();
 }
@@ -62,8 +62,8 @@ if (!isset($_SESSION['admin_name'])) {
                                             <?php
                                             foreach ($listSpecialties as $specialty) {
                                                 // Kiểm tra nếu id của chuyên khoa hiện tại trùng với $specialtySelected
-                                                $selected = ($specialty['specialty_id'] == $specialtySelected) ? 'selected' : '';
-                                                echo "<option value='" . htmlspecialchars($specialty['specialty_id']) . "' $selected>" . htmlspecialchars($specialty['name']) . "</option>";
+                                                $selected = ($specialty['service_id'] == $specialtySelected) ? 'selected' : '';
+                                                echo "<option value='" . htmlspecialchars($specialty['service_id']) . "' $selected>" . htmlspecialchars($specialty['name']) . "</option>";
                                             }
                                             ?>
                                         </select>
@@ -73,13 +73,13 @@ if (!isset($_SESSION['admin_name'])) {
 
                             <div class="col-2-5 table-filters pb-0">
                                 <div class="filter-container">
-                                    <label class="control-label table-filter-title">Lọc chuyên gia:</label>
+                                    <label class="control-label table-filter-title">Lọc nhân viên:</label>
                                     <form>
                                         <select class="select2" name="doctor">
-                                            <option value="All" <?php echo ($doctorSelected == 'All' ? 'selected' : ''); ?>>Tất cả chuyên gia</option>
+                                            <option value="All" <?php echo ($doctorSelected == 'All' ? 'selected' : ''); ?>>Tất cả nhân viên</option>
                                             <?php
                                             foreach ($listDoctors as $doctor) {
-                                                // Kiểm tra nếu id của chuyên gia hiện tại trùng với $doctor_selected
+                                                // Kiểm tra nếu id của nhân viên hiện tại trùng với $doctor_selected
                                                 $selected = ($doctor['id'] == $doctorSelected) ? 'selected' : '';
                                                 echo "<option value='" . htmlspecialchars($doctor['id']) . "' $selected>" . htmlspecialchars($doctor['name']) . "</option>";
                                             }
@@ -154,7 +154,7 @@ if (!isset($_SESSION['admin_name'])) {
                                     <thead>
                                     <tr>
                                         <th style="width:2%;">STT</th>
-                                        <th style="width:13%;">Chuyên gia</th>
+                                        <th style="width:13%;">nhân viên</th>
                                         <th style="width:15%;">Khách hàng</th>
                                         <th style="width:12%;">Thông tin liên hệ</th>
                                         <th style="width:10%;">Dịch vụ</th>
@@ -192,7 +192,7 @@ if (!isset($_SESSION['admin_name'])) {
                                             <td class="user-avatar cell-detail user-info">
                                                 <img class="mt-0 mt-md-2 mt-lg-0" src="<?php echo htmlspecialchars($appointment['doctor_avt']); ?>" alt="Avatar">
                                                 <span><?php echo htmlspecialchars($appointment['doctor_name']); ?></span>
-                                                <!--                                            <span class="cell-detail-description">chuyên gia chuyên khoa 1</span>-->
+                                                <!--                                            <span class="cell-detail-description">nhân viên chuyên khoa 1</span>-->
                                             </td>
                                             <td class="cell-detail milestone" data-project="Bootstrap">
                                                 <span class="completed"><?php echo htmlspecialchars($appointment['patient_dob']); ?></span>

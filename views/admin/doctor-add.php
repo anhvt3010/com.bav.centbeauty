@@ -52,19 +52,35 @@
                     </div>
                 </div>
                 <div class="mb-1 row">
-                    <div class="col-5">
+                    <div class="col-6">
+                        <label for="emPosition" class="form-label">Chức vụ *</label>
+                        <select id="emPosition" class="form-select" aria-label="Large select example" style="height: 50px">
+                            <option hidden="hidden" value="0">Chọn chức vụ</option>
+                            <?php
+                            foreach ($listPositions as $position) {
+                                if ($position['position_id'] != 1) {  // Kiểm tra nếu id chức vụ không phải là 1
+                                    echo "<option value='" . htmlspecialchars($position['position_id']) . "'>" . htmlspecialchars($position['name']) . "</option>";
+                                }
+                            }
+                            ?>
+                        </select>
+                        <span style="margin-left: 10px; color: red" id="errorEmPosition"></span>
+                    </div>
+                    <div class="col-6">
                         <label for="emSpecialty" class="form-label">Dịch vụ *</label>
                         <select id="emSpecialty" class="form-select" aria-label="Large select example" style="height: 50px">
                             <option hidden="hidden" value="0">Chọn dịch vụ</option>
                             <?php
                             foreach ($listSpecialties as $specialty) {
-                                echo "<option value='" . htmlspecialchars($specialty['specialty_id']) . "'>" . htmlspecialchars($specialty['name']) . "</option>";
+                                echo "<option value='" . htmlspecialchars($specialty['service_id']) . "'>" . htmlspecialchars($specialty['name']) . "</option>";
                             }
                             ?>
                         </select>
                         <span style="margin-left: 10px; color: red" id="errorEmSpecialty"></span>
                     </div>
-                    <div class="col-7">
+                </div>
+                <div class="mb-1 row">
+                    <div class="col-12">
                         <div class="mb-3">
                             <label for="emAvt" class="form-label">Tải lên ảnh</label>
                             <input class="form-control" type="file" id="emAvt">

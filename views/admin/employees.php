@@ -539,6 +539,7 @@ if (!isset($_SESSION['admin_name'])) {
                             document.getElementById('errorEmPhone').textContent = errorMessages.emPhoneExisted;
                             emPhone.classList.add('is-invalid');
                             $("#loading-spinner").hide();
+                            location.reload();
                         }
                     },
                     error: function() {

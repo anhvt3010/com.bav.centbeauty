@@ -1,7 +1,7 @@
-<header id="header" class="fixed-top">
+<header id="header" class="fixed-top" style="background-color: #FEDACC!important;">
     <div class="container d-flex align-items-center gap-2">
       <a href="<?php echo HOME_CLIENT_URL ?>" class="logo me-auto">
-        <img   src="assets/img/Medicare.png" alt="">
+        <img   src="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" alt="">
       </a>
 
       <nav id="navbar" class="navbar order-last order-lg-0">
@@ -28,9 +28,9 @@
             echo '<div class="user-dropdown scrollto">
                     <div class="dropdown">
                       <a class="dropdown-toggle appointment-btn m-0"
-                            style="background-color: #3FBBC0FF !important; border-color: #3FBBC0FF; color: whitesmoke"
+                            style="background-color: #d25b33 !important; border-color: #d25b33; color: whitesmoke"
                             type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                       <span class="d-none d-md-inline">Xin chào: </span> ' . htmlspecialchars($username) . '
+                       <span class="d-none d-md-inline"></span> ' . htmlspecialchars($username) . '
                       </a>
                       <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="'. BASE_URL .'/index.php?controller=customer&action=profile">
@@ -52,7 +52,7 @@
     </div>
 
   </header>
- Modal
+<!-- Modal-->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">

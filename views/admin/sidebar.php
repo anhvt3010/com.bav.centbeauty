@@ -41,20 +41,20 @@
                             </li>
                             <li class="parent">
                                 <a href="#">
-                                    <i class="icon fa-solid fa-user-doctor"></i><span>Quản lý chuyên gia</span>
+                                    <i class="icon fa-solid fa-user-doctor"></i><span>Quản lý nhân viên</span>
                                 </a>
                                 <ul class="sub-menu">
-                                    <li><a href="<?php echo BASE_URL ?>/index.php?controller=doctor&action=index">Danh sách chuyên gia</a></li>
+                                    <li><a href="<?php echo BASE_URL ?>/index.php?controller=doctor&action=index">Danh sách nhân viên</a></li>
                                 </ul>
                             </li>
-                            <li class="parent">
-                                <a href="#">
-                                    <i class="icon fa-solid fa-user-nurse"></i><span>Quản lý nhân viên</span>
-                                </a>
-                                <ul class="sub-menu">
-                                    <li><a href="<?php echo BASE_URL ?>/index.php?controller=employee&action=index">Danh sách nhân viên</a></li>
-                                </ul>
-                            </li>
+<!--                            <li class="parent">-->
+<!--                                <a href="#">-->
+<!--                                    <i class="icon fa-solid fa-user-nurse"></i><span>Quản lý nhân viên</span>-->
+<!--                                </a>-->
+<!--                                <ul class="sub-menu">-->
+<!--                                    <li><a href="--><?php //echo BASE_URL ?><!--/index.php?controller=employee&action=index">Danh sách nhân viên</a></li>-->
+<!--                                </ul>-->
+<!--                            </li>-->
                             <li class="parent">
                                 <a href="#">
                                     <i class="icon fa-solid fa-font-awesome"></i><span>Quản lý dịch vụ</span>

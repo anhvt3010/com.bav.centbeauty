@@ -180,7 +180,7 @@ h6 {
 }
 
 .appointment-btn:hover {
-  background: #65c9cd;
+  background: rgba(210, 91, 51, 0.52);
   color: #fff;
 }
 

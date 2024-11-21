@@ -12,19 +12,19 @@ class SpecialtyModel extends Database{
         return mysqli_query($this->connection, $sql);
     }
 
-    public function addSpecialty($name, $description, $status, $update_by) {
+    public function addSpecialty($name, $description, $status, $update_by, $servicePrice) {
         $name = mysqli_real_escape_string($this->connection, $name);
         $description = mysqli_real_escape_string($this->connection, $description);
         $status = mysqli_real_escape_string($this->connection, $status);
         $created_at = date("Y-m-d H:i:s");
 
-        $sql = "INSERT INTO services (name, description, status, create_at, update_by) 
-                VALUES ('$name', '$description', '$status', '$created_at', $update_by)";
+        $sql = "INSERT INTO services (name, description, status, create_at, update_by, price) 
+                VALUES ('$name', '$description', '$status', '$created_at', $update_by, $servicePrice)";
 
         return $this->_query($sql);
     }
 
-    public function updateSpecialtyById($service_id, $specialtyName, $specialtyDescription, $specialtyStatus, $employee_id): mysqli_result|bool
+    public function updateSpecialtyById($service_id, $specialtyName, $specialtyDescription, $specialtyStatus, $employee_id, $servicePrice): mysqli_result|bool
     {
         $specialtyName = mysqli_real_escape_string($this->connection, $specialtyName);
         $specialtyDescription = mysqli_real_escape_string($this->connection, $specialtyDescription);
@@ -34,6 +34,7 @@ class SpecialtyModel extends Database{
                 name = '{$specialtyName}', 
                 description = '{$specialtyDescription}', 
                 status = '{$specialtyStatus}', 
+                price = '{$servicePrice}', 
                 update_at = NOW(),
                 update_by = $employee_id
                 WHERE service_id = {$service_id}";

@@ -20,8 +20,10 @@ class DoctorController extends BaseController {
     {
         $listDoctors = $this->doctorModel->getDoctorForAdmin();
         $listSpecialties = $this->specialtyModel->getSpecialtiesForAppointment();
+        $listPositions = $this->positionModel->getAll();
         return $this->view('admin.doctors', [
             'listDoctors' => $listDoctors,
+            'listPositions' => $listPositions,
             'listSpecialties' => $listSpecialties,
         ]);
     }
@@ -49,7 +51,7 @@ class DoctorController extends BaseController {
         session_start();
         if (isset($_SESSION['admin_name'])) {
             $doctor_id = $_POST['id'];
-            $specialty_id = $_POST['specialty_id'];
+            $specialty_id = $_POST['service_id'];
             $name = $_POST['name'];
             $phone  = $_POST['phone'];
             $email = $_POST['email'];
@@ -86,7 +88,8 @@ class DoctorController extends BaseController {
     {
         session_start();
         if (isset($_SESSION['admin_name'])) {
-            $specialty_id = $_POST['specialty_id'];
+            $specialty_id = $_POST['service_id'];
+            $position_id = $_POST['position_id'];
             $name = $_POST['name'];
             $phone  = $_POST['phone'];
             $email = $_POST['email'];
@@ -104,7 +107,7 @@ class DoctorController extends BaseController {
                 $avt = BASE_URL .'/assets/img/doctors/doctor_default.png';
             }
 
-            $result = $this->doctorModel->addDoctor($name, $dob, $email, $phone, $gender, $address, $specialty_id, $status, $avt, $update_by);
+            $result = $this->doctorModel->addDoctor($name, $dob, $email, $phone, $gender, $address, $specialty_id, $position_id, $status, $avt, $update_by);
             if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
                 header('Content-Type: application/json');
                 echo json_encode($result);

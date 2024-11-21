@@ -17,7 +17,7 @@ if (!isset($_SESSION['admin_name'])) {
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
-    <title>Danh sách chuyên gia</title>
+    <title>Danh sách nhân viên</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css"
           href="<?php echo BASE_URL ?>/views/admin/assets/lib/perfect-scrollbar/css/perfect-scrollbar.css">
@@ -48,12 +48,12 @@ if (!isset($_SESSION['admin_name'])) {
     <?php include 'sidebar.php' ?>
     <div class="be-content">
         <div class="page-head">
-            <h2 class="page-head-title" style="font-size: 25px">Danh sách chuyên gia</h2>
+            <h2 class="page-head-title" style="font-size: 25px">Danh sách nhân viên</h2>
             <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb page-head-nav">
                     <li class="breadcrumb-item"><a href="index.php">Trang chủ</a></li>
-                    <li class="breadcrumb-item">Quán lý chuyên gia</li>
-                    <li class="breadcrumb-item active">Danh sách chuyên gia</li>
+                    <li class="breadcrumb-item">Quán lý nhân viên</li>
+                    <li class="breadcrumb-item active">Danh sách nhân viên</li>
                 </ol>
             </nav>
         </div>
@@ -98,7 +98,7 @@ if (!isset($_SESSION['admin_name'])) {
                                 <div class="filter-container">
                                     <div class="row">
                                         <div class="col-12">
-                                            <input id="searchInput" placeholder="Nhập tên/sđt/mã chuyên gia..." autocomplete="off"
+                                            <input id="searchInput" placeholder="Nhập thông tin nhân viên..." autocomplete="off"
                                                    class="form-control">
                                         </div>
                                     </div>
@@ -111,7 +111,7 @@ if (!isset($_SESSION['admin_name'])) {
                                     <thead>
                                     <tr>
                                         <th style="width:2%;">STT</th>
-                                        <th style="width:13%;">Tên chuyên gia</th>
+                                        <th style="width:13%;">Tên nhân viên</th>
                                         <th style="width:8%;">Mã nhân viên</th>
                                         <th style="width:5%;">Chức vụ</th>
                                         <th style="width:15%;">Dịch vụ</th>
@@ -402,7 +402,9 @@ if (!isset($_SESSION['admin_name'])) {
             emEmail: 'Email không hợp lệ',
             emPhone: 'Số điện thoại không hợp lệ',
             emAddress: 'Vui lòng nhập địa chỉ',
-            emSpecialty: 'Vui lòng chọn dịch vụ '
+            emSpecialty: 'Vui lòng chọn dịch vụ ',
+            emPosition: 'Vui lòng chọn chức vụ'
+
         };
 
         document.getElementById('btnAddEm').addEventListener('click', function() {
@@ -413,6 +415,7 @@ if (!isset($_SESSION['admin_name'])) {
             const emPhone = document.getElementById('emPhone');
             const emAddress = document.getElementById('emAddress');
             const emSpecialty = document.getElementById('emSpecialty');
+            const emPosition = document.getElementById('emPosition');
             const emStatus= document.getElementById('emStatus');
             const emAvt = document.getElementById('emAvt');
             let isValid = true;
@@ -424,6 +427,7 @@ if (!isset($_SESSION['admin_name'])) {
             const errorEmPhone = document.getElementById('errorEmPhone');
             const errorEmAddress = document.getElementById('errorEmAddress');
             const errorEmSpecialty = document.getElementById('errorEmSpecialty');
+            const errorEmPosition = document.getElementById('errorEmPosition');
             const errorEmAvt = document.getElementById('errorEmAvt');
 
             document.querySelectorAll('.form-control').forEach(input => {
@@ -448,6 +452,9 @@ if (!isset($_SESSION['admin_name'])) {
                         break;
                     case 'emSpecialty':
                         errorElement = errorEmSpecialty;
+                        break;
+                    case 'emPosition':
+                        errorElement = errorEmPosition;
                         break;
                     case 'errorEmAvt':
                         errorElement = errorEmAvt;
@@ -518,6 +525,13 @@ if (!isset($_SESSION['admin_name'])) {
                 isValid = false;
             }
 
+            // Kiểm tra chức vụ
+            if (emPosition.value === '0') {
+                document.getElementById('errorEmPosition').textContent = errorMessages.emPosition;
+                emPosition.classList.add('is-invalid');
+                isValid = false;
+            }
+
             // Kiểm tra file ảnh
             if (emAvt.files.length === 0) {
                 errorEmAvt.textContent = 'Vui lòng tải lên ảnh.';
@@ -544,7 +558,8 @@ if (!isset($_SESSION['admin_name'])) {
                 formData.append('email', emEmail.value);
                 formData.append('phone', emPhone.value);
                 formData.append('address', emAddress.value);
-                formData.append('specialty_id', parseInt(emSpecialty.value, 10));
+                formData.append('service_id', parseInt(emSpecialty.value, 10));
+                formData.append('position_id', parseInt(emPosition.value, 10));
                 formData.append('status', parseInt(emStatus.value, 10));
                 formData.append('avt', emAvt.files[0]); // Thêm file vào FormData
 
@@ -559,6 +574,7 @@ if (!isset($_SESSION['admin_name'])) {
                         console.log(response)
                         if(response['success']){
                             success_toast(response['message'])
+                            location.reload();
                         } else {
                             errorEmPhone.textContent = response['message'];
                             emPhone.classList.add('is-invalid');

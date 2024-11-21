@@ -65,7 +65,7 @@ class AppointmentModel extends Database {
             JOIN roles AS r ON r.role_id = e.role_id
             JOIN time_slots AS ts ON ts.time_id = a.time_id
             JOIN services AS s ON s.service_id = a.service_id
-            WHERE r.role_name = LOWER('doctor') AND a.status =  3";
+            WHERE r.role_name = LOWER('employee') AND a.status =  3";
 
         if ($specialty) {
             $sql .= " AND s.service_id = " . $specialty;
@@ -104,7 +104,7 @@ class AppointmentModel extends Database {
             JOIN roles AS r ON r.role_id = e.role_id
             JOIN time_slots AS ts ON ts.time_id = a.time_id
             JOIN services AS s ON s.service_id = a.service_id
-            WHERE r.role_name = LOWER('doctor') AND a.status =  3";
+            WHERE r.role_name = LOWER('employee') AND a.status =  3";
         if ($specialty) {
             $sql .= " AND s.service_id = " . $specialty;
         }
@@ -297,7 +297,7 @@ class AppointmentModel extends Database {
             JOIN roles AS r ON r.role_id = e.role_id
             JOIN time_slots AS ts ON ts.time_id = a.time_id
             JOIN services AS s ON s.service_id = a.service_id
-            WHERE r.role_name = LOWER('doctor') AND a.status =  0 ";
+            WHERE r.role_name = LOWER('employee') AND a.status =  0 ";
         if ($specialty) {
             $sql .= " AND s.service_id = " . $specialty;
         }
@@ -327,7 +327,7 @@ class AppointmentModel extends Database {
             JOIN roles AS r ON r.role_id = e.role_id
             JOIN time_slots AS ts ON ts.time_id = a.time_id
             JOIN services AS s ON s.service_id = a.service_id
-            WHERE r.role_name = LOWER('doctor') AND a.status =  0";
+            WHERE r.role_name = LOWER('employee') AND a.status =  0";
 
         if ($specialty) {
             $sql .= " AND s.service_id = " . $specialty;
@@ -370,7 +370,7 @@ class AppointmentModel extends Database {
             JOIN roles AS r ON r.role_id = e.role_id
             JOIN time_slots AS ts ON ts.time_id = a.time_id
             JOIN services AS s ON s.service_id = a.service_id
-            WHERE r.role_name = LOWER('doctor') AND a.status != 0 AND a.date_slot = " . $date;
+            WHERE r.role_name = LOWER('employee') AND a.status != 0 AND a.date_slot = " . $date;
 
         if ($specialty) {
             $sql .= " AND s.service_id = " . $specialty;
@@ -413,7 +413,7 @@ class AppointmentModel extends Database {
             JOIN roles AS r ON r.role_id = e.role_id
             JOIN time_slots AS ts ON ts.time_id = a.time_id
             JOIN services AS s ON s.service_id = a.service_id
-            WHERE r.role_name = LOWER('doctor')";
+            WHERE r.role_name = LOWER('employee')";
 
         if ($specialty) {
             $sql .= " AND s.service_id = " . $specialty;
@@ -461,7 +461,7 @@ class AppointmentModel extends Database {
             JOIN roles AS r ON r.role_id = e.role_id
             JOIN time_slots AS ts ON ts.time_id = a.time_id
             JOIN services AS s ON s.service_id = a.service_id
-            WHERE r.role_name = LOWER('doctor') AND a.status != 0 AND a.date_slot = " . $date;
+            WHERE r.role_name = LOWER('employee') AND a.status != 0 AND a.date_slot = " . $date;
 
         if ($specialty) {
             $sql .= " AND s.service_id = " . $specialty;
@@ -486,7 +486,7 @@ class AppointmentModel extends Database {
         $sql = "SELECT COUNT(*) AS total FROM appointments AS a
             JOIN employees AS e ON e.employee_id = a.employee_id
             JOIN roles AS r ON r.role_id = e.role_id
-            WHERE r.role_name = LOWER('doctor')";
+            WHERE r.role_name = LOWER('employee')";
 
         $query = $this->_query($sql);
         $result = mysqli_fetch_assoc($query);
@@ -499,7 +499,7 @@ class AppointmentModel extends Database {
             JOIN roles AS r ON r.role_id = e.role_id
             JOIN time_slots AS ts ON ts.time_id = a.time_id
             JOIN services AS s ON s.service_id = a.service_id
-            WHERE r.role_name = LOWER('doctor')";
+            WHERE r.role_name = LOWER('employee')";
 
         if ($specialty) {
             $sql .= " AND s.service_id = " . $specialty;

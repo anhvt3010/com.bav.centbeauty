@@ -7,7 +7,7 @@ ini_set('session.gc_maxlifetime', 86400);
 session_start();
 require_once 'BaseModel.php';
 class AuthModel extends BaseModel {
-    const TABLE_NAME = "patients";
+    const TABLE_NAME = "customers";
 
     protected $connection = null;
 
@@ -49,7 +49,7 @@ class AuthModel extends BaseModel {
         $phone = mysqli_real_escape_string($this->connection, $phone);
         $password = mysqli_real_escape_string($this->connection, $password);
 
-        $sql = "SELECT * FROM patients WHERE phone = '$phone'";
+        $sql = "SELECT * FROM customers WHERE phone = '$phone'";
         $result = $this->_query($sql);
         if ($result && mysqli_num_rows($result) > 0) {
             $patient = mysqli_fetch_assoc($result);
@@ -148,7 +148,7 @@ class AuthModel extends BaseModel {
         $newPassword = mysqli_real_escape_string($this->connection, $newPassword);
 
         // Lấy mật khẩu hiện tại từ cơ sở dữ liệu
-        $sql = "SELECT password FROM patients WHERE patient_id = '$patientId'";
+        $sql = "SELECT password FROM customers WHERE patient_id = '$patientId'";
         $result = $this->_query($sql);
 
         if ($result && mysqli_num_rows($result) > 0) {
@@ -160,7 +160,7 @@ class AuthModel extends BaseModel {
                 $newPasswordHash = password_hash($newPassword, PASSWORD_BCRYPT, ['cost' => 12]);
 
                 // Cập nhật mật khẩu mới vào cơ sở dữ liệu
-                $updateSql = "UPDATE patients SET password = '$newPasswordHash' WHERE patient_id = '$patientId'";
+                $updateSql = "UPDATE customers SET password = '$newPasswordHash' WHERE patient_id = '$patientId'";
                 if ($this->_query($updateSql)) {
                     return ['success' => true, 'message' => 'Mật khẩu đã được thay đổi thành công'];
                 } else {
@@ -179,13 +179,13 @@ class AuthModel extends BaseModel {
         $newPassword = mysqli_real_escape_string($this->connection, $newPassword);
 
         // Lấy mật khẩu hiện tại từ cơ sở dữ liệu
-        $sql = "SELECT password FROM patients WHERE phone = '$phone'";
+        $sql = "SELECT password FROM customers WHERE phone = '$phone'";
         $result = $this->_query($sql);
 
         if ($result && mysqli_num_rows($result) > 0) {
             $newPasswordHash = password_hash($newPassword, PASSWORD_BCRYPT, ['cost' => 12]);
 
-            $updateSql = "UPDATE patients SET password = '$newPasswordHash' WHERE phone = '$phone'";
+            $updateSql = "UPDATE customers SET password = '$newPasswordHash' WHERE phone = '$phone'";
             if ($this->_query($updateSql)) {
                 return ['success' => true, 'message' => 'Mật khẩu đã được thay đổi thành công'];
             } else {

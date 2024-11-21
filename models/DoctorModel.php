@@ -87,7 +87,7 @@ class DoctorModel  extends BaseModel {
         ];
     }
 
-    public function addDoctor($name, $dob, $email, $phone, $gender, $address, $service_id, $status, $avt, $update_by): array
+    public function addDoctor($name, $dob, $email, $phone, $gender, $address, $service_id, $position_id, $status, $avt, $update_by): array
     {
         // Kiểm tra số điện thoại đã tồn tại chưa
         if ($this->checkPhoneExists($phone)) {
@@ -101,7 +101,6 @@ class DoctorModel  extends BaseModel {
         $created_at = date("Y-m-d H:i:s");
         $hashedPassword = password_hash('Abc12345', PASSWORD_BCRYPT, ['cost' => 12]);
         $role_id = 2;
-        $position_id = 1;
         // Bước 1: Thêm  mà không có employee_code
         $sql = "INSERT INTO employees (
                    service_id,
@@ -137,7 +136,7 @@ class DoctorModel  extends BaseModel {
         $doctor_id = mysqli_insert_id($this->connection);
 
         // Bước 2: Tạo employee_code và cập nhật
-        $employee_code = 'DOC' . $doctor_id; // Sử dụng tiền tố 'DOC' cho bác sĩ
+        $employee_code = 'EMP' . $doctor_id; // Sử dụng tiền tố 'DOC' cho bác sĩ
         $sqlUpdate = "UPDATE employees SET employee_code = ? WHERE employee_id = ?";
         $stmtUpdate = mysqli_prepare($this->connection, $sqlUpdate);
         if ($stmtUpdate === false) {
@@ -191,10 +190,10 @@ class DoctorModel  extends BaseModel {
                     e.employee_code AS employee_code,
                     e.status AS status
                 FROM employees AS e
-                JOIN positions AS p ON e.position_id = p.position_id
-                JOIN services AS s ON e.service_id = s.service_id
-                JOIN roles AS r ON e.role_id = r.role_id
-                WHERE r.role_name = LOWER('doctor') ORDER BY e.employee_id DESC";
+                    JOIN positions AS p ON e.position_id = p.position_id
+                    JOIN services AS s ON e.service_id = s.service_id
+                    JOIN roles AS r ON e.role_id = r.role_id
+                WHERE r.role_name = LOWER('employee') ORDER BY e.employee_id DESC";
 
         $query = $this->_query($sql);
         $data = [];
@@ -210,7 +209,7 @@ class DoctorModel  extends BaseModel {
                 FROM employees AS e
                 JOIN services AS s ON e.service_id = s.service_id
                 JOIN roles AS r ON r.role_id = e.role_id
-                WHERE r.role_name = 'doctor' AND e.status = 1 AND s.service_id = $specialty";
+                WHERE r.role_name = 'employee' AND e.status = 1 AND s.service_id = $specialty";
 
         $query = $this->_query($sql);
         $data = [];

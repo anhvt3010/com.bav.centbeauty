@@ -18,10 +18,10 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Contact Us</h2>
+                        <h2>Liên hệ với chúng tôi</h2>
                         <div class="breadcrumb__links">
-                            <a href="./index.html">Home</a>
-                            <span>Contact</span>
+                            <a href="./index.php">Trang chủ</a>
+                            <span>Liên hệ</span>
                         </div>
                     </div>
                 </div>
@@ -40,8 +40,8 @@
                             <i class="fa fa-map-marker"></i>
                         </div>
                         <div class="contact__widget__text">
-                            <h5>Address</h5>
-                            <p>Los Angeles Gournadi, 1230 Bariasl</p>
+                            <h5>Địa chỉ</h5>
+                            <p> 12 P. Chùa Bộc, Quang Trung, Đống Đa, Hà Nội</p>
                         </div>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                         </div>
                         <div class="contact__widget__text">
                             <h5>Hotline</h5>
-                            <p>1-677-124-44227 • 1-688-356-66889</p>
+                            <p>+84 988 526 666</p>
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                         </div>
                         <div class="contact__widget__text">
                             <h5>Email</h5>
-                            <p>Support@gmail.com</p>
+                            <p>CentBeauty@gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -77,13 +77,12 @@
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="contact__form">
-                            <h3>Get in touch</h3>
+                            <h3>Ý kiến đóng góp</h3>
                             <form action="#">
-                                <input type="text" placeholder="Name">
+                                <input type="text" placeholder="Tên của bạn">
                                 <input type="text" placeholder="Email">
-                                <input type="text" placeholder="Website">
-                                <textarea placeholder="Message"></textarea>
-                                <button type="submit" class="site-btn">Send Message</button>
+                                <textarea placeholder="Ý kiến đóng góp"></textarea>
+                                <button type="submit" class="site-btn">Gửi</button>
                             </form>
                         </div>
                     </div>

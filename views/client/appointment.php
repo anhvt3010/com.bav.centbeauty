@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đặt Lịch Khám</title>
-    <link href="../../assets/img/logo_cent_orage.png" rel="icon">
+    <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -97,7 +97,7 @@
     </div>
 </div>
 <main id="main">
-    <section class="container" style="padding-top: 100px">
+    <section class="container" style="padding-top: 70px">
         <h2>Đặt Lịch Khám</h2>
         <hr>
         <form method="GET" action="#" class="row">
@@ -162,7 +162,7 @@
                         </div>
                     </div>
                     <div class="mb-2">
-                        <label for="conDescription" class="form-label">Lý do khám</label>
+                        <label for="conDescription" class="form-label">Ghi chú</label>
                         <textarea class="form-control" rows="2" id="conDescription" disabled></textarea>
                     </div>
                 </div>

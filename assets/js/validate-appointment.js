@@ -118,7 +118,7 @@ function validatePatientInfo(patientName, patientGender, patientDob, patientPhon
     var errorDes = document.getElementById('error-description');
     if (patientDescription.length > 500) {
         errorDes.style.display = 'block';
-        errorDes.textContent = 'Vui lòng mô tả triệu trứng ngắn gọn dưới 500 kí tự'
+        errorDes.textContent = 'Vui lòng nhập dưới 500 kí tự'
         return false;
     } else {
         errorDes.style.display = 'none';

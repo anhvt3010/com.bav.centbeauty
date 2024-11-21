@@ -57,7 +57,6 @@ if (!isset($_SESSION['admin_name'])) {
                                        placeholder="Nhập tên dịch vụ" value="<?php echo $specialty['name'] ?>"
                                        disabled>
                                 <span style="margin-left: 10px; color: red" id="errorSpecialtyNameUpdate"></span>
-
                             </div>
                             <div class="mb-3">
                                 <label for="specialtyDescription" class="form-label">Mô tả dịch vụ</label>
@@ -65,6 +64,13 @@ if (!isset($_SESSION['admin_name'])) {
                                           placeholder="Mô tả dịch vụ" maxlength="500"
                                           disabled><?php echo $specialty['description'] ?></textarea>
                                 <span style="margin-left: 10px; color: red" id="errorSpecialtyDescriptionUpdate"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="specialtyName" class="form-label">Giá</label>
+                                <input type="text" class="form-control" id="servicePrice" maxlength="150"
+                                       placeholder="Nhập giá dịch vụ" value="<?php echo $specialty['price'] ?>"
+                                       disabled>
+                                <span style="margin-left: 10px; color: red" id="errorServicePrice"></span>
                             </div>
                             <div class="mb-3 row">
                                 <div class="col-1">
@@ -129,10 +135,12 @@ if (!isset($_SESSION['admin_name'])) {
         const editButton = document.getElementById('editButton');
         const backButton = document.getElementById('backButton');
         const specialtyName = document.getElementById('specialtyName');
+        const servicePrice = document.getElementById('servicePrice');
         const specialtyDescription = document.getElementById('specialtyDescription');
         const specialtyStatus = document.getElementById('specialtyStatus');
         const errorSpecialtyName = document.getElementById('errorSpecialtyNameUpdate');
         const errorSpecialtyDescription = document.getElementById('errorSpecialtyDescriptionUpdate');
+        const errorServicePrice = document.getElementById('errorServicePrice');
 
         editButton.addEventListener('click', function () {
             if (editButton.textContent === "Chỉnh sửa") {
@@ -141,6 +149,8 @@ if (!isset($_SESSION['admin_name'])) {
                 specialtyName.disabled = false;
                 specialtyDescription.disabled = false;
                 specialtyStatus.disabled = false;
+                servicePrice.disabled = false;
+
 
                 // Thay đổi tên nút
                 editButton.textContent = "Cập nhật";
@@ -156,6 +166,11 @@ if (!isset($_SESSION['admin_name'])) {
 
                 if (!specialtyDescription.value) {
                     errorSpecialtyDescription.textContent = 'Mô tả không được để trống';
+                    valid = false;
+                }
+
+                if (!servicePrice.value) {
+                    errorServicePrice.textContent = 'Giá không được để trống';
                     valid = false;
                 }
 
@@ -177,6 +192,7 @@ if (!isset($_SESSION['admin_name'])) {
             formData.append('specialtyName', specialtyName.value);
             formData.append('specialtyDescription', specialtyDescription.value);
             formData.append('specialtyStatus', specialtyStatus.value);
+            formData.append('servicePrice', servicePrice.value);
 
             document.getElementById('loading-spinner').style.display = 'block';
             $.ajax({
