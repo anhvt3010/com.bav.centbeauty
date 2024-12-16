@@ -1,5 +1,31 @@
-<?php include "component_cent/header.php"; ?>
-<link rel="stylesheet" href="<?php echo BASE_URL ?>/views/admin/assets/css/app.css" type="text/css">
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Aesthetic Template">
+    <meta name="keywords" content="Aesthetic, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cent's Beauty</title>
+    <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
+
+    <!-- Google Font -->
+    <!--        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"-->
+    <!--            rel="stylesheet">-->
+
+    <!-- Css Styles -->
+<!--    <link rel="stylesheet" href="assetsv2/css/bootstrap.min.css" type="text/css">-->
+<!--    <link rel="stylesheet" href="assetsv2/css/font-awesome.min.css" type="text/css">-->
+<!--    <link rel="stylesheet" href="assetsv2/css/flaticon.css" type="text/css">-->
+<!--    <link rel="stylesheet" href="assetsv2/css/nice-select.css" type="text/css">-->
+<!--    <link rel="stylesheet" href="assetsv2/css/jquery-ui.min.css" type="text/css">-->
+<!--    <link rel="stylesheet" href="assetsv2/css/magnific-popup.css" type="text/css">-->
+<!--    <link rel="stylesheet" href="assetsv2/css/owl.carousel.min.css" type="text/css">-->
+<!--    <link rel="stylesheet" href="assetsv2/css/slicknav.min.css" type="text/css">-->
+    <link rel="stylesheet" href="assetsv2/css/style.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo BASE_URL ?>/views/admin/assets/css/app.css" type="text/css">
+</head>
 <body>
 
 <!-- Offcanvas Menu Begin -->
@@ -19,7 +45,7 @@
         <div class="row">
             <div class="col-md-12 p-0">
                 <div class="page-head p-0 mb-3">
-                    <h2 class="page-head-title">Tra cứu lịch khám</h2>
+                    <h2 class="page-head-title">Tra cứu lịch hẹn</h2>
                 </div>
                 <div class="card card-table">
                     <div class="card-body">
@@ -36,13 +62,13 @@
                             </div>
                             <div class="col-2 table-filters pb-0">
                                 <div class="filter-container">
-                                    <button id="btnSearch" type="button" class="btn btn-success form-control"
+                                    <button id="btnSearch" type="button" class="btn form-control" style="background-color: #D25B33!important; color: white"
                                             data-toggle="modal" data-target="#modalSearch">Tìm kiếm</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-body">
-                            <div class="noSwipe">
+                        <div class="card-body" style="padding: 0">
+                            <div class="noSwipe" style="padding-top: 20px">
                                 <table class="table table-striped table-hover be-table-responsive" id="table1">
                                     <thead>
                                     <tr>
@@ -51,7 +77,7 @@
                                         <th style="width:12%;">Khách hàng</th>
                                         <th style="width:12%;">Thông tin liên hệ</th>
                                         <th style="width:15%;">Dịch vụ</th>
-                                        <th style="width:10%;">Thời gian khám</th>
+                                        <th style="width:10%;">Thời gian hẹn</th>
                                         <th style="width:10%;" class="text-center">Trạng thái</th>
                                         <th style="width:2%;"></th>
                                     </tr>
@@ -94,8 +120,8 @@
 <?php include "component_cent/footer.php"; ?>
 
 <script src="<?php echo BASE_URL ?>/views/admin/assets/lib\jquery\jquery.min.js" type="text/javascript"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>-->
 <script src="<?php echo BASE_URL ?>/assets/js/toast/use-bootstrap-toaster.min.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {

@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-6">
-        <h5 class="mb-4">Chọn thông tin khám bệnh</h5>
+        <h5 class="mb-4">Chọn thông tin dịch vụ</h5>
         <div class="row">
             <div class="mb-3 col-sm-11">
                 <?php include "select-specialty.php" ?>

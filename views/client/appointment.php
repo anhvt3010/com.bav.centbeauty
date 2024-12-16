@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đặt Lịch Khám</title>
+    <title>Đặt Lịch Hẹn</title>
     <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
@@ -26,21 +26,42 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
-                    <ul class="header__top__left">
+                    <ul class="header__top__left" style="margin-bottom: 0!important;">
                         <li><i class="fa fa-phone"></i> +84 988 526 666</li>
                         <li><i class="fa fa-map-marker"></i> 12 P. Chùa Bộc, Quang Trung, Đống Đa, Hà Nội</li>
                         <li><i class="fa fa-clock-o"></i> Thứ 2 - Thứ 6 8:00 - 17:00</li>
                     </ul>
                 </div>
                 <div class="col-lg-4">
-                    <div class="header__top__right">
+                    <div class="header__top__right" style="padding-top: 13px; text-align: right; color: whitesmoke; ">
                         <?php
                         if (!isset($_SESSION['user_phone'])) {
                             echo
                                 '<a href="'. LOGIN_CLIENT_URL .'" class=" order-last order-lg-0" style="color:white;">
-                  <i style="color: white;" class="fa fa-sign-in" aria-hidden="true"></i>
-                  Đăng nhập
-                </a>';
+                                      <i style="color: white;" class="fa fa-sign-in" aria-hidden="true"></i>
+                                      Đăng nhập
+                                    </a>';
+                        } else {
+                            $username =  $_SESSION['user_name'];
+
+                            // Hiển thị số điện thoại người dùng
+                            echo '<div class="dropdown order-last order-lg-0">
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            ' . htmlspecialchars($username) . '
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item" href="'. BASE_URL .'/index.php?controller=customer&action=profile">
+                                    Thông tin cá nhân</a>
+                            </li>
+                            <li><a class="dropdown-item" href="'. BASE_URL .'/index.php?controller=customer&action=history">
+                                    Lịch sử sử dụng dịch vụ</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Đăng xuất
+                                </a></li>
+                        </ul>
+                    </div>';
                         }
                         ?>
                     </div>
@@ -72,7 +93,7 @@
                                 <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=blog">Tin Tức</a>
                             </li>
                             <li class="<?php echo ($action == 'contact') ? 'active' : ''; ?>">
-                                <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=contact">Cơ sở</a>
+                                <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=contact">Liên hệ</a>
                             </li>
                             <li class="<?php echo ($action == 'lookup') ? 'active' : ''; ?>">
                                 <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=search_client">Tra cứu</a>
@@ -98,7 +119,7 @@
 </div>
 <main id="main">
     <section class="container" style="padding-top: 70px">
-        <h2>Đặt Lịch Khám</h2>
+        <h2>Đặt Lịch Hẹn</h2>
         <hr>
         <form method="GET" action="#" class="row">
             <div id="form-time-container">
@@ -116,7 +137,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">Kiểm tra lịch khám</h1>
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Kiểm tra lịch hẹn</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -156,7 +177,7 @@
                             <input type="text" class="form-control" id="conSpecialty" disabled>
                         </div>
                         <div class="col-6">
-                            <label for="conTime" class="form-label">Thời gian khám</label>
+                            <label for="conTime" class="form-label">Thời gian hẹn</label>
                             <input style="background-color: #d25b33" type="text" class="form-control" id="conTime"
                                    disabled>
                         </div>
@@ -378,7 +399,7 @@
             body: `
           <div class="d-flex w-100" data-bs-theme="dark">
             <div class="flex-grow-1">
-              Đặt lịch khám thành công !
+              Đặt lịch hẹn thành công !
             </div>
             <button type="button" class="btn-close flex-shrink-0" data-bs-dismiss="toast" aria-label="Close"></button>
           </div>`,

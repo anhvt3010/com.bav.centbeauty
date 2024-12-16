@@ -26,7 +26,7 @@ if (!isset($_SESSION['admin_name'])) {
                             <i class="fa-solid fa-bed-pulse fa-3x"  style="color: #34a853"></i>
                         </div>
                         <div class="data-info">
-                            <div class="desc">Ca khám đã phục vụ</div>
+                            <div class="desc">Ca hẹn đã phục vụ</div>
                             <div class="value">
                                 <span class="indicator indicator-positive mdi mdi-chevron-up"></span>
                                 <span class="number" data-toggle="counter"
@@ -57,7 +57,7 @@ if (!isset($_SESSION['admin_name'])) {
                             <i class="fa-solid fa-clock fa-3x" style="color: #4182ff"></i>
                         </div>
                         <div class="data-info">
-                            <div class="desc">Lịch khám đang chờ</div>
+                            <div class="desc">Lịch hẹn đang chờ</div>
                             <div class="value">
                                 <span class="indicator indicator-positive mdi mdi-chevron-up" style="color: #4182ff"></span>
                                 <span class="number" data-toggle="counter" data-end="<?php echo $appointmentProcess ?>">0</span>
@@ -189,7 +189,7 @@ if (!isset($_SESSION['admin_name'])) {
         var myPieChart = new Chart(ctx, {
             type: 'pie',
             data: {
-                labels: ['Lịch đã được đặt', 'Lịch khám hoàn thành', 'Lịch khám bị hủy'],
+                labels: ['Lịch đã được đặt', 'Lịch hẹn hoàn thành', 'Lịch hẹn bị hủy'],
                 datasets: [{
                     data: [
                         <?php echo $appointmentPending + $appointmentProcess ?>,

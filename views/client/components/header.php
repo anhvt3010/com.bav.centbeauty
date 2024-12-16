@@ -17,7 +17,7 @@
       </nav>
 
       <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=appointment"
-         class="appointment-btn scrollto"><span class="d-none d-md-inline"></span>ĐẶT LỊCH KHÁM</a>
+         class="appointment-btn scrollto"><span class="d-none d-md-inline"></span>ĐẶT LỊCH HẸN</a>
 
         <?php
         if (isset($_SESSION['user_phone'])) {

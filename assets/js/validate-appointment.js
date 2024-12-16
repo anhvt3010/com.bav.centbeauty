@@ -20,7 +20,7 @@ function validateAppointment(specialId, doctorId, dateSlot, timeSlotId) {
     var errorDate = document.getElementById('error-date');
     if (!dateSlot) {
         errorDate.style.display = 'block';
-        errorDate.textContent = 'Vui lòng chọn ngày khám'
+        errorDate.textContent = 'Vui lòng chọn ngày hẹn'
         return false;
     } else {
         errorDoctor.style.display = 'none';
@@ -39,7 +39,7 @@ function validateAppointment(specialId, doctorId, dateSlot, timeSlotId) {
             return false;
         } else {
             errorTime.style.display = 'block';
-            errorTime.textContent = 'Vui lòng chọn giờ khám'
+            errorTime.textContent = 'Vui lòng chọn giờ hẹn'
             return false;
         }
     } else {

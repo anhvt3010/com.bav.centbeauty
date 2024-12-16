@@ -14,7 +14,7 @@ if (!isset($_SESSION['admin_name'])) {
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
-    <title>Xác nhận lịch khám</title>
+    <title>Xác nhận lịch hẹn</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <?php include 'import-link-tag.php' ?>
     <link href="<?php echo BASE_URL ?>/assets/css/appointment.css" rel="stylesheet">
@@ -40,12 +40,12 @@ if (!isset($_SESSION['admin_name'])) {
     <?php include 'sidebar.php' ?>
     <div class="be-content">
         <div class="page-head">
-            <h2 class="page-head-title">Cập nhật lịch khám</h2>
+            <h2 class="page-head-title">Cập nhật lịch hẹn</h2>
             <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb page-head-nav">
                     <li class="breadcrumb-item"><a href="<?php echo BASE_URL ?>/index.php?controller=home&action=home_admin">Trang chủ</a></li>
                     <li class="breadcrumb-item">Quán lý đặt lịch</li>
-                    <li class="breadcrumb-item active">Cập nhật lịch khám</li>
+                    <li class="breadcrumb-item active">Cập nhật lịch hẹn</li>
                 </ol>
             </nav>
         </div>
@@ -87,7 +87,7 @@ if (!isset($_SESSION['admin_name'])) {
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body pt-0">
-                Xác nhận cập nhật lịch khám
+                Xác nhận cập nhật lịch hẹn
             </div>
             <div class="modal-footer pt-0">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
@@ -144,7 +144,7 @@ if (!isset($_SESSION['admin_name'])) {
         function buildAppointment(response) {
             appointmentUpdate['id'] = parseInt(response['id'], 10)
             appointmentUpdate['employee_id'] = parseInt(response['employee_id'], 10)
-            appointmentUpdate['specialty_id'] = parseInt(response['specialty_id'], 10)
+            appointmentUpdate['specialty_id'] = parseInt(response['service_id'], 10)
             appointmentUpdate['date_slot'] = parseInt(response['date_slot'], 10)
             appointmentUpdate['time_id'] = parseInt(response['time_id'], 10)
             appointmentUpdate['patient_name'] = response['patient_name']
@@ -159,6 +159,8 @@ if (!isset($_SESSION['admin_name'])) {
             appointmentUpdate['employee_name'] = response['employee_name']
             appointmentUpdate['patient_phone'] = response['patient_phone']
             appointmentUpdate['time_slot'] = response['time_slot']
+
+            // console.log("parseInt(response['specialty_id'], 10): ", parseInt(response['service_id'], 10))
             return appointmentUpdate;
         }
 
@@ -313,6 +315,7 @@ if (!isset($_SESSION['admin_name'])) {
                 },
                 success: function (response) {
                     success_toast('<?php echo BASE_URL ?>/index.php?controller=appointment&action=confirm')
+                    console.log(response.data)
                 },
                 error: function () {
                     failed_toast()

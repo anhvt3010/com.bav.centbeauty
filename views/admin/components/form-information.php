@@ -11,11 +11,11 @@
             </div>
             <div class="col-md-4 text-center row mt-6">
                 <div class="col-6">
-                    <input type="radio" id="male" name="gender" value="1" style="width: 14px; height: 14px;">
+                    <input type="radio" id="male" name="gender" value="1" style="width: 14px; height: 14px;" disabled>
                     <label for="male">Nam</label>
                 </div>
                 <div class="col-6">
-                    <input type="radio" id="female" name="gender" value="0" style="width: 14px; height: 14px;">
+                    <input type="radio" id="female" name="gender" value="0" style="width: 14px; height: 14px;" disabled>
                     <label for="female">Nữ</label>
                 </div>
             </div>
@@ -55,7 +55,7 @@
             <p style="margin-top: 8px">Trạng thái</p>
         </div>
         <div class="col-9 pr-0 px-0">
-            <select id="status-appointment" class="form-select" aria-label="Small select example" style="background-color: #61d4d8">
+            <select id="status-appointment" class="form-select" aria-label="Small select example" style="background-color: #D25B33">
                 <option selected hidden="true">Chọn trạng thái</option>
                 <option value="0">Chờ xác nhận</option>
                 <option value="1">Đã xác nhận</option>

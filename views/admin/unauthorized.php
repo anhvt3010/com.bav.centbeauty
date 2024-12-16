@@ -7,7 +7,7 @@ if (!isset($_SESSION['admin_name'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Danh sách lịch khám</title>
+    <title>Danh sách lịch hẹn</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <?php include 'import_head.php' ?>
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -26,7 +26,7 @@ if (!isset($_SESSION['admin_name'])) {
         </h2>
         <h3 class="h2 mb-2">Ối! Bạn không có quyền truy cập.</h3>
         <p class="mb-5">Người dùng không có quyền thích hợp.</p>
-        <a class="btn bsb-btn-5xl btn-dark rounded-pill px-5 fs-6 m-0" style="background-color: #3fbbc0; border-color: #3fbbc0"
+        <a class="btn bsb-btn-5xl btn-dark rounded-pill px-5 fs-6 m-0" style="background-color: #DC6F30; border-color: #DC6F30"
            onclick="window.history.back();" role="button">Trở lại</a>
     </div>
 </div>

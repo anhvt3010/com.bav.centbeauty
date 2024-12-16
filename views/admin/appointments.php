@@ -17,7 +17,7 @@ if (!isset($_SESSION['admin_name'])) {
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
-    <title>Danh sách lịch khám</title>
+    <title>Danh sách lịch hẹn</title>
     <?php include 'import-link-tag.php' ?>
     <style>
         #btn-action:focus {
@@ -39,12 +39,12 @@ if (!isset($_SESSION['admin_name'])) {
     <?php include 'sidebar.php' ?>
     <div class="be-content">
         <div class="page-head">
-            <h2 class="page-head-title">Danh sách lịch khám</h2>
+            <h2 class="page-head-title">Danh sách lịch hẹn</h2>
             <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb page-head-nav">
                     <li class="breadcrumb-item"><a href="index.php">Trang chủ</a></li>
                     <li class="breadcrumb-item">Quán lý đặt lịch</li>
-                    <li class="breadcrumb-item active">Danh sách lịch khám</li>
+                    <li class="breadcrumb-item active">Danh sách lịch hẹn</li>
                 </ol>
             </nav>
         </div>
@@ -144,7 +144,7 @@ if (!isset($_SESSION['admin_name'])) {
                             </div>
                             <div class="col-2 table-filters pb-xl-4">
                                 <div class="m-0 pt-8">
-                                    <button id="button" class="btn btn-success form-control">Tìm kiếm</button>
+                                    <button id="button" style="background-color: #D25B33!important; color: white" class="btn form-control">Tìm kiếm</button>
                                 </div>
                             </div>
                         </div>
@@ -154,7 +154,7 @@ if (!isset($_SESSION['admin_name'])) {
                                     <thead>
                                     <tr>
                                         <th style="width:2%;">STT</th>
-                                        <th style="width:13%;">nhân viên</th>
+                                        <th style="width:13%;">Nhân viên</th>
                                         <th style="width:15%;">Khách hàng</th>
                                         <th style="width:12%;">Thông tin liên hệ</th>
                                         <th style="width:10%;">Dịch vụ</th>

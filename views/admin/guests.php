@@ -75,7 +75,7 @@ if (!isset($_SESSION['admin_name'])) {
                                 <div class="filter-container">
                                     <div class="row">
                                         <div class="col-12">
-                                            <button id="button" class="btn btn-success form-control">Tìm kiếm</button>
+                                            <button id="button" style="background-color: #D25B33!important; color: white" class="btn form-control">Tìm kiếm</button>
                                         </div>
                                     </div>
                                 </div>
@@ -92,7 +92,7 @@ if (!isset($_SESSION['admin_name'])) {
                                         <th style="width:10%;">Ngày sinh</th>
                                         <th style="width:10%;">Số điện thoại</th>
                                         <th style="width:10%;">Email</th>
-                                        <th style="width:10%;">Số lần thăm khám</th>
+                                        <th style="width:10%;">Số lần sử dụng dịch vụ</th>
                                         <th style="width:1%;"></th>
                                     </tr>
                                     </thead>

@@ -16,16 +16,16 @@
                             </a>
                             <ul class="sub-menu">
                                 <?php if ($_SESSION['role_id'] != 2) { ?>
-                                    <li><a href="<?php echo BASE_URL ?>/index.php?controller=appointment&action=index">Danh sách lịch khám</a></li>
+                                    <li><a href="<?php echo BASE_URL ?>/index.php?controller=appointment&action=index">Danh sách lịch hẹn</a></li>
                                 <?php } ?>
-                                <li><a href="<?php echo BASE_URL ?>/index.php?controller=appointment&action=today">Lịch khám hôm nay</a></li>
+                                <li><a href="<?php echo BASE_URL ?>/index.php?controller=appointment&action=today">Lịch hẹn hôm nay</a></li>
                                 <?php if ($_SESSION['role_id'] != 2) { ?>
                                     <li>
                                         <a href="<?php echo BASE_URL ?>/index.php?controller=appointment&action=confirm">Xác
-                                            nhận lịch khám</a></li>
+                                            nhận lịch hẹn</a></li>
                                     <li>
                                         <a href="<?php echo BASE_URL ?>/index.php?controller=appointment&action=expired">
-                                            Lịch khám quá hạn</a></li>
+                                            Lịch hẹn quá hạn</a></li>
                                 <?php } ?>
                             </ul>
                         </li>

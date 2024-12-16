@@ -14,7 +14,7 @@ if (!isset($_SESSION['admin_name'])) {
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
-    <title>Chi tiết lịch khám</title>
+    <title>Chi tiết lịch hẹn</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <?php include 'import-link-tag.php'?>
@@ -32,12 +32,12 @@ if (!isset($_SESSION['admin_name'])) {
     <?php include 'sidebar.php' ?>
     <div class="be-content">
         <div class="page-head py-0">
-            <h2 class="page-head-title" style="font-size: 25px">Chi tiết lịch khám</h2>
+            <h2 class="page-head-title" style="font-size: 25px">Chi tiết lịch hẹn</h2>
             <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb page-head-nav">
                     <li class="breadcrumb-item"><a href="index.php">Trang chủ</a></li>
                     <li class="breadcrumb-item">Quán lý đặt lịch</li>
-                    <li class="breadcrumb-item active">Danh sách lịch khám</li>
+                    <li class="breadcrumb-item active">Danh sách lịch hẹn</li>
                     <li class="breadcrumb-item active">Chi tiết</li>
                 </ol>
             </nav>
@@ -82,7 +82,7 @@ if (!isset($_SESSION['admin_name'])) {
                         </div>
                     </div>
                     <div class="col-6">
-                        <h3 class="mt-0">Thông tin khám bệnh</h3>
+                        <h3 class="mt-0">Thông tin lịch hẹn</h3>
                         <div class="mb-3 row">
                             <div class="col-8">
                                 <label for="" class="form-label">Tên chuyên gia</label>
@@ -99,13 +99,13 @@ if (!isset($_SESSION['admin_name'])) {
                         </div>
                         <div class="mb-3 row">
                             <div class="col-8">
-                                <label for="" class="form-label">Ngày đặt lịch khám</label>
+                                <label for="" class="form-label">Ngày đặt lịch hẹn</label>
                                 <div class="form-control-sm" style="background-color: #eee; line-height: 30px">
                                     <?php echo convertDayTimestampToDate($appointment['date_slot']); ?>
                                 </div>
                             </div>
                             <div class="col-4">
-                                <label for="" class="form-label">Giờ khám</label>
+                                <label for="" class="form-label">Giờ hẹn</label>
                                 <div class="form-control-sm" style="background-color: #eee; line-height: 30px">
                                     <?php echo substr($appointment['time_slot'], 0, 5) ?>
                                 </div>
@@ -216,7 +216,7 @@ if (!isset($_SESSION['admin_name'])) {
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Bạn có muốn tải lịch khám này lên ?</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Bạn có muốn tải lịch hẹn này lên ?</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -238,7 +238,7 @@ if (!isset($_SESSION['admin_name'])) {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Việc bệnh nhân đã vắng mặt, bạn có muốn chuyển lịch khám này đến danh sách lịch khám quá giờ ?
+                    Việc bệnh nhân đã vắng mặt, bạn có muốn chuyển lịch hẹn này đến danh sách lịch hẹn quá giờ ?
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>

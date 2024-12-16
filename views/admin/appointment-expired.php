@@ -17,7 +17,7 @@ if (!isset($_SESSION['admin_name'])) {
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
-    <title>Lịch khám quá hạn</title>
+    <title>Lịch hẹn quá hạn</title>
     <?php include 'import-link-tag.php' ?>
 
     <style>
@@ -36,12 +36,12 @@ if (!isset($_SESSION['admin_name'])) {
     <?php include 'sidebar.php' ?>
     <div class="be-content">
         <div class="page-head">
-            <h2 class="page-head-title">Lịch khám quá hạn/đã hủy</h2>
+            <h2 class="page-head-title">Lịch hẹn quá hạn/đã hủy</h2>
             <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb page-head-nav">
                     <li class="breadcrumb-item"><a href="index.php">Trang chủ</a></li>
                     <li class="breadcrumb-item">Quán lý đặt lịch</li>
-                    <li class="breadcrumb-item active">Lịch khám quá hạn</li>
+                    <li class="breadcrumb-item active">Lịch hẹn quá hạn</li>
                 </ol>
             </nav>
         </div>
@@ -226,7 +226,7 @@ if (!isset($_SESSION['admin_name'])) {
                                                         </svg>
                                                     </button>
                                                     <div class='dropdown-menu dropdown-menu-right' role='menu'>
-                                                        <a href="http://localhost/Medicare/index.php?controller=appointment&action=update_show&appointmentId=<?php echo $appointment['id'] ?>"
+                                                        <a href="http://localhost/CentBeauty/index.php?controller=appointment&action=update_show&appointmentId=<?php echo $appointment['id'] ?>"
                                                            type='button' class='dropdown-item'>Cập nhật</a>
 <!--                                                        <a href="http://localhost/Medicare/index.php?controller=appointment&action=detail&id=--><?php //echo $appointment['id'] ?><!--"-->
 <!--                                                           type='button' class='dropdown-item'>Chi tiết</a>-->

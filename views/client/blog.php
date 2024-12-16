@@ -124,7 +124,7 @@
                             <img src="assetsv2/img/blog/464502826_925937866261563_5767948794781601948_n.jpg" alt="">
                         </div>
                         <div class="blog__item__text">
-                            <h5><a href="https://www.facebook.com/centbeautyy/posts/pfbid02a98ASoYJk9xY96TUGsZCrUc1M5ZLhznmHg6dcZB9rwDz5mxsp7mA5BhiKAafFsbYl?__cft__[0]=AZWas19MGOFKWD3yI1sYhlQiBrmexmjmhf64DOYQEMBM-Jo-UDnRbEjLJAZHCUwoVNDZ4xoZyapeMzmjeo0AMoSa2WiB-fpuTFcQ6UbKRB50bzclkqX56F1fC59MUwABkFwSCKHyOPCW761MbgnBM1G9V-7tk_jzpvEPQnRkZXE-r1RhjgQf0_mwWaG4KmpauiM&__tn__=%2CO*F">🔥 Sở hữu ngay đầu triệt ‘chính chủ’ khi triệt lông tại Cent Beauty 🔥</a></h5>
+                            <h5><a href="https://www.facebook.com/centbeautyy/posts/pfbid02a98ASoYJk9xY96TUGsZCrUc1M5ZLhznmHg6dcZB9rwDz5mxsp7mA5BhiKAafFsbYl?__cft__[0]=AZWas19MGOFKWD3yI1sYhlQiBrmexmjmhf64DOYQEMBM-Jo-UDnRbEjLJAZHCUwoVNDZ4xoZyapeMzmjeo0AMoSa2WiB-fpuTFcQ6UbKRB50bzclkqX56F1fC59MUwABkFwSCKHyOPCW761MbgnBM1G9V-7tk_jzpvEPQnRkZXE-r1RhjgQf0_mwWaG4KmpauiM&__tn__=%2CO*F">🔥 Sở hữu ngay đầu triệt ‘chính chủ’ khi triệt lông tại Cent Beauty</a></h5>
                             <ul>
                                 <li><img src="assetsv2/img/blog/blog-author.jpg" alt=""> Cent`s Beauty</li>
                                 <li>Dec 06, 2019</li>

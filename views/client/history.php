@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lịch sử khám bệnh</title>
+    <title>Lịch sử sử dụng dịch vụ</title>
     <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
@@ -11,12 +11,102 @@
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="assets/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo BASE_URL ?>/views/admin/assets/css/app.css" type="text/css">
+    <link rel="stylesheet" href="assetsv2/css/style.css" type="text/css">
 
 
 </head>
 <body>
-<?php include "components/topbar.php" ?>
-<?php include "components/header.php" ?>
+<header class="header">
+    <div class="header__top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <ul class="header__top__left" style="margin-bottom: 0!important;">
+                        <li><i class="fa fa-phone"></i> +84 988 526 666</li>
+                        <li><i class="fa fa-map-marker"></i> 12 P. Chùa Bộc, Quang Trung, Đống Đa, Hà Nội</li>
+                        <li><i class="fa fa-clock-o"></i> Thứ 2 - Thứ 6 8:00 - 17:00</li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <div class="header__top__right" style="padding-top: 13px; text-align: right; color: whitesmoke; ">
+                        <?php
+                        if (!isset($_SESSION['user_phone'])) {
+                            echo
+                                '<a href="'. LOGIN_CLIENT_URL .'" class=" order-last order-lg-0" style="color:white;">
+                                      <i style="color: white;" class="fa fa-sign-in" aria-hidden="true"></i>
+                                      Đăng nhập
+                                    </a>';
+                        } else {
+                            $username =  $_SESSION['user_name'];
+
+                            // Hiển thị số điện thoại người dùng
+                            echo '<div class="dropdown order-last order-lg-0">
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            ' . htmlspecialchars($username) . '
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item" href="'. BASE_URL .'/index.php?controller=customer&action=profile">
+                                    Thông tin cá nhân</a>
+                            </li>
+                            <li><a class="dropdown-item" href="'. BASE_URL .'/index.php?controller=customer&action=history">
+                                    Lịch sử sử dụng dịch vụ</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Đăng xuất
+                                </a></li>
+                        </ul>
+                    </div>';
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="header__logo" style="padding-top: 15px">
+                    <a href="./index.php"><img width="120" src="assetsv2/img/logo_cent_orage.png" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-10">
+                <div class="header__menu__option">
+                    <nav class="header__menu">
+                        <ul>
+                            <li class="<?php echo ($action == 'home') ? 'active' : ''; ?>">
+                                <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=home">Trang chủ</a>
+                            </li>
+                            <li class="<?php echo ($action == 'about') ? 'active' : ''; ?>">
+                                <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=about">GIỚI THIỆU</a>
+                            </li>
+                            <li class="<?php echo ($action == 'services') ? 'active' : ''; ?>">
+                                <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=services">Dịch vụ</a>
+                            </li>
+                            <li class="<?php echo ($action == 'blog') ? 'active' : ''; ?>">
+                                <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=blog">Tin Tức</a>
+                            </li>
+                            <li class="<?php echo ($action == 'contact') ? 'active' : ''; ?>">
+                                <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=contact">Liên hệ</a>
+                            </li>
+                            <li class="<?php echo ($action == 'lookup') ? 'active' : ''; ?>">
+                                <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=search_client">Tra cứu</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header__btn">
+                        <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=appointment"
+                           class="primary-btn">Đặt Lịch Ngay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="canvas__open">
+            <i class="fa fa-bars"></i>
+        </div>
+    </div>
+</header>
 <main class="container p-0" style="margin-top: 150px!important; margin-bottom: 30px; height: 500px">
     <div class="main-content container-fluid" style="margin-top: -30px">
         <div class="row">

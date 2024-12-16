@@ -64,7 +64,7 @@ if (!isset($_SESSION['admin_name'])) {
                         <div class="row table-filters-container">
                             <div class="col-2 table-filters pb-0">
                                 <div class="filter-container">
-                                    <button id="btnAddDoctor" type="button" class="btn btn-success form-control"
+                                    <button id="btnAddDoctor" type="button" class="btn form-control" style="background-color: #D25B33!important; color: white"
                                             data-bs-toggle="modal" data-bs-target="#staticBackdrop">Thêm mới</button>
                                 </div>
                             </div>

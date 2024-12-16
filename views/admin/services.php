@@ -11,7 +11,7 @@ if (!isset($_SESSION['admin_name'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Danh sách lịch khám</title>
+    <title>Danh sách lịch hẹn</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <?php include 'import_head.php' ?>
 </head>
@@ -45,7 +45,7 @@ if (!isset($_SESSION['admin_name'])) {
                         <div class="row table-filters-container">
                             <div class="col-2 table-filters pb-0">
                                 <div class="filter-container">
-                                    <button id="btnAdd" type="button" class="btn btn-success form-control"
+                                    <button id="btnAdd" type="button" class="btn form-control" style="background-color: #D25B33!important; color: white"
                                             data-bs-toggle="modal" data-bs-target="#staticBackdrop">Thêm mới</button>
                                 </div>
                             </div>
@@ -83,7 +83,7 @@ if (!isset($_SESSION['admin_name'])) {
                                     <tr>
                                         <th style="width:2%;">STT</th>
                                         <th style="width:20%;">Tên Dịch vụ</th>
-                                        <th style="width:60%;">Mô tả</th>
+                                        <th style="width:50%;">Mô tả</th>
                                         <th style="width:10%;">Giá</th>
                                         <th style="width:15%;">Trạng thái</th>
                                     </tr>

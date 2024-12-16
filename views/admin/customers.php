@@ -83,7 +83,7 @@ if (!isset($_SESSION['admin_name'])) {
                                         <th style="width:10%;">Ngày sinh</th>
                                         <th style="width:10%;">Liên hệ</th>
                                         <th style="width:15%;">Địa chỉ</th>
-                                        <th style="width:5%;">Số lần khám</th>
+                                        <th style="width:10%;">Số lần sử dụng dịch vụ</th>
                                         <th style="width:2%;"></th>
                                     </tr>
                                     </thead>

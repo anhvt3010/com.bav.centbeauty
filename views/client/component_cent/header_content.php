@@ -17,8 +17,8 @@ $action = isset($_GET['action']) ? $_GET['action'] : 'home';
     <div class="header__top">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
-                    <ul class="header__top__left">
+                <div class="col-8"">
+                    <ul class="header__top__left" style="margin-bottom: 0!important;">
                         <li><i class="fa fa-phone"></i> +84 988 526 666</li>
                         <li><i class="fa fa-map-marker"></i> 12 P. Chùa Bộc, Quang Trung, Đống Đa, Hà Nội</li>
                         <li><i class="fa fa-clock-o"></i> Thứ 2 - Thứ 6 8:00 - 17:00</li>
@@ -46,7 +46,7 @@ $action = isset($_GET['action']) ? $_GET['action'] : 'home';
                                     Thông tin cá nhân</a>
                             </li>
                             <li><a class="dropdown-item" href="'. BASE_URL .'/index.php?controller=customer&action=history">
-                                    Lịch sử khám</a>
+                                    Lịch sử sử dụng dịch vụ</a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -85,7 +85,7 @@ $action = isset($_GET['action']) ? $_GET['action'] : 'home';
                                 <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=blog">Tin Tức</a>
                             </li>
                             <li class="<?php echo ($action == 'contact') ? 'active' : ''; ?>">
-                                <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=contact">Cơ sở</a>
+                                <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=contact">Liên hệ</a>
                             </li>
                             <li class="<?php echo ($action == 'lookup') ? 'active' : ''; ?>">
                                 <a href="<?php echo BASE_URL ?>/index.php?controller=home&action=search_client">Tra cứu</a>

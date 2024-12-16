@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lịch sử khám bệnh</title>
+    <title>Lịch sử sử dụng dịch vụ</title>
     <link href="http://localhost/CentBeauty/assets/img/logo_cent_orage.png" rel="icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
@@ -59,7 +59,7 @@ include "components/header.php" ;
                 </div>
             </div>
             <div class="col-6">
-                <h3 class="mt-0">Thông tin khám bệnh</h3>
+                <h3 class="mt-0">Thông tin lịch hẹn</h3>
                 <div class="mb-3 row">
                     <div class="col-8">
                         <label for="" class="form-label">Tên chuyên gia</label>
@@ -76,13 +76,13 @@ include "components/header.php" ;
                 </div>
                 <div class="mb-3 row">
                     <div class="col-8">
-                        <label for="" class="form-label">Ngày đặt lịch khám</label>
+                        <label for="" class="form-label">Ngày đặt lịch hẹn</label>
                         <div class="form-control-sm" style="background-color: #eee; line-height: 30px">
                             <?php echo convertDayTimestampToDate($appointment['date_slot']); ?>
                         </div>
                     </div>
                     <div class="col-4">
-                        <label for="" class="form-label">Giờ khám</label>
+                        <label for="" class="form-label">Giờ hẹn</label>
                         <div class="form-control-sm" style="background-color: #eee; line-height: 30px">
                             <?php echo substr($appointment['time_slot'], 0, 5) ?>
                         </div>
@@ -133,7 +133,7 @@ include "components/header.php" ;
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="resultModalLabel">Hồ sơ khám bệnh</h5>
+                                        <h5 class="modal-title" id="resultModalLabel">Hồ sơ sử dụng dịch vụ</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>

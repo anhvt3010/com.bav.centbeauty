@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 21, 2024 lúc 06:15 PM
+-- Thời gian đã tạo: Th12 16, 2024 lúc 07:17 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -52,12 +52,18 @@ CREATE TABLE `appointments` (
 --
 
 INSERT INTO `appointments` (`appointment_id`, `patient_id`, `service_id`, `employee_id`, `date_slot`, `time_id`, `patient_name`, `patient_gender`, `patient_dob`, `patient_phone`, `patient_email`, `patient_description`, `status`, `result`, `update_at`, `update_by`, `created_at`) VALUES
-(100, NULL, 1, 104, 19896, 15, 'Hoa Minh', 0, '1997-04-02', '0987654322', 'hoaminh678@gmail.com', 'Đổ mồ hôi đêm', 0, NULL, '2024-06-22 05:53:23', 67, '2024-06-20 01:14:38'),
-(101, NULL, 3, 105, 19896, 6, 'Nguyễn Thùy Linh', 0, '1968-10-20', '0987654323', 'nguyenthuylinh852003@gmail.com', 'Đau bụng', 1, NULL, '2024-06-22 05:52:02', 67, '2024-06-20 01:15:56'),
+(100, NULL, 1, 104, 19896, 15, 'Hoa Minh', 0, '1997-04-02', '0987654322', 'hoaminh678@gmail.com', 'Đổ mồ hôi đêm', 2, NULL, '2024-06-22 05:53:23', 67, '2024-06-20 01:14:38'),
+(101, NULL, 3, 105, 19896, 6, 'Nguyễn Thùy Linh', 0, '1968-10-20', '0966444453', 'nguyenthuylinh852003@gmail.com', 'Đau bụng', 1, NULL, '2024-06-22 05:52:02', 67, '2024-06-20 01:15:56'),
 (102, 1, 1, 105, 19897, 10, 'Vũ Thị Thắm', 1, '2002-05-23', '0987654321', 'tham@gmail.com', 'Đau nửa đầu, buồn nôn', 3, NULL, '2024-06-22 06:41:37', 76, '2024-06-22 06:40:43'),
 (103, NULL, 24, 103, 20020, 4, 'Bệnh nhân 36', 1, '2002-10-30', '0964444444', 'chatgpt3010@gmail.com', 'không biết gì cả', 2, NULL, NULL, NULL, '2024-10-23 00:05:03'),
-(104, NULL, 1, 107, 20048, 1, 'Khách hàng vãng lai 1', 1, '2002-10-30', '0978901234', 'kh1@gmail.com', 'không', 0, NULL, NULL, NULL, '2024-11-20 23:42:16'),
-(105, 53, 1, 107, 20048, 11, 'Trần Huyền Trang', 0, '2002-10-30', '0888888888', 'trang01@gmail.com', '', 2, NULL, NULL, NULL, '2024-11-21 01:17:34');
+(104, NULL, 1, 107, 20048, 1, 'Khách hàng vãng lai 1', 1, '2002-10-30', '0978901234', 'kh1@gmail.com', 'không', 2, NULL, NULL, NULL, '2024-11-20 23:42:16'),
+(105, 53, 1, 107, 20048, 11, 'Trần Huyền Trang', 0, '2002-10-30', '0888888888', 'trang01@gmail.com', '', 2, NULL, NULL, NULL, '2024-11-21 01:17:34'),
+(106, NULL, 1, 107, 20050, 9, 'Vũ Đức Thành', 1, '2002-02-20', '0966444453', 'chatgpt3010@gmail.com', 'đẹp trai', 2, NULL, NULL, NULL, '2024-11-22 00:24:57'),
+(107, NULL, 1, 107, 20050, 9, 'Vũ Đức Thành', 1, '2002-02-20', '0966444453', 'chatgpt3010@gmail.com', 'đẹp trai', 2, NULL, '2024-12-09 23:59:34', 1, '2024-11-22 00:24:59'),
+(108, NULL, 3, 105, 20049, 11, 'Vũ Thuý Hiền', 0, '2002-03-02', '0978901234', 'tanh09644@gmail.com', 'xinh gái', 2, NULL, NULL, NULL, '2024-11-22 00:31:33'),
+(109, NULL, 1, 107, 20067, 5, 'Vũ Minh Ánh', 1, '2002-10-30', '09060606060', 'tanh09644@gmail.com', 'xam moi', 0, NULL, NULL, NULL, '2024-12-09 20:58:59'),
+(110, NULL, 1, 103, 20067, 3, 'Vũ Tuấn Anh', 1, '2002-10-30', '0964434877', 'tanh09644@gmail.com', 'aaaa', 2, NULL, '2024-12-09 23:49:04', 1, '2024-12-09 23:36:24'),
+(111, NULL, 2, 103, 20068, 5, 'Phạm Hoàng Bách', 1, '2003-11-20', '0966444453', 'chatgpt3010@gmail.com', 'Tui đưa bạn gái đi ', 2, NULL, '2024-12-10 21:53:28', 108, '2024-12-10 21:52:16');
 
 -- --------------------------------------------------------
 
@@ -85,7 +91,7 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`patient_id`, `name`, `password`, `dob`, `gender`, `address`, `phone`, `email`, `status`, `create_at`, `update_by`, `update_at`) VALUES
-(53, 'Trần Huyền Trang 1', '$2y$12$4bwEoetAx77yZUEPabt2aeGShHf3q5Ytioo0nXfrXGJ1co/l9N4jK', '2002-10-30', 0, '11 Kim Mã Thượng, Ba Đình, Hà Nội', '0888888888', 'trang01@gmail.com', 1, NULL, NULL, NULL);
+(53, 'Vũ Ngọc Huyền', '$2a$12$RIhSPN36VEq3iASaeUrzfODmeM7FL4.eXLAdYd2DPSZIEx4ZhA/3a', '2002-10-30', 0, '11 Kim Mã Thượng, Ba Đình, Hà Nội', '0888888888', 'trang01@gmail.com', 1, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -118,12 +124,17 @@ CREATE TABLE `employees` (
 --
 
 INSERT INTO `employees` (`employee_id`, `role_id`, `service_id`, `position_id`, `employee_code`, `name`, `password`, `avt`, `phone`, `email`, `dob`, `gender`, `address`, `status`, `create_at`, `update_at`, `update_by`) VALUES
-(1, 1, NULL, NULL, 'ADMIN', 'admin', '$2a$12$1TZWRMnPAwbzIY6M.dML.ux1BNAJQoxDHhZbOaksdfUhPWQvkWIjG', 'https://cdn.vectorstock.com/i/500p/52/38/avatar-icon-vector-11835238.jpg', '0999999999', 'admin@gmail.com', '2002-12-01', 1, '20 Hồ Tùng Mậu, Mai Dịch, Cầu Giấy, Hà Nội', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
-(103, 2, 2, 1, 'DOC103', 'Vũ Ngọc Huyền', '$2y$12$PppGnZzBm4s1qPsx34/Y5erGsGljp62WZLTO5Ir/5/R90N8v0XTZy', 'https://res.cloudinary.com/dnp6p86dp/image/upload/v1732115576/hlelrxfwstfeanin42a6.jpg', '0999999998', 'huyen123@gmail.com', '2002-10-30', 0, '8 Đồng Bát, Mỹ Đình 2, Nam Từ Liêm, Hà Nội', 1, '2024-11-20 22:12:58', NULL, 1),
-(104, 2, 3, 1, 'DOC104', 'Vũ Tuấn Anhh', '$2y$12$w2GUWLjPGl.W.zscOaCkIuavZ6Sc6qLVrZgokbESTGt/2MT.Oi.xq', 'https://res.cloudinary.com/dnp6p86dp/image/upload/v1732116435/lu7spbnigiddwawyl5ug.jpg', '0999999997', 'anhvt123@gmail.com', '2002-10-30', 1, '858 Kim Giang, Thanh Liệt, Thanh Trì, Hà Nội', 1, '2024-11-20 22:27:16', '2024-11-20 22:31:37', 1),
-(105, 2, 3, 4, 'EMP105', 'Nguyễn Thị Thu Huyền', '$2y$12$x.GG5skVdgx4yjJjy0UR/eqHw8A8pFK67HxX9lJTQew9YbRqvCp7a', 'https://res.cloudinary.com/dnp6p86dp/image/upload/v1732117858/tas3mb5qyd3ixaw9qxrq.jpg', '0999999996', 'thuhuyen11@gmail.com', '2002-05-22', 0, '217 Lạc Long Quân, Tây Hồ , Hà Nội', 1, '2024-11-20 16:50:58', NULL, 1),
+(1, 1, NULL, NULL, 'ADMIN', 'Vũ Ngọc Huyền', '$2a$12$EVhqIYDVLnnhtvWVQisDZuGgvcOUNC9/tRteBZ3d7UnFc4NJfZEk6', 'https://cdn.vectorstock.com/i/500p/52/38/avatar-icon-vector-11835238.jpg', '0999999999', 'admin@gmail.com', '2002-12-01', 1, '20 Hồ Tùng Mậu, Mai Dịch, Cầu Giấy, Hà Nội', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
+(103, 2, 2, 1, 'DOC103', 'Vũ Ngọc Huyền', '$2a$12$EVhqIYDVLnnhtvWVQisDZuGgvcOUNC9/tRteBZ3d7UnFc4NJfZEk6', 'https://res.cloudinary.com/dnp6p86dp/image/upload/v1733553495/cb75axukdbpxlzg9zvdp.jpg', '0999999998', 'huyen123@gmail.com', '2002-10-30', 0, '8 Đồng Bát, Mỹ Đình 2, Nam Từ Liêm, Hà Nội', 1, '2024-11-20 22:12:58', '2024-12-07 13:38:16', 1),
+(104, 2, 3, 1, 'DOC104', 'Vũ Tuấn Anhh', '$2y$12$w2GUWLjPGl.W.zscOaCkIuavZ6Sc6qLVrZgokbESTGt/2MT.Oi.xq', 'https://res.cloudinary.com/dnp6p86dp/image/upload/v1733553612/x1o3ncarousuy05ksdgl.jpg', '0999999997', 'anhvt123@gmail.com', '2002-10-30', 1, '858 Kim Giang, Thanh Liệt, Thanh Trì, Hà Nội', 1, '2024-11-20 22:27:16', '2024-12-07 13:40:13', 1),
+(105, 2, 3, 4, 'EMP105', 'Nguyễn Thị Thu Huyền', '$2y$12$x.GG5skVdgx4yjJjy0UR/eqHw8A8pFK67HxX9lJTQew9YbRqvCp7a', 'https://res.cloudinary.com/dnp6p86dp/image/upload/v1733553560/do5xwbdocyxy8pmyu3gk.jpg', '0999999996', 'thuhuyen11@gmail.com', '2002-05-22', 0, '217 Lạc Long Quân, Tây Hồ , Hà Nội', 1, '2024-11-20 16:50:58', '2024-12-07 13:39:21', 1),
 (106, 2, 4, 2, 'EMP106', 'Vũ Thị Thuý Hiền', '$2y$12$GfT9gFjwhGOzkupG23LJh.qyH38BEx1ZbKHnqx1E7c6djhf1eDVHO', 'https://res.cloudinary.com/dnp6p86dp/image/upload/v1732118327/wyzp3iqeqwm08grpudzs.jpg', '0999999995', 'thuyhien22@gmail.com', '2002-10-30', 0, 'Tân Hồng, Bình Giang, Hải Dương', 1, '2024-11-20 16:58:47', NULL, 1),
-(107, 2, 1, 5, 'EMP107', 'Vũ Minh Anh', '$2y$12$ZMlb8gXm4Rc8eA1G9RWUTunTlDU39jmcAayIgFbnvJSDRUsNOOwCq', 'https://res.cloudinary.com/dnp6p86dp/image/upload/v1732120230/crf4ow00e8jvi1v29m3d.jpg', '0988888887', 'anh11@gmail.com', '2002-06-10', 1, 'Vĩnh Hồng, Bình Giang, Hải Dương', 1, '2024-11-20 23:30:30', NULL, 1);
+(107, 2, 1, 5, 'EMP107', 'Vũ Minh Anh', '$2y$12$ZMlb8gXm4Rc8eA1G9RWUTunTlDU39jmcAayIgFbnvJSDRUsNOOwCq', 'https://res.cloudinary.com/dnp6p86dp/image/upload/v1732120230/crf4ow00e8jvi1v29m3d.jpg', '0988888887', 'anh11@gmail.com', '2002-06-10', 1, 'Vĩnh Hồng, Bình Giang, Hải Dương', 0, '2024-11-20 23:30:30', '2024-12-09 21:05:00', 1),
+(108, 1, 1, 1, 'ADMIN2', 'Thành Hưng', '$2a$12$EVhqIYDVLnnhtvWVQisDZuGgvcOUNC9/tRteBZ3d7UnFc4NJfZEk6', 'https://res.cloudinary.com/dzuahpxqv/image/upload/v1733841237/uwkf19fqhrgjc05sr0jv.jpg', '0999999994', 'thanhhung@gmail.com', '2003-04-28', 1, 'Hà Nội', 1, NULL, NULL, NULL),
+(109, 1, 1, 1, 'ADMIN3', 'Phạm Hoàng Khiêm', '$2a$12$EVhqIYDVLnnhtvWVQisDZuGgvcOUNC9/tRteBZ3d7UnFc4NJfZEk6', 'https://res.cloudinary.com/dzuahpxqv/image/upload/v1733841237/uwkf19fqhrgjc05sr0jv.jpg', '0999999993', 'hoangkhiem@gmail.com', '2003-04-28', 1, 'Hà Nội', 1, NULL, NULL, NULL),
+(110, 1, 1, 1, 'ADMIN4', 'Nguyễn Thị Thu Huyyền', '$2a$12$EVhqIYDVLnnhtvWVQisDZuGgvcOUNC9/tRteBZ3d7UnFc4NJfZEk6', 'https://res.cloudinary.com/dzuahpxqv/image/upload/v1733841237/uwkf19fqhrgjc05sr0jv.jpg', '0999999992', 'thuhuyen@gmail.com', '2003-04-28', 0, 'Hà Nội', 1, NULL, NULL, NULL),
+(111, 2, 1, 5, 'EMP111', 'Vũ Văn Khang', '$2y$12$yW8KkoHlCQQ.hNEBMnQt7.iD/kLwBtXGmvPX/O0.IxcZCetvTirwS', 'https://res.cloudinary.com/dnp6p86dp/image/upload/v1734371711/vygl8ceecprfun9raoul.jpg', '0988526666', 'khang02@gmail.com', '2002-06-10', 1, '266 Đội Cấn, Ba Đình, Hà Nội', 1, '2024-12-17 00:55:13', NULL, 1),
+(112, 3, 1, 5, 'EMP112', 'Khuất Bá Tiến', '$2y$12$ovHUfZhvRgq08xQADQW1IuiZJdVrZVN/DQGoRlk0Nktnmt1DvPjYq', 'https://res.cloudinary.com/dnp6p86dp/image/upload/v1734372489/h2eurmixpjg35seprjxb.jpg', '0964434876', 'tien97@gmail.com', '1997-04-30', 1, '66 Hồ Tùng Mậu, Mai Dịch, Cầu Giấy, Hà Nội', 1, '2024-12-17 01:08:11', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -164,7 +175,8 @@ CREATE TABLE `roles` (
 
 INSERT INTO `roles` (`role_id`, `role_name`) VALUES
 (1, 'admin'),
-(2, 'employee');
+(2, 'employee'),
+(3, 'consultant');
 
 -- --------------------------------------------------------
 
@@ -289,7 +301,7 @@ ALTER TABLE `time_slots`
 -- AUTO_INCREMENT cho bảng `appointments`
 --
 ALTER TABLE `appointments`
-  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `appointment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 
 --
 -- AUTO_INCREMENT cho bảng `customers`
@@ -301,7 +313,7 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT cho bảng `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `employee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
+  MODIFY `employee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 
 --
 -- AUTO_INCREMENT cho bảng `positions`
@@ -313,7 +325,7 @@ ALTER TABLE `positions`
 -- AUTO_INCREMENT cho bảng `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `services`

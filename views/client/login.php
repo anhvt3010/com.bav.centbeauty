@@ -45,7 +45,7 @@ if (isset($_SESSION['user_phone'])) {
     </div>
 </div>
 <!-- Login 9 - Bootstrap Brain Component -->
-<section class=" py-3 py-md-5 py-xl-8" style="margin-top: 50px">
+<section class=" py-3 py-md-5 py-xl-8" style="margin-top: 100px">
     <div class="container">
         <div class="row gy-4 align-items-center">
             <div class="col-12 col-md-6 col-xl-7">

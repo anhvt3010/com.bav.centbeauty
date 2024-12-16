@@ -47,7 +47,7 @@ if (isset($_SESSION['admin_name'])) {
     </div>
 </div>
 <!-- Login 9 - Bootstrap Brain Component -->
-<section class="py-5 py-md-5 py-xl-8 mt-1" style="margin-top: 85px!important;">
+<section class="py-5 py-md-5 py-xl-8 mt-1" style="margin-top: 100px!important;">
     <div class="container">
         <div class="row gy-4 align-items-center">
             <div class="col-12 col-md-6 col-xl-7">

@@ -125,7 +125,7 @@ if (!isset($_SESSION['admin_name'])) {
                             </div>
                             <div class="col-6">
                                 <h4>
-                                    <strong>Lịch sử khám</strong>
+                                    <strong>Lịch sử sử dụng dịch vụ</strong>
                                     <hr>
                                 </h4>
                                 <?php include 'patient-detail-history.php'?>

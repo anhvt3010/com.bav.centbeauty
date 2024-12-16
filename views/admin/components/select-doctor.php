@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($data)) {
         }
 
         .filter-item:hover {
-            background-color: #8fe5e8;
+            background-color: #D25B33;
         }
 
         .end-toggle::after {
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($data)) {
 <body>
 <div id="bts-ex-6" class="dropdown">
     <button class="btn btn-outline-info dropdown-toggle end-toggle"
-            style="width: 100%; background-color: #3fbbc0; color: #ffffff; border-color: #3fbbc0; text-align: left"
+            style="width: 100%; background-color: #D25B33; color: #ffffff; border-color: #D25B33; text-align: left"
             type="button" id="dropdownMenuButtonDoctor"
             data-bs-toggle="dropdown" aria-expanded="false" disabled>
         Chọn chuyên gia (*)

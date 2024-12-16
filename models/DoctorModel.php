@@ -100,7 +100,11 @@ class DoctorModel  extends BaseModel {
         date_default_timezone_set('Asia/Ho_Chi_Minh');
         $created_at = date("Y-m-d H:i:s");
         $hashedPassword = password_hash('Abc12345', PASSWORD_BCRYPT, ['cost' => 12]);
-        $role_id = 2;
+        if($position_id == 5) {
+            $role_id = 3;
+        } else {
+            $role_id = 2;
+        }
         // Bước 1: Thêm  mà không có employee_code
         $sql = "INSERT INTO employees (
                    service_id,
@@ -193,7 +197,7 @@ class DoctorModel  extends BaseModel {
                     JOIN positions AS p ON e.position_id = p.position_id
                     JOIN services AS s ON e.service_id = s.service_id
                     JOIN roles AS r ON e.role_id = r.role_id
-                WHERE r.role_name = LOWER('employee') ORDER BY e.employee_id DESC";
+                WHERE r.role_name = LOWER('employee') OR r.role_name = LOWER('consultant') ORDER BY e.employee_id DESC";
 
         $query = $this->_query($sql);
         $data = [];
