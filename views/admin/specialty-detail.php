@@ -3,7 +3,7 @@ session_start();
 if (!isset($_SESSION['admin_name'])) {
     header('Location: '. NOT_FOUND_URL);
     exit();
-} else if ($_SESSION['role_id'] != 1){  // Chỉ admin
+} else if ($_SESSION['role_id'] == 3){
     header('Location: '. UNAUTHORIZED_URL);
     exit();
 }
@@ -93,7 +93,9 @@ if (!isset($_SESSION['admin_name'])) {
                                 <a id="backButton" class="btn btn-danger"
                                    href="<?php echo BASE_URL ?>/index.php?controller=specialty&action=index">Quay lại
                                     danh sách</a>
+
                                 <button id="editButton" class="btn btn-primary">Chỉnh sửa</button>
+
                             </div>
                         </div>
                     </div>

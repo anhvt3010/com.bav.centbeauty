@@ -3,10 +3,11 @@ session_start();
 if (!isset($_SESSION['admin_name'])) {
     header('Location: '. NOT_FOUND_URL);
     exit();
-} else if ($_SESSION['role_id'] == 2){
-    header('Location: '. UNAUTHORIZED_URL);
-    exit();
 }
+//else if ($_SESSION['role_id'] == 3){
+//    header('Location: '. UNAUTHORIZED_URL);
+//    exit();
+//}
 ?>
 <!DOCTYPE html>
 <html lang="en">

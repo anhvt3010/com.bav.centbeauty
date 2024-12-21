@@ -3,10 +3,11 @@ session_start();
 if (!isset($_SESSION['admin_name'])) {
     header('Location: '. NOT_FOUND_URL);
     exit();
-} else if ($_SESSION['role_id'] != 1){  // Chỉ admin
-    header('Location: '. UNAUTHORIZED_URL);
-    exit();
 }
+//else if ($_SESSION['role_id'] == 3){  // Chỉ admin
+//    header('Location: '. UNAUTHORIZED_URL);
+//    exit();
+//}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -90,12 +91,12 @@ if (!isset($_SESSION['admin_name'])) {
     <?php include 'sidebar.php' ?>
     <div class="be-content">
         <div class="page-head">
-            <h2 class="page-head-title" style="font-size: 25px">Chi tiết chuyên gia</h2>
+            <h2 class="page-head-title" style="font-size: 25px">Chi tiết nhân viên</h2>
             <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb page-head-nav">
                     <li class="breadcrumb-item"><a href="index.php">Trang chủ</a></li>
-                    <li class="breadcrumb-item">Quán lý chuyên gia</li>
-                    <li class="breadcrumb-item active">Danh sách chuyên gia</li>
+                    <li class="breadcrumb-item">Quán lý nhân viên</li>
+                    <li class="breadcrumb-item active">Danh sách nhân viên</li>
                     <li class="breadcrumb-item active">Chi tiết</li>
                 </ol>
             </nav>
@@ -210,7 +211,9 @@ if (!isset($_SESSION['admin_name'])) {
                 </div>
                 <div class="d-flex justify-content-between p-3">
                     <a id="backButton" class="btn btn-danger" href="<?php echo BASE_URL ?>/index.php?controller=doctor&action=index">Quay lại danh sách</a>
-                    <button id="editButtonDoctor" class="btn btn-primary">Chỉnh sửa</button>
+                    <?php if ($_SESSION['role_id'] == 1) { ?>
+                        <button id="editButtonDoctor" class="btn btn-primary">Chỉnh sửa</button>
+                    <?php } ?>
                 </div>
             </div>
         </div>

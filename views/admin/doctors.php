@@ -3,10 +3,11 @@ session_start();
 if (!isset($_SESSION['admin_name'])) {
     header('Location: '. NOT_FOUND_URL);
     exit();
-} else if ($_SESSION['role_id'] != 1){  // Chỉ admin
-    header('Location: '. UNAUTHORIZED_URL);
-    exit();
 }
+//else if ($_SESSION['role_id'] == 3){  // Chỉ admin va chuyen vien
+//    header('Location: '. UNAUTHORIZED_URL);
+//    exit();
+//}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,10 +63,13 @@ if (!isset($_SESSION['admin_name'])) {
                 <div class="col-md-12">
                     <div class="card card-table">
                         <div class="row table-filters-container">
+
                             <div class="col-2 table-filters pb-0">
                                 <div class="filter-container">
+                                    <?php if ($_SESSION['role_id'] == 1) { ?>
                                     <button id="btnAddDoctor" type="button" class="btn form-control" style="background-color: #D25B33!important; color: white"
                                             data-bs-toggle="modal" data-bs-target="#staticBackdrop">Thêm mới</button>
+                                    <?php } ?>
                                 </div>
                             </div>
 

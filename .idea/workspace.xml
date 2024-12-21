@@ -6,8 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="d135579f-d2e6-42b6-af04-33dcd6f1265a" name="Changes" comment="update code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/sendMailConfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/configs/sendMailConfig.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/DoctorModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/DoctorModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cent_beauty.sql" beforeDir="false" afterPath="$PROJECT_DIR$/cent_beauty.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/appointments.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/appointments.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/customer-detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/customer-detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/customers.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/customers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/doctor-detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/doctor-detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/doctors.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/doctors.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/guest-detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/guest-detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/sidebar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/specialty-detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/specialty-detail.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +93,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.grazie&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;E:\\PhpStorm 2024.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -151,7 +161,19 @@
       <workItem from="1731939328980" duration="12289000" />
       <workItem from="1732014709353" duration="2885000" />
       <workItem from="1732110489454" duration="14954000" />
-      <workItem from="1732194016210" duration="12554000" />
+      <workItem from="1732194016210" duration="12742000" />
+      <workItem from="1733543394918" duration="11076000" />
+      <workItem from="1733659714886" duration="594000" />
+      <workItem from="1733746982236" duration="11578000" />
+      <workItem from="1733839385764" duration="3733000" />
+      <workItem from="1734022594024" duration="607000" />
+      <workItem from="1734023676196" duration="9000" />
+      <workItem from="1734365570256" duration="4494000" />
+      <workItem from="1734454003071" duration="620000" />
+      <workItem from="1734617004442" duration="10551000" />
+      <workItem from="1734718891062" duration="903000" />
+      <workItem from="1734720643018" duration="636000" />
+      <workItem from="1734799418030" duration="331000" />
     </task>
     <task id="LOCAL-00002" summary="fixbug">
       <option name="closed" value="true" />
@@ -233,7 +255,23 @@
       <option name="project" value="LOCAL" />
       <updated>1732209399496</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="config gmail">
+      <option name="closed" value="true" />
+      <created>1732210368312</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1732210368312</updated>
+    </task>
+    <task id="LOCAL-00013" summary="update code">
+      <option name="closed" value="true" />
+      <created>1734374222088</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1734374222089</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,7 +281,23 @@
     <MESSAGE value="merge branch" />
     <MESSAGE value="fixbug" />
     <MESSAGE value="update code home" />
+    <MESSAGE value="config gmail" />
     <MESSAGE value="update code" />
     <option name="LAST_COMMIT_MESSAGE" value="update code" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/controllers/DoctorController.php</url>
+          <line>86</line>
+          <properties>
+            <option name="className" value="\DoctorController" />
+            <option name="methodName" value="add" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

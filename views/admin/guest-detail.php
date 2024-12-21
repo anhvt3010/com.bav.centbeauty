@@ -3,7 +3,7 @@ session_start();
 if (!isset($_SESSION['admin_name'])) {
     header('Location: ' . NOT_FOUND_URL);
     exit();
-} else if ($_SESSION['role_id'] != 1) {  // Chỉ admin
+} else if ($_SESSION['role_id'] == 2){   // Chỉ admin
     header('Location: ' . UNAUTHORIZED_URL);
     exit();
 }
@@ -43,7 +43,7 @@ if (!isset($_SESSION['admin_name'])) {
                 <ol class="breadcrumb page-head-nav">
                     <li class="breadcrumb-item"><a href="index.php">Trang chủ</a></li>
                     <li class="breadcrumb-item">Quán lý khách hàng</li>
-                    <li class="breadcrumb-item active">Danh sách khách hàng</li>
+                    <li class="breadcrumb-item active">Danh sách khách vãng lai</li>
                     <li class="breadcrumb-item active">Chi tiết</li>
                 </ol>
             </nav>
@@ -129,8 +129,9 @@ if (!isset($_SESSION['admin_name'])) {
                 </table>
 
                 <div style="position: fixed; bottom: 0; left: 0; margin: 20px; margin-left: 260px">
-                    <button id="backButton" class="btn btn-danger mr-3" onclick="window.history.back();">Quay lại</button>
+                    <button id="backButton" class="btn btn-danger mr-3" onclick="window.location.href='<?php echo BASE_URL ?>/index.php?controller=customer&action=guest';">Quay lại</button>
                 </div>
+
             </div>
         </div>
     </div>

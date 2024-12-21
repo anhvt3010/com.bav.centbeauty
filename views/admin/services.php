@@ -3,7 +3,7 @@ session_start();
 if (!isset($_SESSION['admin_name'])) {
     header('Location: '. NOT_FOUND_URL);
     exit();
-} else if ($_SESSION['role_id'] != 1){  // Chỉ admin
+} else if ($_SESSION['role_id'] == 3){  // Chỉ admin va chuyen vien
     header('Location: '.UNAUTHORIZED_URL);
     exit();
 }
@@ -45,8 +45,10 @@ if (!isset($_SESSION['admin_name'])) {
                         <div class="row table-filters-container">
                             <div class="col-2 table-filters pb-0">
                                 <div class="filter-container">
+
                                     <button id="btnAdd" type="button" class="btn form-control" style="background-color: #D25B33!important; color: white"
                                             data-bs-toggle="modal" data-bs-target="#staticBackdrop">Thêm mới</button>
+
                                 </div>
                             </div>
 

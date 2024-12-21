@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 16, 2024 lúc 07:17 PM
+-- Thời gian đã tạo: Th12 21, 2024 lúc 05:48 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -61,7 +61,7 @@ INSERT INTO `appointments` (`appointment_id`, `patient_id`, `service_id`, `emplo
 (106, NULL, 1, 107, 20050, 9, 'Vũ Đức Thành', 1, '2002-02-20', '0966444453', 'chatgpt3010@gmail.com', 'đẹp trai', 2, NULL, NULL, NULL, '2024-11-22 00:24:57'),
 (107, NULL, 1, 107, 20050, 9, 'Vũ Đức Thành', 1, '2002-02-20', '0966444453', 'chatgpt3010@gmail.com', 'đẹp trai', 2, NULL, '2024-12-09 23:59:34', 1, '2024-11-22 00:24:59'),
 (108, NULL, 3, 105, 20049, 11, 'Vũ Thuý Hiền', 0, '2002-03-02', '0978901234', 'tanh09644@gmail.com', 'xinh gái', 2, NULL, NULL, NULL, '2024-11-22 00:31:33'),
-(109, NULL, 1, 107, 20067, 5, 'Vũ Minh Ánh', 1, '2002-10-30', '09060606060', 'tanh09644@gmail.com', 'xam moi', 0, NULL, NULL, NULL, '2024-12-09 20:58:59'),
+(109, NULL, 1, 107, 20067, 5, 'Vũ Minh Ánh', 1, '2002-10-30', '09060606060', 'tanh09644@gmail.com', 'xam moi', 3, NULL, '2024-12-20 00:18:37', 1, '2024-12-09 20:58:59'),
 (110, NULL, 1, 103, 20067, 3, 'Vũ Tuấn Anh', 1, '2002-10-30', '0964434877', 'tanh09644@gmail.com', 'aaaa', 2, NULL, '2024-12-09 23:49:04', 1, '2024-12-09 23:36:24'),
 (111, NULL, 2, 103, 20068, 5, 'Phạm Hoàng Bách', 1, '2003-11-20', '0966444453', 'chatgpt3010@gmail.com', 'Tui đưa bạn gái đi ', 2, NULL, '2024-12-10 21:53:28', 108, '2024-12-10 21:52:16');
 
@@ -91,7 +91,8 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`patient_id`, `name`, `password`, `dob`, `gender`, `address`, `phone`, `email`, `status`, `create_at`, `update_by`, `update_at`) VALUES
-(53, 'Vũ Ngọc Huyền', '$2a$12$RIhSPN36VEq3iASaeUrzfODmeM7FL4.eXLAdYd2DPSZIEx4ZhA/3a', '2002-10-30', 0, '11 Kim Mã Thượng, Ba Đình, Hà Nội', '0888888888', 'trang01@gmail.com', 1, NULL, NULL, NULL);
+(53, 'Vũ Ngọc Huyền', '$2a$12$RIhSPN36VEq3iASaeUrzfODmeM7FL4.eXLAdYd2DPSZIEx4ZhA/3a', '2002-10-30', 0, '11 Kim Mã Thượng, Ba Đình, Hà Nội', '0888888888', 'trang01@gmail.com', 1, NULL, NULL, NULL),
+(54, 'Khách hàng 1', '$2y$12$PCaalATjCIy5jUwM.jCcGe/jWA.lazJFzLI1myYeqnaUSFd5/3mmW', NULL, NULL, NULL, '0777777777', NULL, 1, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -134,7 +135,9 @@ INSERT INTO `employees` (`employee_id`, `role_id`, `service_id`, `position_id`, 
 (109, 1, 1, 1, 'ADMIN3', 'Phạm Hoàng Khiêm', '$2a$12$EVhqIYDVLnnhtvWVQisDZuGgvcOUNC9/tRteBZ3d7UnFc4NJfZEk6', 'https://res.cloudinary.com/dzuahpxqv/image/upload/v1733841237/uwkf19fqhrgjc05sr0jv.jpg', '0999999993', 'hoangkhiem@gmail.com', '2003-04-28', 1, 'Hà Nội', 1, NULL, NULL, NULL),
 (110, 1, 1, 1, 'ADMIN4', 'Nguyễn Thị Thu Huyyền', '$2a$12$EVhqIYDVLnnhtvWVQisDZuGgvcOUNC9/tRteBZ3d7UnFc4NJfZEk6', 'https://res.cloudinary.com/dzuahpxqv/image/upload/v1733841237/uwkf19fqhrgjc05sr0jv.jpg', '0999999992', 'thuhuyen@gmail.com', '2003-04-28', 0, 'Hà Nội', 1, NULL, NULL, NULL),
 (111, 2, 1, 5, 'EMP111', 'Vũ Văn Khang', '$2y$12$yW8KkoHlCQQ.hNEBMnQt7.iD/kLwBtXGmvPX/O0.IxcZCetvTirwS', 'https://res.cloudinary.com/dnp6p86dp/image/upload/v1734371711/vygl8ceecprfun9raoul.jpg', '0988526666', 'khang02@gmail.com', '2002-06-10', 1, '266 Đội Cấn, Ba Đình, Hà Nội', 1, '2024-12-17 00:55:13', NULL, 1),
-(112, 3, 1, 5, 'EMP112', 'Khuất Bá Tiến', '$2y$12$ovHUfZhvRgq08xQADQW1IuiZJdVrZVN/DQGoRlk0Nktnmt1DvPjYq', 'https://res.cloudinary.com/dnp6p86dp/image/upload/v1734372489/h2eurmixpjg35seprjxb.jpg', '0964434876', 'tien97@gmail.com', '1997-04-30', 1, '66 Hồ Tùng Mậu, Mai Dịch, Cầu Giấy, Hà Nội', 1, '2024-12-17 01:08:11', NULL, 1);
+(112, 3, 1, 5, 'EMP112', 'Khuất Bá Tiến', '$2y$12$ovHUfZhvRgq08xQADQW1IuiZJdVrZVN/DQGoRlk0Nktnmt1DvPjYq', 'https://res.cloudinary.com/dnp6p86dp/image/upload/v1734372489/h2eurmixpjg35seprjxb.jpg', '0964434876', 'tien97@gmail.com', '1997-04-30', 1, '66 Hồ Tùng Mậu, Mai Dịch, Cầu Giấy, Hà Nội', 1, '2024-12-17 01:08:11', NULL, 1),
+(113, 2, 38, 5, 'EMP113', 'Chuyên Viên', '$2y$12$mV7tE0cHbvYorP2CfsidtucI/Z9KDKVnPifripdYovSteeDe0MNm.', 'https://res.cloudinary.com/dnp6p86dp/image/upload/v1734623110/tzawbf4c759ufrsnvjg7.jpg', '0999999111', 'chuyenvien@gmail.com', '2003-01-30', 1, '281 Đội Cấn, Ba Đình, Hà Nội', 1, '2024-12-19 22:45:12', NULL, 1),
+(114, 3, 1, 2, 'EMP114', 'Nhân Viên Tư Vấn', '$2y$12$X3fVY1i16UDOuSM4pZPPUuQqr8HN25QfgK7DRqUCt7HPcpfvsDwCy', 'https://res.cloudinary.com/dnp6p86dp/image/upload/v1734629486/lcx2brywwsi4n5pwynew.jpg', '0999999222', 'tuvan@gmail.com', '2003-06-12', 1, '8 Đồng Bát, Mỹ Đình, Hà Nội', 1, '2024-12-20 00:31:27', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -166,17 +169,18 @@ INSERT INTO `positions` (`position_id`, `name`) VALUES
 
 CREATE TABLE `roles` (
   `role_id` int(11) NOT NULL,
-  `role_name` varchar(255) DEFAULT NULL
+  `role_name` varchar(255) DEFAULT NULL,
+  `description` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `roles`
 --
 
-INSERT INTO `roles` (`role_id`, `role_name`) VALUES
-(1, 'admin'),
-(2, 'employee'),
-(3, 'consultant');
+INSERT INTO `roles` (`role_id`, `role_name`, `description`) VALUES
+(1, 'admin', 'Quản trị viên'),
+(2, 'employee', 'Chuyên viên'),
+(3, 'consultant', 'Nhân viên tư vấn');
 
 -- --------------------------------------------------------
 
@@ -307,13 +311,13 @@ ALTER TABLE `appointments`
 -- AUTO_INCREMENT cho bảng `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `patient_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `patient_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT cho bảng `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `employee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
+  MODIFY `employee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
 
 --
 -- AUTO_INCREMENT cho bảng `positions`
