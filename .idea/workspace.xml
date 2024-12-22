@@ -5,18 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d135579f-d2e6-42b6-af04-33dcd6f1265a" name="Changes" comment="update code">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cent_beauty.sql" beforeDir="false" afterPath="$PROJECT_DIR$/cent_beauty.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/appointments.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/appointments.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/customer-detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/customer-detail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/customers.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/customers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/doctor-detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/doctor-detail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/doctors.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/doctors.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/guest-detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/guest-detail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/services.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/sidebar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/specialty-detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/specialty-detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Database.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +165,8 @@
       <workItem from="1734617004442" duration="10551000" />
       <workItem from="1734718891062" duration="903000" />
       <workItem from="1734720643018" duration="636000" />
-      <workItem from="1734799418030" duration="331000" />
+      <workItem from="1734799418030" duration="957000" />
+      <workItem from="1734834356289" duration="4977000" />
     </task>
     <task id="LOCAL-00002" summary="fixbug">
       <option name="closed" value="true" />
@@ -271,7 +264,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734374222089</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="update code">
+      <option name="closed" value="true" />
+      <created>1734799769431</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1734799769431</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

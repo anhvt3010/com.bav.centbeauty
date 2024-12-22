@@ -1,8 +1,8 @@
 <?php
 class Database{
-    const HOST = 'localhost';
-    const USERNAME = 'root';
-    const PASSWORD = '';
+    const HOST = '103.216.117.60';
+    const USERNAME = 'anhvt3010';
+    const PASSWORD = '@fIP1pQWIiB-Jol6U^W)';
     const DATABASE = 'cent_beauty';
 
 //    product
