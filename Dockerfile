@@ -1,11 +1,14 @@
 # Dockerfile
 FROM php:8.2-apache
 
-# Cài đặt các extension cần thiết
-RUN docker-php-ext-install mysqli pdo pdo_mysql
+# Cài đặt các extension cần thiết và các phụ thuộc hệ thống
+RUN apt-get update && apt-get install -y \
+   git \
+   unzip \
+   && docker-php-ext-install mysqli pdo pdo_mysql
 
 # Cài đặt Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 
 # Thiết lập thư mục làm việc
 WORKDIR /var/www/html

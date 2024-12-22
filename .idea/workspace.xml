@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d135579f-d2e6-42b6-af04-33dcd6f1265a" name="Changes" comment="update code">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,6 +165,8 @@
       <workItem from="1734720643018" duration="636000" />
       <workItem from="1734799418030" duration="957000" />
       <workItem from="1734834356289" duration="4977000" />
+      <workItem from="1734844171354" duration="895000" />
+      <workItem from="1734871017016" duration="68000" />
     </task>
     <task id="LOCAL-00002" summary="fixbug">
       <option name="closed" value="true" />
@@ -278,13 +278,26 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="merge branch" />
     <MESSAGE value="fixbug" />
     <MESSAGE value="update code home" />
     <MESSAGE value="config gmail" />
     <MESSAGE value="update code" />
-    <option name="LAST_COMMIT_MESSAGE" value="update code" />
+    <MESSAGE value="init dockerfile" />
+    <MESSAGE value="init dockerfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="init dockerfile" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
