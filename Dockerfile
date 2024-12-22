@@ -5,7 +5,8 @@ FROM php:8.2-apache
 RUN apt-get update && apt-get install -y \
    git \
    unzip \
-   && docker-php-ext-install mysqli pdo pdo_mysql
+   && docker-php-ext-install mysqli pdo pdo_mysql \
+   && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Cài đặt Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
@@ -17,7 +18,7 @@ WORKDIR /var/www/html
 COPY . .
 
 # Cài đặt các phụ thuộc từ composer
-RUN composer install
+RUN composer install --no-scripts --no-progress --prefer-dist
 
 # Cấu hình Apache
 COPY .htaccess /var/www/html/.htaccess
